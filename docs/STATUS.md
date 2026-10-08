@@ -1,12 +1,141 @@
 # Project Status
 
-## Current milestone: 3 (Deterministic logic & parsing core)
+## Current milestone: 4 (Graph write path)
 
 ## Last session: 2026-10-08
 
-## State: Quote normalization + verification, date interval algebra, chronology comparator, Zod extraction schemas (enum-parity guarded), and section-aware chunking — all pure, with fast-check property tests. `pnpm run verify` green (147 tests).
+## State: Graph mutation + traversal core complete — `upsertNode`, `insertVerifiedEdge` (+ batch), `checkForCycle` / `hasActiveCycle`, `mergeNodes`, and traversal queries. `pnpm run verify` green (212 tests).
 
-## Next: Milestone 4 (insertVerifiedEdge + cycle check + upsertNode)
+## Next: Milestone 5 (Wikipedia API client + Wikidata QID resolver)
+
+---
+
+## Session log — 2026-10-08 (Milestone 4)
+
+Completed (all NEW):
+
+- `src/lib/graph/types.ts` — application-level input/output types plus the
+  Drizzle client aliases (`Database`, `Transaction`, `DbClient`).
+- `src/lib/graph/cycleCheck.ts` — `checkForCycle` (recursive CTE walking
+  upstream from the proposed cause; self-edge short-circuit) and
+  `hasActiveCycle` (full-graph cycle probe used by merge).
+- `src/lib/graph/upsertNode.ts` — canonical identity upsert (P1). QID /
+  nexusGeneratedId use `ON CONFLICT DO NOTHING` + re-select; wikipediaPageId
+  (non-unique) uses select-then-insert. Metadata fill-in only (never overwrites
+  or downgrades).
+- `src/lib/graph/insertVerifiedEdge.ts` — **the only edge write path**.
+  Validates self-edge / importance / evidence before opening a transaction,
+  then runs cycle check, stored-date chronology, and the raw `INSERT ... ON
+  CONFLICT (...) WHERE status='ACTIVE' DO NOTHING` + evidence insert inside one
+  SERIALIZABLE transaction, wrapped in a jittered retry (`40001` / `40P01`).
+  Also `insertVerifiedEdgeBatch` (lexicographic lock ordering, per-edge tx).
+- `src/lib/graph/mergeNodes.ts` — P1 reconciliation: repoints edges, retires
+  duplicate ACTIVE edges (keeping the earlier `createdAt`) and moves evidence,
+  repoints expansion requests / extraction runs, re-checks P2, logs
+  `qidReconciliations`, deletes the removed node.
+- `src/lib/graph/traversal.ts` — `getNodeNeighborhood`, `getAncestors`,
+  `getDescendants` (recursive CTEs, deduplicated), `distanceToNearestRoot`.
+- `src/lib/graph/index.ts` — barrel.
+- `src/test/helpers/fixtures.ts` — added `uniqueQid`, `insertSourceDocument`,
+  `insertExtractionRun`, and a fourth fixture node; `createTestFixtures`
+  unchanged in shape apart from the new `nodeD`.
+- `src/test/helpers/edgeHelper.ts` — added `makeEvidence` and
+  `insertVerifiedEdgeThroughApp` (the production write path). The existing
+  raw-SQL probe helpers are retained for the M2 invariant suite.
+- `docs/STATUS.md` — this update.
+
+Tests added (65 new; 60 graph + 5 retry; 147 + 65 = 212 total):
+
+- `src/test/integration/graph/upsertNode.test.ts` (13) — identity schemes,
+  P1 violation, QID pattern, metadata no-overwrite, date upgrade/no-downgrade,
+  concurrent same-QID upsert (two pools), DAY-without-day guard.
+- `src/test/integration/graph/insertVerifiedEdge.test.ts` (19) — create /
+  ACTIVE / chronology status, evidence offsets, EXISTING + accumulated
+  evidence, per-relation edges, SELF_EDGE, NO_EVIDENCE, rank 0/11,
+  CHRONOLOGY_VIOLATION, UNVERIFIED dates, cycle rejection, deferred P3 trigger,
+  batch accept, batch partition, concurrent identical inserts, concurrent
+  opposite edges.
+- `src/test/integration/graph/cycleCheck.test.ts` (8) — empty, 2-node,
+  3-node, branch, separate chains, self-edge fast path, long chain, diamond.
+- `src/test/integration/graph/mergeNodes.test.ts` (8) — repoint + log,
+  duplicate retirement with evidence move, self-edge removal, missing node,
+  cycle rollback, node deletion, expansion-request repoint, count accuracy.
+- `src/test/integration/graph/traversal.test.ts` (12) — neighborhood
+  causes/effects/empty/null, bounded ancestors, dedupe, descendants,
+  distance-to-root 0/2/2/null.
+- `src/test/integration/graph/retry.test.ts` (5) — classification (direct +
+  nested `40001`, `40P01`, non-retryable), fake-runner retry/exhaustion, and a
+  **real PostgreSQL 40001** provoked by two barrier-synchronised SERIALIZABLE
+  transactions (retry observed; `invocations >= 3`).
+
+`pnpm run verify` output: lint PASS (0 errors), typecheck PASS, 212/212 tests
+PASS (19 files), audit 7/7 PASS.
+
+`pnpm run audit:invariants` output:
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+=====================
+Result: 7/7 passed
+```
+
+Deviations / API decisions (with reasons):
+
+1. **ON CONFLICT is raw SQL.** Drizzle's `.onConflictDoNothing()` cannot express
+   a partial-index conflict target of the form
+   `ON CONFLICT (cols) WHERE status='ACTIVE' DO NOTHING`, so the edge insert
+   uses `tx.execute(sql\`...\`)`. Evidence spans still use `tx.insert`.
+2. **`mergeNodes` deletes self-edge rows (P4 deviation).** The
+   `chk_no_self_edge` CHECK applies to every row regardless of status, so an
+   edge that would become `Y -> Y` cannot be stored as SUPERSEDED. It is
+   removed together with its evidence (the FK forces the evidence delete). A
+   node delete is already sanctioned by the task; this is the minimal
+   additional delete required by the schema. Documented in `mergeNodes.ts`.
+3. **`mergeNodes` repoints `expansionRequests.nodeId`.** The FK is `NOT NULL`
+   with no `ON DELETE`, so the removed node cannot be deleted otherwise. The
+   brief's optional handling ("nullify or repoint") is implemented as repoint;
+   the merge test asserts it.
+4. **`mergeNodes` keeps the earlier `createdAt`.** When the surviving ACTIVE
+   edge is the one being repointed (it is older), the function retires the
+   existing target edge instead and repoints the survivor.
+5. **`cycleCheck` seeds the path with the proposed cause and de-duplicates.**
+   The brief's CTE returns `path || effect` which can end in a doubled id; the
+   returned `cyclePath` (debugging only) is seeded `[cause, ...ancestors]` and
+   consecutive duplicates collapsed.
+6. **Cycle test 4 corrected.** The brief's "A→B, A→C, C→D, propose D→B" is not
+   a cycle (nothing reaches D from B). The test proposes `D→A` instead, which
+   is a genuine cycle (A→C→D→A).
+7. **Upsert test 7 interpretation.** `label` is `NOT NULL` and required, so
+   "null label" is interpreted as "an existing non-empty label is never
+   overwritten".
+8. **Raw-SQL probe retained in `edgeHelper.ts`.** The M2 invariant tests
+   (`src/test/invariants/`, out of scope) deliberately bypass the application
+   path to assert database-level defence-in-depth (self-edge CHECK, importance
+   CHECK, partial unique index, deferred P3 trigger). They import
+   `edgeInsertSql` / `insertEdgeWithEvidence`; removing those would break tests
+   this task must not modify. They use raw SQL, **not**
+   `db.insert(edges)`, so the ESLint ban does not fire. M4 tests use the new
+   `insertVerifiedEdgeThroughApp` wrapper.
+9. **`withSerializableRetry` / `isSerializationFailure` are exported** so the
+   retry logic can be tested directly (including against real PostgreSQL).
+
+Verification performed locally (PostgreSQL 18, database `nexus_test`):
+
+- `pnpm run lint`, `pnpm run typecheck` clean.
+- Graph suite run four times; the concurrency tests were stable.
+- Real `40001` retry confirmed via temporary instrumentation ("[retry-diag]
+  serialization failure on attempt 1" under the barrier test), then removed.
+- Grep confirms no Drizzle `insert(edges)` anywhere; the only raw
+  `INSERT INTO "edges"` statements are `insertVerifiedEdge.ts` (production) and
+  the documented test probe in `edgeHelper.ts`.
 
 ---
 

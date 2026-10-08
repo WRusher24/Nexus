@@ -1,6 +1,12 @@
 import { sql, type SQL } from 'drizzle-orm';
 import type { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import * as schema from '../../lib/db/schema';
+import { insertVerifiedEdge as insertVerifiedEdgeImpl } from '../../lib/graph/insertVerifiedEdge';
+import type {
+  EdgeInsertInput,
+  EdgeInsertResult,
+  EvidenceInput,
+} from '../../lib/graph/types';
 
 type Db = NodePgDatabase<typeof schema>;
 
@@ -85,4 +91,45 @@ export async function insertEdgeWithEvidence(
 
     return edgeId;
   });
+}
+
+/**
+ * Build an evidence span for `insertVerifiedEdge` from a source document and
+ * extraction run. `input` is assumed to be already verified by the caller (the
+ * production write path records it as VERIFIED). Defaults line up with the
+ * default fixture text.
+ */
+export function makeEvidence(
+  params: {
+    sourceDocumentId: string;
+    extractionRunId: string;
+  },
+  overrides: Partial<EvidenceInput> = {},
+): EvidenceInput {
+  const quoteText = overrides.quoteText ?? 'The source text supports the test.';
+  return {
+    quoteText,
+    normalizedQuote: overrides.normalizedQuote ?? quoteText.toLowerCase(),
+    sectionTitle: overrides.sectionTitle ?? 'Lead',
+    charOffsetStart: overrides.charOffsetStart ?? 0,
+    charOffsetEnd: overrides.charOffsetEnd ?? quoteText.length,
+    sourceDocumentId: params.sourceDocumentId,
+    extractionRunId: params.extractionRunId,
+  };
+}
+
+/**
+ * Create an edge through the production write path.
+ *
+ * `insertEdgeWithEvidence` above deliberately bypasses the application layer to
+ * probe the database's own constraints (self-edges, importance bounds, the P3
+ * trigger). Graph behaviour, by contrast, must be tested through the real
+ * write path, so M4 tests use this wrapper. Both live here and both avoid
+ * `db.insert(edges)`; only `insertVerifiedEdge` writes edges in production.
+ */
+export async function insertVerifiedEdgeThroughApp(
+  db: Db,
+  input: EdgeInsertInput,
+): Promise<EdgeInsertResult> {
+  return insertVerifiedEdgeImpl(db, input);
 }
