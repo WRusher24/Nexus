@@ -1,0 +1,96 @@
+{
+  "promptHash": "synthetic-napoleon-upstream",
+  "recordedLive": false,
+  "response": {
+    "parsed": {
+      "focalEntity": {
+        "name": "Napoleon",
+        "entityType": "ACTOR",
+        "dateStart": {
+          "year": 1914,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        },
+        "dateEnd": {
+          "year": 1918,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        }
+      },
+      "direction": "UPSTREAM",
+      "edges": [
+        {
+          "relatedEntity": {
+            "name": "French Revolution",
+            "entityType": "EVENT",
+            "dateStart": {
+              "year": 1789,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1789,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1789"
+            }
+          },
+          "relationType": "ENABLED",
+          "importanceRank": 1,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "The French Revolution enabled Napoleon to rise to power.",
+            "sectionTitle": "Rise to power"
+          }
+        },
+        {
+          "relatedEntity": {
+            "name": "French Revolutionary Wars",
+            "entityType": "EVENT",
+            "dateStart": {
+              "year": 1792,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1792,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1792"
+            }
+          },
+          "relationType": "CONTRIBUTED_TO",
+          "importanceRank": 2,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "The revolutionary wars contributed to his military reputation.",
+            "sectionTitle": "Rise to power"
+          }
+        }
+      ],
+      "metadata": {
+        "sparsenessReason": null,
+        "feedbackLoopsDecomposed": false
+      }
+    },
+    "rawResponse": "{\"focalEntity\":{\"name\":\"Napoleon\",\"entityType\":\"ACTOR\",\"dateStart\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1918,\"month\":null,\"day\":null,\"precision\":\"YEAR\"}},\"direction\":\"UPSTREAM\",\"edges\":[{\"relatedEntity\":{\"name\":\"French Revolution\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1789,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1789,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1789\"}},\"relationType\":\"ENABLED\",\"importanceRank\":1,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"The French Revolution enabled Napoleon to rise to power.\",\"sectionTitle\":\"Rise to power\"}},{\"relatedEntity\":{\"name\":\"French Revolutionary Wars\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1792,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1792,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1792\"}},\"relationType\":\"CONTRIBUTED_TO\",\"importanceRank\":2,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"The revolutionary wars contributed to his military reputation.\",\"sectionTitle\":\"Rise to power\"}}],\"metadata\":{\"sparsenessReason\":null,\"feedbackLoopsDecomposed\":false}}",
+    "modelId": "gpt-4o-mini",
+    "usage": {
+      "inputTokens": 1800,
+      "outputTokens": 450
+    },
+    "estimatedCostUsd": 0.00054
+  }
+}

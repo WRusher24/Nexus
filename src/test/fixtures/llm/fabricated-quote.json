@@ -1,0 +1,67 @@
+{
+  "promptHash": "synthetic-fabricated-quote",
+  "recordedLive": false,
+  "response": {
+    "parsed": {
+      "focalEntity": {
+        "name": "World War I",
+        "entityType": "EVENT",
+        "dateStart": {
+          "year": 1914,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        },
+        "dateEnd": {
+          "year": 1918,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        }
+      },
+      "direction": "UPSTREAM",
+      "edges": [
+        {
+          "relatedEntity": {
+            "name": "Fabricated cause",
+            "entityType": "EVENT",
+            "dateStart": {
+              "year": 1900,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1900,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1900"
+            }
+          },
+          "relationType": "CAUSED",
+          "importanceRank": 1,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "This sentence about World War I appears nowhere in the source article.",
+            "sectionTitle": "Causes"
+          }
+        }
+      ],
+      "metadata": {
+        "sparsenessReason": null,
+        "feedbackLoopsDecomposed": false
+      }
+    },
+    "rawResponse": "{\"focalEntity\":{\"name\":\"World War I\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1918,\"month\":null,\"day\":null,\"precision\":\"YEAR\"}},\"direction\":\"UPSTREAM\",\"edges\":[{\"relatedEntity\":{\"name\":\"Fabricated cause\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1900,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1900,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1900\"}},\"relationType\":\"CAUSED\",\"importanceRank\":1,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"This sentence about World War I appears nowhere in the source article.\",\"sectionTitle\":\"Causes\"}}],\"metadata\":{\"sparsenessReason\":null,\"feedbackLoopsDecomposed\":false}}",
+    "modelId": "gpt-4o-mini",
+    "usage": {
+      "inputTokens": 1800,
+      "outputTokens": 450
+    },
+    "estimatedCostUsd": 0.00054
+  }
+}

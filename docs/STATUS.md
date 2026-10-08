@@ -1,12 +1,160 @@
 # Project Status
 
-## Current milestone: 5 (External clients: Wikipedia, Wikidata, search/disambiguation, root-node creation)
+## Current milestone: 6 (LLM extraction pipeline: prompt, providers, validation, orchestrator)
 
 ## Last session: 2026-10-08
 
-## State: External data layer complete — `wikipediaClient`, `wikidataClient`, `parser`, `qidResolver`, `search`, `sourceDocuments`, `rateLimit`, fixture-backed HTTP mocks, and `createRootNode`. All clients are built and tested against **recorded live-API fixtures** (no live calls in tests). `pnpm run verify` green (280 tests).
+## State: Extraction pipeline complete — versioned context-free prompt, four LLM providers (OpenAI/Anthropic/DeepSeek/fixture), atomic budget reservation, the full post-extraction validation pipeline, and the `runExtraction` orchestrator that converts untrusted Wikipedia text into verified graph edges. `pnpm run verify` green (358 tests, 33 files); audit 7/7. No live LLM in tests (fixture provider only).
 
-## Next: Milestone 6 (LLM extraction + validation pipeline)
+## Next: Human quality gate — run `scripts/run-extraction.ts` against ~15 topics and review quality BEFORE building M7. Then Milestone 7 (worker/queue/state machine).
+
+---
+
+## Session log — 2026-10-08 (Milestone 6)
+
+Completed (all NEW unless noted):
+
+- `src/lib/extraction/prompt.ts` — versioned context-free prompt
+  (`PROMPT_VERSION = '1.0.0'`), `buildPrompt`. No root-topic, no nesting-level
+  variable, no user/session id (Amendment A1). Source text wrapped in
+  `<source_text>` delimiters with an anti-injection rule.
+- `src/lib/extraction/provider.ts` — `LlmProvider` interface, `LlmError`,
+  `MODEL_PRICING`, `computeCostUsd` (conservative fallback + warning for unknown
+  models), `zodToJsonSchema`, `validateExtractionJson`, `fetchWithTimeout`
+  (hard timeout even if the injected fetch ignores the abort signal),
+  `mapHttpError`, and `getProvider` (env-driven; refuses live providers under
+  Vitest).
+- `src/lib/extraction/providers/openai.ts` — Structured Outputs
+  (`json_schema`, `strict: true`) with `convertZodToOpenAiStrictSchema` (strips
+  `maxLength`/`minimum`/`minimum`/`maxItems`/…, converts `type: [x, null]` to
+  `anyOf`, requires every property, forces `additionalProperties: false`, makes
+  optional fields required+nullable, then strips null `brief` before Zod).
+- `src/lib/extraction/providers/anthropic.ts` — tool use
+  (`emit_extraction`), forced via `tool_choice`; parses the tool input object
+  (never `JSON.parse`).
+- `src/lib/extraction/providers/deepseek.ts` — OpenAI-compatible
+  `response_format: { type: 'json_object' }`, schema echoed into the system
+  prompt, strict Zod validation.
+- `src/lib/extraction/providers/fixture.ts` — `createLlmFixtureStore`, keyed by
+  `sha256(systemPrompt + '\n---\n' + userPrompt)`; `'*'` wildcard for tests;
+  `loadDirectory` Zod-validates every fixture at load time.
+- `src/lib/extraction/budget.ts` — `reserveBudget` (day/month rollover +
+  single conditional `UPDATE`; zero rows → abort) and `reconcileBudget`
+  (`GREATEST(0, …)` adjust from reserved to actual; 0 = full refund).
+- `src/lib/extraction/validate.ts` — the deterministic pipeline: quote
+  verification + chunk filter, A7 entity-mention check, QID resolution with
+  WIKIDATA/NEXUS_GENERATED fallback, self-reference, stored-date chronology,
+  batch dedupe, and actual-section recording.
+- `src/lib/extraction/orchestrator.ts` — `runExtraction`: focal load → source
+  resolve → chunk → prompt → cost estimate → budget reserve → ExtractionRun
+  BEFORE the call (A9) → provider call → validate → persist accepted edges via
+  `insertVerifiedEdge` + `RejectedProposal` → reconcile → result. It does NOT
+  touch ExpansionRequest, node state, or user quota (M7).
+- `src/lib/extraction/types.ts` — orchestrator I/O types.
+- `src/lib/extraction/index.ts` — barrel extended (UPDATE).
+- `scripts/run-extraction.ts` — live quality-gate CLI (search → top candidate →
+  `createRootNode` → `runExtraction` → human-readable accepted/rejected summary).
+- `src/test/fixtures/llm/` — 8 fixtures (see inventory below).
+- `src/test/fixtures/extraction/harness.ts` — deterministic stubs + builders.
+- `src/test/helpers/llmFixture.ts` — fixture-store helper.
+- `docs/STATUS.md` — this update.
+
+Tests added (78; 280 + 78 = 358 total, 33 files):
+
+- `src/test/integration/extraction/prompt.test.ts` (12).
+- `src/test/integration/extraction/providers.test.ts` (19).
+- `src/test/integration/extraction/fixtures.test.ts` (3).
+- `src/test/integration/extraction/budget.test.ts` (8).
+- `src/test/integration/extraction/validate.test.ts` (16).
+- `src/test/integration/extraction/orchestrator.test.ts` (18).
+- `src/test/integration/extraction/injection.test.ts` (3).
+
+`pnpm run verify` output: lint PASS (0 errors, 10 non-null-assertion warnings in
+new tests), typecheck PASS, 358/358 tests PASS (33 files), audit 7/7 PASS.
+
+`pnpm run audit:invariants` output (unchanged):
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+=====================
+Result: 7/7 passed
+```
+
+### Prompt version and models
+
+- `PROMPT_VERSION = '1.0.0'` (recorded on every ExtractionRun). `EXTRACTION_SCHEMA_VERSION = '1.0.0'` (unchanged).
+- Provider models with pricing entries: `gpt-4o-mini`, `gpt-4o`,
+  `claude-3-5-sonnet-latest`, `claude-3-5-haiku-latest`,
+  `claude-3-5-haiku-20241022`, `deepseek-chat`, `deepseek-reasoner`.
+  `EXTRACTION_PROVIDER` selects openai | anthropic | deepseek; unknown models use
+  the most expensive known price and log a warning.
+- `scripts/run-extraction.ts` makes live calls and is NOT part of `verify`.
+  It was typechecked but not executed (no API keys on the build host) — see the
+  M6 report.
+
+### LLM fixture inventory (hand-crafted, Zod-validated at load time)
+
+| Fixture | Purpose |
+| --- | --- |
+| `wwi-upstream-rich.json` | 5 edges (rich; 3 valid + 2 rejectable) |
+| `wwi-upstream-sparse.json` | 0 edges + sparsenessReason |
+| `treaty-of-versailles-upstream.json` | rich upstream extraction |
+| `treaty-of-versailles-downstream.json` | rich downstream extraction |
+| `napoleon-upstream.json` | 2 edges |
+| `injection-attempt-malicious.json` | model followed an injection (must reject) |
+| `fabricated-quote.json` | quote not present in the source (must reject) |
+| `chronology-violation.json` | cause-after-effect (must reject) |
+
+All fixtures are synthetic (`recordedLive: false`); they exist as a stable
+inventory. Orchestrator tests register recordings against the exact prompt via
+the fixture store (exact hash or `'*'` wildcard).
+
+### Deviations / decisions (with reasons)
+
+1. **`schema.ts` unchanged.** The brief allowed a schema version bump if needed
+   to make optional fields nullable. Instead, the OpenAI adapter makes optional
+   fields required+nullable only in the provider-facing JSON Schema and strips
+   the resulting `brief: null` before Zod validation, so the canonical Zod
+   schema (and `.optional()`) is untouched and `EXTRACTION_SCHEMA_VERSION` stays
+   `1.0.0`.
+2. **Orchestrator persists edges outside one mega-transaction.**
+   `insertVerifiedEdge` opens its own SERIALIZABLE transaction and is the sole
+   edge write path (P3). Wrapping it inside an outer transaction would degrade
+   the isolation level, so each accepted edge is written through
+   `insertVerifiedEdge(db, …)` and the rejected-proposal rows + run counts are
+   written afterwards. `upsertNode` runs immediately before each edge so the FK
+   target exists.
+3. **`ValidationContext.sentChunks` is `SentChunkRange[]` (`ChunkRange` plus
+   `sectionTitle`).** Structurally assignable to `ChunkRange[]` for
+   `verifyQuote`, and it lets the pipeline record the ACTUAL section a quote
+   came from (the required warning behaviour).
+4. **No `WIKIPEDIA_PAGE` fallback in the pipeline.** The resolver is
+   Wikidata-based and exposes no page id on its candidates, so a LOW-confidence
+   match deterministically produces a `NEXUS_GENERATED` id. Documented in
+   `validate.ts`.
+5. **Late rejections reuse `RejectionReason`.** `insertVerifiedEdge` can still
+   reject for `CYCLE_DETECTED` (concurrent edge), which is recorded as a
+   `RejectedProposal`. `SCHEMA_INVALID` is intentionally unreachable at this
+   layer (the provider validates with Zod first; `providers.test.ts` covers the
+   `SCHEMA_MISMATCH` path).
+6. **`orchestrator`/`validate` tests inject stub services and a fixture
+   provider** rather than recorded Wikipedia/Wikidata fixtures. The pipeline's
+   only external dependencies are injected via `ExtractionConfig`, so stubs make
+   the tests hermetic and deterministic; the M5 client suites still cover the
+   live-shaped HTTP fixtures. No test file contains a live provider hostname
+   (verified by grep).
+7. **CLI narrows the db client.** `src/lib/db/client.ts` returns a union of the
+   Neon-HTTP and node-postgres Drizzle types; the graph layer is typed against
+   `NodePgDatabase`. The CLI casts once (`db as unknown as Database`) and
+   documents why.
 
 ---
 

@@ -1,0 +1,37 @@
+{
+  "promptHash": "synthetic-wwi-upstream-sparse",
+  "recordedLive": false,
+  "response": {
+    "parsed": {
+      "focalEntity": {
+        "name": "World War I",
+        "entityType": "EVENT",
+        "dateStart": {
+          "year": 1914,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        },
+        "dateEnd": {
+          "year": 1918,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        }
+      },
+      "direction": "UPSTREAM",
+      "edges": [],
+      "metadata": {
+        "sparsenessReason": "Article is a stub with no causal language for the requested direction",
+        "feedbackLoopsDecomposed": false
+      }
+    },
+    "rawResponse": "{\"focalEntity\":{\"name\":\"World War I\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1918,\"month\":null,\"day\":null,\"precision\":\"YEAR\"}},\"direction\":\"UPSTREAM\",\"edges\":[],\"metadata\":{\"sparsenessReason\":\"Article is a stub with no causal language for the requested direction\",\"feedbackLoopsDecomposed\":false}}",
+    "modelId": "gpt-4o-mini",
+    "usage": {
+      "inputTokens": 1800,
+      "outputTokens": 450
+    },
+    "estimatedCostUsd": 0.00054
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "promptHash": "synthetic-wwi-upstream-rich",
+  "recordedLive": false,
+  "response": {
+    "parsed": {
+      "focalEntity": {
+        "name": "World War I",
+        "entityType": "EVENT",
+        "dateStart": {
+          "year": 1914,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        },
+        "dateEnd": {
+          "year": 1918,
+          "month": null,
+          "day": null,
+          "precision": "YEAR"
+        }
+      },
+      "direction": "UPSTREAM",
+      "edges": [
+        {
+          "relatedEntity": {
+            "name": "Assassination of Archduke Franz Ferdinand",
+            "entityType": "EVENT",
+            "dateStart": {
+              "year": 1914,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1914,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1914"
+            }
+          },
+          "relationType": "TRIGGERED",
+          "importanceRank": 1,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "The assassination of Archduke Franz Ferdinand triggered the July Crisis.",
+            "sectionTitle": "Causes"
+          }
+        },
+        {
+          "relatedEntity": {
+            "name": "European alliance system",
+            "entityType": "PROCESS",
+            "dateStart": {
+              "year": 1879,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1879,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1879"
+            }
+          },
+          "relationType": "ENABLED",
+          "importanceRank": 2,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "The alliance system drew the great powers into war.",
+            "sectionTitle": "Causes"
+          }
+        },
+        {
+          "relatedEntity": {
+            "name": "Militarism",
+            "entityType": "IDEOLOGY",
+            "dateStart": {
+              "year": 1880,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1880,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1880"
+            }
+          },
+          "relationType": "CONTRIBUTED_TO",
+          "importanceRank": 3,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "Militarism and imperial rivalry created the underlying conditions.",
+            "sectionTitle": "Causes"
+          }
+        },
+        {
+          "relatedEntity": {
+            "name": "Treaty of Versailles",
+            "entityType": "POLICY",
+            "dateStart": {
+              "year": 1919,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1919,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1919"
+            }
+          },
+          "relationType": "CAUSED",
+          "importanceRank": 4,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "The Treaty of Versailles caused the rise of extremism.",
+            "sectionTitle": "Aftermath"
+          }
+        },
+        {
+          "relatedEntity": {
+            "name": "Napoleon",
+            "entityType": "ACTOR",
+            "dateStart": {
+              "year": 1769,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "dateEnd": {
+              "year": 1769,
+              "month": null,
+              "day": null,
+              "precision": "YEAR"
+            },
+            "disambiguationHint": {
+              "description": "test entity",
+              "approximateDateRange": "1769"
+            }
+          },
+          "relationType": "CAUSED",
+          "importanceRank": 5,
+          "contested": false,
+          "evidence": {
+            "verbatimQuote": "Napoleon caused climate change according to all historians.",
+            "sectionTitle": "Causes"
+          }
+        }
+      ],
+      "metadata": {
+        "sparsenessReason": null,
+        "feedbackLoopsDecomposed": false
+      }
+    },
+    "rawResponse": "{\"focalEntity\":{\"name\":\"World War I\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1918,\"month\":null,\"day\":null,\"precision\":\"YEAR\"}},\"direction\":\"UPSTREAM\",\"edges\":[{\"relatedEntity\":{\"name\":\"Assassination of Archduke Franz Ferdinand\",\"entityType\":\"EVENT\",\"dateStart\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1914,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1914\"}},\"relationType\":\"TRIGGERED\",\"importanceRank\":1,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"The assassination of Archduke Franz Ferdinand triggered the July Crisis.\",\"sectionTitle\":\"Causes\"}},{\"relatedEntity\":{\"name\":\"European alliance system\",\"entityType\":\"PROCESS\",\"dateStart\":{\"year\":1879,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1879,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1879\"}},\"relationType\":\"ENABLED\",\"importanceRank\":2,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"The alliance system drew the great powers into war.\",\"sectionTitle\":\"Causes\"}},{\"relatedEntity\":{\"name\":\"Militarism\",\"entityType\":\"IDEOLOGY\",\"dateStart\":{\"year\":1880,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1880,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1880\"}},\"relationType\":\"CONTRIBUTED_TO\",\"importanceRank\":3,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"Militarism and imperial rivalry created the underlying conditions.\",\"sectionTitle\":\"Causes\"}},{\"relatedEntity\":{\"name\":\"Treaty of Versailles\",\"entityType\":\"POLICY\",\"dateStart\":{\"year\":1919,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1919,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1919\"}},\"relationType\":\"CAUSED\",\"importanceRank\":4,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"The Treaty of Versailles caused the rise of extremism.\",\"sectionTitle\":\"Aftermath\"}},{\"relatedEntity\":{\"name\":\"Napoleon\",\"entityType\":\"ACTOR\",\"dateStart\":{\"year\":1769,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"dateEnd\":{\"year\":1769,\"month\":null,\"day\":null,\"precision\":\"YEAR\"},\"disambiguationHint\":{\"description\":\"test entity\",\"approximateDateRange\":\"1769\"}},\"relationType\":\"CAUSED\",\"importanceRank\":5,\"contested\":false,\"evidence\":{\"verbatimQuote\":\"Napoleon caused climate change according to all historians.\",\"sectionTitle\":\"Causes\"}}],\"metadata\":{\"sparsenessReason\":null,\"feedbackLoopsDecomposed\":false}}",
+    "modelId": "gpt-4o-mini",
+    "usage": {
+      "inputTokens": 1800,
+      "outputTokens": 450
+    },
+    "estimatedCostUsd": 0.00054
+  }
+}
