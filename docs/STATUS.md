@@ -1,12 +1,133 @@
 # Project Status
 
-## Current milestone: 1 (Scaffold)
+## Current milestone: 2 (Data model and DB invariants)
 
 ## Last session: 2026-10-08
 
-## State: Scaffold created, CI green, no schema or logic yet.
+## State: Full Drizzle schema, migrations (incl. custom SQL), invariant audit, and a real-Postgres invariant test suite. `pnpm run verify` green.
 
-## Next: Milestone 2 (Data model and DB invariants)
+## Next: Milestone 3 (quote normalization, date intervals, chronology comparator)
+
+---
+
+## Session log — 2026-10-08 (Milestone 2)
+
+Completed:
+
+- `src/lib/db/schema.ts` — full Drizzle schema: 12 enums, 11 tables
+  (`nodes`, `edges`, `sourceDocuments`, `extractionRuns`, `evidenceSpans`,
+  `expansionRequests`, `rejectedProposals`, `userQuotas`, `globalBudget`,
+  `edgeFeedback`, `qidReconciliations`), indexes/unique constraints, and all
+  `relations()` for relational queries.
+- Migration strategy **Option A**: custom SQL (5 CHECK constraints, 2 partial
+  unique indexes, the deferred P3 constraint trigger, and the globalBudget
+  seed) is appended to the Drizzle-generated migration
+  `src/lib/db/migrations/0000_chemical_lilith.sql`, delimited by
+  `--> statement-breakpoint` markers so the drizzle migrator applies it as one
+  ordered migration. Rationale: a single self-contained migration that both
+  `db:migrate` and the test helper apply automatically.
+- `src/lib/db/audit.ts` — real `pg`-backed audit running all 7 queries with
+  PASS/FAIL output; exits 1 on any violation.
+- `src/test/helpers/db.ts` — `getTestDb` / `resetTestDb` / `closeTestDb`
+  (+ `getTestDatabaseUrl`, `getPgErrorCode`, `captureError`, `errorChainMessage`).
+  Applies migrations programmatically; test files serialise via a session
+  advisory lock; reset uses `TRUNCATE ... CASCADE` + re-seed.
+- `src/test/helpers/fixtures.ts` — `insertNode`, `createTestFixtures`.
+- `src/test/helpers/edgeHelper.ts` — `edgeInsertSql`,
+  `insertEdgeWithEvidence` (edge + VERIFIED evidence in one transaction; raw
+  SQL for the Edge insert to respect the Edge-insert lint ban).
+- `src/test/invariants/` — 5 test files, 30 tests.
+- `docs/STATUS.md` — this update.
+
+Tests added (30 invariant + 1 pre-existing smoke = 31 total, all passing):
+
+- `p1-canonical-identity.test.ts` (8): insert with QID; only
+  `wikipediaPageId`; only `nexusGeneratedId`; reject neither identity
+  (`chk_node_identity`, 23514); reject duplicate QID (23505); reject duplicate
+  `nexusGeneratedId` (23505); allow shared `wikipediaPageId` with distinct
+  QIDs; concurrent same-QID inserts across two independent pools → exactly one
+  row, one 23505.
+- `p2-acyclicity.test.ts` (8): A→B succeeds; self-edge rejected (23514);
+  `importanceRank` 0 and 11 rejected (23514); rank 5 accepted; second ACTIVE
+  triple rejected (23505); ACTIVE+SUPERSEDED same triple allowed; same pair
+  different `relationType` allowed.
+- `p3-evidence-constraint.test.ts` (5): ACTIVE edge + VERIFIED evidence
+  succeeds; ACTIVE edge with no evidence rejected at COMMIT with
+  `P3 VIOLATION` (23514); NOT_FOUND-only evidence rejected; deleting evidence
+  after commit is NOT caught (documented KNOWN GAP, audit 5 catches it);
+  SUPERSEDED edge without evidence allowed.
+- `p1-p2-constraints.test.ts` (6): DAY-without-day, MONTH-without-month,
+  YEAR-without-year rejected; UNKNOWN/all-null accepted; YEAR/-44 (BCE)
+  accepted; DAY end-precision without end day rejected.
+- `expansion-constraints.test.ts` (3): second PENDING same `(node, direction)`
+  rejected (23505); PENDING+COMPLETED allowed; PENDING UPSTREAM + PENDING
+  DOWNSTREAM allowed.
+
+Verification performed locally (PostgreSQL 18, database `nexus_test`):
+
+- `pnpm run db:migrate` against a freshly created database — applied cleanly.
+- `pnpm run db:push --force` against a separate fresh database — applies the
+  declarative schema (tables, columns, FKs, indexes, unique constraints) but,
+  by design, not the hand-written custom objects (CHECKs, partial indexes,
+  trigger, seed), which only exist in the migration. `db:migrate` is therefore
+  the authoritative path.
+- Post-migration catalog check: 11 tables, 5 CHECK constraints, 12 FKs,
+  4 unique constraints, both partial unique indexes, and
+  `trg_edge_evidence` (`tgdeferrable = true`, `tginitdeferred = true`).
+- Planted a 2-node cycle to exercise the audit failure path: audit 4 reported
+  `2 violations` and the script exited 1. Cleaned up; audit back to 7/7.
+
+`pnpm run verify` output: lint PASS, typecheck PASS, 31/31 tests PASS,
+audit 7/7 PASS.
+
+`pnpm run audit:invariants` output (empty database):
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+=====================
+Result: 7/7 passed
+```
+
+Deviations from the task brief (with reasons):
+
+1. **Audit 4 query corrected.** The brief's recursive CTE excludes any node
+   already in `path`, which also excludes the edge that closes a cycle, so it
+   can only ever detect self-loops. The implementation instead allows the single
+   closing step back to the chain's `start` (while still pruning intermediate
+   revisits). Verified by planting A→B→A: the audit reports a violation.
+   Documented in a comment in `src/lib/db/audit.ts`.
+2. **Per-table column lists win over the general "every table has createdAt and
+   updatedAt" rule.** `userQuotas` and `globalBudget` therefore have no
+   `createdAt`, and `edgeFeedback` / `qidReconciliations` have neither
+   `updatedAt` nor (for `qidReconciliations`) `createdAt`, matching the explicit
+   per-table specs. Commented in `schema.ts`.
+3. **`wikipediaPageId` is intentionally not unique.** The brief explicitly says
+   so (redirects); test 5.1.7 documents and asserts the behavior.
+4. **Test serialisation.** `vitest.config.ts` is outside the files this task
+   allows changing, and its `pool: 'forks'` runs test files in parallel against
+   one shared database. `getTestDb` therefore takes a session-level Postgres
+   advisory lock held for the life of a test file, so files run one at a time
+   instead of truncating each other's data.
+5. **Edge inserts in test helpers use raw SQL.** AGENTS.md forbids Drizzle
+   `insert(edges)` outside the (M4) `insertVerifiedEdge()`; raw SQL both respects
+   that lint rule and still exercises the real DB constraints.
+6. **`package.json` / `client.ts` / `drizzle.config.ts` unchanged.** The
+   `audit:invariants` and `verify` scripts already existed from M1; the schema
+   import path did not change; no new dependencies were required.
+
+Environment notes:
+
+- No Docker on this host; verified against the local PostgreSQL 18 service
+  (`nexus_test`). CI uses the `postgres:16-alpine` service with
+  `DATABASE_URL=...nexus_test`.
 
 ---
 
