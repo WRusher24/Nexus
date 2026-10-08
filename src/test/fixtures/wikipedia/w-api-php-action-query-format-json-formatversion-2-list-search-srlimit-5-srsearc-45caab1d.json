@@ -1,0 +1,67 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Napoleon&srlimit=5&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "continue": {
+      "sroffset": 5,
+      "continue": "-||"
+    },
+    "query": {
+      "searchinfo": {
+        "totalhits": 37406
+      },
+      "search": [
+        {
+          "ns": 0,
+          "title": "Napoleon",
+          "pageid": 69880,
+          "size": 187052,
+          "wordcount": 19804,
+          "snippet": "<span class=\"searchmatch\">Napoleon</span> Bonaparte (born Napoleone di Buonaparte; 15 August 1769 – 5 May 1821), later known by his regnal name <span class=\"searchmatch\">Napoleon</span> I, was Emperor of the French from",
+          "timestamp": "2026-10-04T22:14:25Z"
+        },
+        {
+          "ns": 0,
+          "title": "Napoleon III",
+          "pageid": 62581,
+          "size": 186909,
+          "wordcount": 24266,
+          "snippet": "<span class=\"searchmatch\">Napoleon</span> III (born Charles-Louis <span class=\"searchmatch\">Napoléon</span> Bonaparte; 20 April 1808 – 9 January 1873) was the first President of France from 1848 to 1852 and then Emperor",
+          "timestamp": "2026-10-04T18:43:58Z"
+        },
+        {
+          "ns": 0,
+          "title": "Napoleonic Wars",
+          "pageid": 45420,
+          "size": 179871,
+          "wordcount": 19914,
+          "snippet": "by the First French Empire (1804–1815) under the Emperor of the French, <span class=\"searchmatch\">Napoleon</span>. The wars originated in political forces arising from the French Revolution",
+          "timestamp": "2026-09-29T09:31:25Z"
+        },
+        {
+          "ns": 0,
+          "title": "Napoleon (disambiguation)",
+          "pageid": 21224,
+          "size": 5895,
+          "wordcount": 674,
+          "snippet": "<span class=\"searchmatch\">Napoleon</span>, <span class=\"searchmatch\">napoleon</span>, <span class=\"searchmatch\">Napoléon</span>, or <span class=\"searchmatch\">Napóleon</span> in Wiktionary, the free dictionary. <span class=\"searchmatch\">Napoleon</span> (1769–1821) was a French military leader and emperor. <span class=\"searchmatch\">Napoleon</span>",
+          "timestamp": "2026-06-25T07:52:11Z"
+        },
+        {
+          "ns": 0,
+          "title": "Napoleon Dynamite",
+          "pageid": 882119,
+          "size": 53023,
+          "wordcount": 5482,
+          "snippet": "<span class=\"searchmatch\">Napoleon</span> Dynamite is a 2004 American comedy film directed by Jared Hess, written by Jared and Jerusha Hess, and produced by Jeremy Coon, Chris Wyatt, and",
+          "timestamp": "2026-10-07T23:38:06Z"
+        }
+      ]
+    }
+  }
+}

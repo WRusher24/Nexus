@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Industrial+Revolution&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q2269": {
+        "pageid": 3208,
+        "ns": 0,
+        "title": "Q2269",
+        "lastrevid": 2551511298,
+        "modified": "2026-09-30T22:41:12Z",
+        "type": "item",
+        "id": "Q2269"
+      }
+    },
+    "success": 1
+  }
+}

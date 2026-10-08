@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Mercury&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q48397": {
+        "pageid": 50386,
+        "ns": 0,
+        "title": "Q48397",
+        "lastrevid": 2538194816,
+        "modified": "2026-08-30T14:01:06Z",
+        "type": "item",
+        "id": "Q48397"
+      }
+    },
+    "success": 1
+  }
+}

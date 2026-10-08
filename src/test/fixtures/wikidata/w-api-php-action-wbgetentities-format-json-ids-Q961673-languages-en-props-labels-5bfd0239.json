@@ -1,0 +1,253 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q961673&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=en&sitefilter=enwiki&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q961673": {
+        "type": "item",
+        "id": "Q961673",
+        "labels": {
+          "en": {
+            "language": "en",
+            "value": "Treaty of Versailles"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "1768 treaty between the Republic of Genoa and France"
+          }
+        },
+        "aliases": {},
+        "claims": {
+          "P646": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P646",
+                "hash": "ab6aecc4cbb9a3362d33ddcbb1d721a277b4dab1",
+                "datavalue": {
+                  "value": "/m/04n37mf",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q961673$3FC4B2E2-EA4B-4574-AFDA-2B51A976059E",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 15241312,
+                            "id": "Q15241312"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P577": [
+                      {
+                        "snaktype": "value",
+                        "property": "P577",
+                        "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2013-10-28T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P577"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131569,
+                    "id": "Q131569"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q961673$D08F9E57-5462-4FB0-BE22-2208080E4630",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8447,
+                            "id": "Q8447"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P585": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "90a77cb7a62683705a75fa01a08a812709cdcb96",
+                "datavalue": {
+                  "value": {
+                    "time": "+1768-05-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q961673$8214238b-413e-8da7-ee75-a093bf0d388c",
+              "rank": "normal"
+            }
+          ],
+          "P131": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "60220c2b576e277e5e856ba606888361952f402b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 621,
+                    "id": "Q621"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q961673$154b78b5-47c8-da79-5710-86e0e88101e4",
+              "rank": "normal"
+            }
+          ],
+          "P17": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P17",
+                "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 142,
+                    "id": "Q142"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q961673$8546519A-B7FE-42BE-8708-E8D8A0D2D2FE",
+              "rank": "normal"
+            }
+          ],
+          "P996": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P996",
+                "hash": "cd2ea30f29a2b9658a64837fdbe73a0d81e00208",
+                "datavalue": {
+                  "value": "Trattato di Versailles (1768).pdf",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q961673$5C2A4EA9-73DA-40CC-828A-C950D48D7F2A",
+              "rank": "normal"
+            }
+          ],
+          "P276": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P276",
+                "hash": "d8994da9da8d2bfbefc06c8e4a7ae1c5c14ec107",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 960109,
+                    "id": "Q960109"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q961673$612A949C-1C74-47D3-AA2A-6FA4580DBDEB",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "enwiki": {
+            "site": "enwiki",
+            "title": "Treaty of Versailles (1768)",
+            "badges": []
+          }
+        }
+      }
+    },
+    "success": 1
+  }
+}

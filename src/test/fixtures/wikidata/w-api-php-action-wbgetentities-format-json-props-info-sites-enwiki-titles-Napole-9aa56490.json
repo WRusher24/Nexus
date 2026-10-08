@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Napoleon+Dynamite&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q1133772": {
+        "pageid": 1080632,
+        "ns": 0,
+        "title": "Q1133772",
+        "lastrevid": 2555037228,
+        "modified": "2026-10-08T13:34:22Z",
+        "type": "item",
+        "id": "Q1133772"
+      }
+    },
+    "success": 1
+  }
+}

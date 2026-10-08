@@ -1,0 +1,19 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Fictional+nonsense+query+xyzabc&srlimit=5&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "searchinfo": {
+        "totalhits": 0,
+        "suggestion": "fictional nonsense queen xeabc",
+        "suggestionsnippet": "fictional nonsense <em>queen xeabc</em>"
+      },
+      "search": []
+    }
+  }
+}

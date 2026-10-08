@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Treaty+of+Paris+%281783%29&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q217450": {
+        "pageid": 212562,
+        "ns": 0,
+        "title": "Q217450",
+        "lastrevid": 2544663831,
+        "modified": "2026-09-12T18:08:57Z",
+        "type": "item",
+        "id": "Q217450"
+      }
+    },
+    "success": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Nonexistent+Fictional+Page+xyz&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "-1": {
+        "site": "enwiki",
+        "title": "Nonexistent Fictional Page xyz",
+        "missing": ""
+      }
+    },
+    "success": 1
+  }
+}

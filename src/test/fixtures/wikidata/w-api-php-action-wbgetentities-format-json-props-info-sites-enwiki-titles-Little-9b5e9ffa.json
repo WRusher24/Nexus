@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Little+Treaty+of+Versailles&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q4919093": {
+        "pageid": 4699781,
+        "ns": 0,
+        "title": "Q4919093",
+        "lastrevid": 2552455345,
+        "modified": "2026-10-03T05:50:38Z",
+        "type": "item",
+        "id": "Q4919093"
+      }
+    },
+    "success": 1
+  }
+}

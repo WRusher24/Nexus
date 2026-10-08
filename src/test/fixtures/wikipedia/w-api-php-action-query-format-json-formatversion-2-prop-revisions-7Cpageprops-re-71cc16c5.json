@@ -1,0 +1,33 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Mercury&redirects=1&prop=revisions%7Cpageprops&rvprop=ids&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 19007,
+          "ns": 0,
+          "title": "Mercury",
+          "revisions": [
+            {
+              "revid": 1379008290,
+              "parentid": 1376049828
+            }
+          ],
+          "pageprops": {
+            "disambiguation": "",
+            "expectshortpage": "",
+            "toc": "",
+            "wikibase-shortdesc": "Topics referred to by the same term",
+            "wikibase_item": "Q48397"
+          }
+        }
+      ]
+    }
+  }
+}

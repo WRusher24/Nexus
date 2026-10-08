@@ -1,0 +1,67 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Industrial+Revolution&srlimit=5&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "continue": {
+      "sroffset": 5,
+      "continue": "-||"
+    },
+    "query": {
+      "searchinfo": {
+        "totalhits": 32150
+      },
+      "search": [
+        {
+          "ns": 0,
+          "title": "Industrial Revolution",
+          "pageid": 14914,
+          "size": 218742,
+          "wordcount": 24299,
+          "snippet": "The <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span>, sometimes called the First <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span> in contrast to the subsequent Second <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span>, was a transitional",
+          "timestamp": "2026-10-07T04:48:03Z"
+        },
+        {
+          "ns": 0,
+          "title": "Fourth Industrial Revolution",
+          "pageid": 39773873,
+          "size": 68888,
+          "wordcount": 6981,
+          "snippet": "The Fourth <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span>, also known as 4IR, Industry 4.0 or the Intelligence Age, is a neologism describing rapid technological advancement in",
+          "timestamp": "2026-10-03T21:29:58Z"
+        },
+        {
+          "ns": 0,
+          "title": "Second Industrial Revolution",
+          "pageid": 359626,
+          "size": 89396,
+          "wordcount": 10554,
+          "snippet": "The Second <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span>, also known as the Technological <span class=\"searchmatch\">Revolution</span>, was a phase of rapid scientific discovery, standardization, mass production",
+          "timestamp": "2026-09-28T08:17:01Z"
+        },
+        {
+          "ns": 0,
+          "title": "Industrial revolutions",
+          "pageid": 71555934,
+          "size": 648,
+          "wordcount": 110,
+          "snippet": "technological <span class=\"searchmatch\">revolutions</span> have been defined as successors of the original <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span>. The sequence includes: <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span> in the United",
+          "timestamp": "2026-05-03T04:50:24Z"
+        },
+        {
+          "ns": 0,
+          "title": "Industrial Society and Its Future",
+          "pageid": 54982458,
+          "size": 42353,
+          "wordcount": 3705,
+          "snippet": "domestic terrorist and mathematician Ted Kaczynski. It argues that the <span class=\"searchmatch\">Industrial</span> <span class=\"searchmatch\">Revolution</span> began a harmful process of natural destruction brought about by",
+          "timestamp": "2026-10-08T04:18:33Z"
+        }
+      ]
+    }
+  }
+}

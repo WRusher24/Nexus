@@ -1,0 +1,31 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Napoleon&redirects=1&prop=revisions%7Cpageprops&rvprop=ids&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 69880,
+          "ns": 0,
+          "title": "Napoleon",
+          "revisions": [
+            {
+              "revid": 1378527515,
+              "parentid": 1378525629
+            }
+          ],
+          "pageprops": {
+            "page_image_free": "Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+            "wikibase-shortdesc": "Emperor of the French (1804–1814; 1815)",
+            "wikibase_item": "Q517"
+          }
+        }
+      ]
+    }
+  }
+}

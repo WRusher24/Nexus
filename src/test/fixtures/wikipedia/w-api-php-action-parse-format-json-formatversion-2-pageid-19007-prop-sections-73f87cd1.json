@@ -1,0 +1,322 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=parse&pageid=19007&prop=sections&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "warnings": {
+      "main": {
+        "warnings": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
+      },
+      "parse": {
+        "warnings": "\"prop=sections\" has been deprecated. Please use \"prop=tocdata\" instead."
+      }
+    },
+    "parse": {
+      "title": "Mercury",
+      "pageid": 19007,
+      "sections": [
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Companies",
+          "number": "1",
+          "index": "1",
+          "fromtitle": "Mercury",
+          "byteoffset": 279,
+          "anchor": "Companies",
+          "linkAnchor": "Companies"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Computing",
+          "number": "2",
+          "index": "2",
+          "fromtitle": "Mercury",
+          "byteoffset": 1312,
+          "anchor": "Computing",
+          "linkAnchor": "Computing"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Film and television",
+          "number": "3",
+          "index": "3",
+          "fromtitle": "Mercury",
+          "byteoffset": 1657,
+          "anchor": "Film_and_television",
+          "linkAnchor": "Film_and_television"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Literature",
+          "number": "4",
+          "index": "4",
+          "fromtitle": "Mercury",
+          "byteoffset": 2046,
+          "anchor": "Literature",
+          "linkAnchor": "Literature"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Comics",
+          "number": "4.1",
+          "index": "5",
+          "fromtitle": "Mercury",
+          "byteoffset": 2061,
+          "anchor": "Comics",
+          "linkAnchor": "Comics"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Magazines",
+          "number": "4.2",
+          "index": "6",
+          "fromtitle": "Mercury",
+          "byteoffset": 2438,
+          "anchor": "Magazines",
+          "linkAnchor": "Magazines"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Newspapers",
+          "number": "4.3",
+          "index": "7",
+          "fromtitle": "Mercury",
+          "byteoffset": 2609,
+          "anchor": "Newspapers",
+          "linkAnchor": "Newspapers"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Novels",
+          "number": "4.4",
+          "index": "8",
+          "fromtitle": "Mercury",
+          "byteoffset": 3345,
+          "anchor": "Novels",
+          "linkAnchor": "Novels"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Music",
+          "number": "5",
+          "index": "9",
+          "fromtitle": "Mercury",
+          "byteoffset": 3534,
+          "anchor": "Music",
+          "linkAnchor": "Music"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Albums",
+          "number": "5.1",
+          "index": "10",
+          "fromtitle": "Mercury",
+          "byteoffset": 3544,
+          "anchor": "Albums",
+          "linkAnchor": "Albums"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Songs",
+          "number": "5.2",
+          "index": "11",
+          "fromtitle": "Mercury",
+          "byteoffset": 3918,
+          "anchor": "Songs",
+          "linkAnchor": "Songs"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Other music",
+          "number": "5.3",
+          "index": "12",
+          "fromtitle": "Mercury",
+          "byteoffset": 4290,
+          "anchor": "Other_music",
+          "linkAnchor": "Other_music"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Military",
+          "number": "6",
+          "index": "13",
+          "fromtitle": "Mercury",
+          "byteoffset": 4553,
+          "anchor": "Military",
+          "linkAnchor": "Military"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Places",
+          "number": "7",
+          "index": "14",
+          "fromtitle": "Mercury",
+          "byteoffset": 5067,
+          "anchor": "Places",
+          "linkAnchor": "Places"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "United States",
+          "number": "7.1",
+          "index": "15",
+          "fromtitle": "Mercury",
+          "byteoffset": 5078,
+          "anchor": "United_States",
+          "linkAnchor": "United_States"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Elsewhere",
+          "number": "7.2",
+          "index": "16",
+          "fromtitle": "Mercury",
+          "byteoffset": 5281,
+          "anchor": "Elsewhere",
+          "linkAnchor": "Elsewhere"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Plants",
+          "number": "8",
+          "index": "17",
+          "fromtitle": "Mercury",
+          "byteoffset": 5385,
+          "anchor": "Plants",
+          "linkAnchor": "Plants"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Radio",
+          "number": "9",
+          "index": "18",
+          "fromtitle": "Mercury",
+          "byteoffset": 5652,
+          "anchor": "Radio",
+          "linkAnchor": "Radio"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Sports",
+          "number": "10",
+          "index": "19",
+          "fromtitle": "Mercury",
+          "byteoffset": 5781,
+          "anchor": "Sports",
+          "linkAnchor": "Sports"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Theatres",
+          "number": "11",
+          "index": "20",
+          "fromtitle": "Mercury",
+          "byteoffset": 6183,
+          "anchor": "Theatres",
+          "linkAnchor": "Theatres"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Vehicles",
+          "number": "12",
+          "index": "21",
+          "fromtitle": "Mercury",
+          "byteoffset": 6310,
+          "anchor": "Vehicles",
+          "linkAnchor": "Vehicles"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Air",
+          "number": "12.1",
+          "index": "22",
+          "fromtitle": "Mercury",
+          "byteoffset": 6323,
+          "anchor": "Air",
+          "linkAnchor": "Air"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Land",
+          "number": "12.2",
+          "index": "23",
+          "fromtitle": "Mercury",
+          "byteoffset": 6443,
+          "anchor": "Land",
+          "linkAnchor": "Land"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Sea",
+          "number": "12.3",
+          "index": "24",
+          "fromtitle": "Mercury",
+          "byteoffset": 6729,
+          "anchor": "Sea",
+          "linkAnchor": "Sea"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Space",
+          "number": "12.4",
+          "index": "25",
+          "fromtitle": "Mercury",
+          "byteoffset": 6895,
+          "anchor": "Space",
+          "linkAnchor": "Space"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Other uses",
+          "number": "13",
+          "index": "26",
+          "fromtitle": "Mercury",
+          "byteoffset": 7036,
+          "anchor": "Other_uses",
+          "linkAnchor": "Other_uses"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "See also",
+          "number": "14",
+          "index": "27",
+          "fromtitle": "Mercury",
+          "byteoffset": 7396,
+          "anchor": "See_also",
+          "linkAnchor": "See_also"
+        }
+      ],
+      "showtoc": true
+    }
+  }
+}

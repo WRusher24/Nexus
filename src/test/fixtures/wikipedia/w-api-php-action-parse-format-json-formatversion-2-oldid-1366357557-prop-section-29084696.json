@@ -1,0 +1,37 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=parse&oldid=1366357557&prop=sections&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "warnings": {
+      "main": {
+        "warnings": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
+      },
+      "parse": {
+        "warnings": "\"prop=sections\" has been deprecated. Please use \"prop=tocdata\" instead."
+      }
+    },
+    "parse": {
+      "title": "Treaty of Versailles (1768)",
+      "pageid": 19362662,
+      "revid": 1366357557,
+      "sections": [
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "References",
+          "number": "1",
+          "index": "1",
+          "fromtitle": "Treaty_of_Versailles_(1768)",
+          "byteoffset": 2166,
+          "anchor": "References",
+          "linkAnchor": "References"
+        }
+      ],
+      "showtoc": false
+    }
+  }
+}

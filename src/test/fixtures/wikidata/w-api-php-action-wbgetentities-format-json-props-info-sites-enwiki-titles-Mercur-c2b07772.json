@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Mercury+Records&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q165745": {
+        "pageid": 166349,
+        "ns": 0,
+        "title": "Q165745",
+        "lastrevid": 2500216035,
+        "modified": "2026-05-31T17:22:04Z",
+        "type": "item",
+        "id": "Q165745"
+      }
+    },
+    "success": 1
+  }
+}

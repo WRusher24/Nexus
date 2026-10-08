@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Mercury+%28planet%29&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q308": {
+        "pageid": 495,
+        "ns": 0,
+        "title": "Q308",
+        "lastrevid": 2553438374,
+        "modified": "2026-10-05T12:14:52Z",
+        "type": "item",
+        "id": "Q308"
+      }
+    },
+    "success": 1
+  }
+}

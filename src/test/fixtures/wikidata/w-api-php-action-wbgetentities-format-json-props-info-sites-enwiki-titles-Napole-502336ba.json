@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Napoleonic+Wars&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q78994": {
+        "pageid": 81543,
+        "ns": 0,
+        "title": "Q78994",
+        "lastrevid": 2551137154,
+        "modified": "2026-09-30T03:23:39Z",
+        "type": "item",
+        "id": "Q78994"
+      }
+    },
+    "success": 1
+  }
+}

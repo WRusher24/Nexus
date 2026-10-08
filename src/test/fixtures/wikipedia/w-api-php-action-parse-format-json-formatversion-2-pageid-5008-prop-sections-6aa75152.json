@@ -1,0 +1,157 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=parse&pageid=5008&prop=sections&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "warnings": {
+      "main": {
+        "warnings": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
+      },
+      "parse": {
+        "warnings": "\"prop=sections\" has been deprecated. Please use \"prop=tocdata\" instead."
+      }
+    },
+    "parse": {
+      "title": "Battle of Actium",
+      "pageid": 5008,
+      "sections": [
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Background",
+          "number": "1",
+          "index": "1",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 5360,
+          "anchor": "Background",
+          "linkAnchor": "Background"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Battle",
+          "number": "2",
+          "index": "2",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 12498,
+          "anchor": "Battle",
+          "linkAnchor": "Battle"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Order of battle",
+          "number": "2.1",
+          "index": "3",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 14932,
+          "anchor": "Order_of_battle",
+          "linkAnchor": "Order_of_battle"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Combat",
+          "number": "2.2",
+          "index": "4",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 16768,
+          "anchor": "Combat",
+          "linkAnchor": "Combat"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Alternative theories",
+          "number": "2.3",
+          "index": "5",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 23447,
+          "anchor": "Alternative_theories",
+          "linkAnchor": "Alternative_theories"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Aftermath",
+          "number": "3",
+          "index": "6",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 24171,
+          "anchor": "Aftermath",
+          "linkAnchor": "Aftermath"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "See also",
+          "number": "4",
+          "index": "7",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 33090,
+          "anchor": "See_also",
+          "linkAnchor": "See_also"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Notes",
+          "number": "5",
+          "index": "8",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 33197,
+          "anchor": "Notes",
+          "linkAnchor": "Notes"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "References",
+          "number": "6",
+          "index": "9",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 33220,
+          "anchor": "References",
+          "linkAnchor": "References"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Sources",
+          "number": "6.1",
+          "index": "10",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 35375,
+          "anchor": "Sources",
+          "linkAnchor": "Sources"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Further reading",
+          "number": "7",
+          "index": "11",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 35633,
+          "anchor": "Further_reading",
+          "linkAnchor": "Further_reading"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "External links",
+          "number": "8",
+          "index": "12",
+          "fromtitle": "Battle_of_Actium",
+          "byteoffset": 36794,
+          "anchor": "External_links",
+          "linkAnchor": "External_links"
+        }
+      ],
+      "showtoc": true
+    }
+  }
+}

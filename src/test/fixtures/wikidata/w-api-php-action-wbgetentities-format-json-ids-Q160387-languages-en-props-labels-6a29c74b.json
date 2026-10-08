@@ -1,0 +1,1180 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q160387&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=en&sitefilter=enwiki&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q160387": {
+        "type": "item",
+        "id": "Q160387",
+        "labels": {
+          "en": {
+            "language": "en",
+            "value": "Battle of Actium"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "31 BCE decisive confrontation of the Final War of the Roman Republic"
+          }
+        },
+        "aliases": {},
+        "claims": {
+          "P373": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P373",
+                "hash": "0f30fcf059dd29bf0a938151a4bddd190b89f683",
+                "datavalue": {
+                  "value": "Battle of Actium",
+                  "type": "string"
+                },
+                "datatype": "string"
+              },
+              "type": "statement",
+              "id": "q160387$2B4D37DB-A210-4722-9C5F-E6FF38CB9033",
+              "rank": "normal"
+            }
+          ],
+          "P625": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P625",
+                "hash": "4301c965262b870d9362c08df08d6e027642fa65",
+                "datavalue": {
+                  "value": {
+                    "latitude": 38.925,
+                    "longitude": 20.725,
+                    "altitude": null,
+                    "precision": 0.0002777777777777778,
+                    "globe": "http://www.wikidata.org/entity/Q2"
+                  },
+                  "type": "globecoordinate"
+                },
+                "datatype": "globe-coordinate"
+              },
+              "type": "statement",
+              "id": "q160387$A5D18A9A-6097-471C-A8CD-60D73AA23B3E",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P585": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ef386ebe84aaae4dba34922b4bbf79a3708a57e3",
+                "datavalue": {
+                  "value": {
+                    "time": "-0031-09-02T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q160387$e2a5cc8e-4b09-83ec-21a8-cb01a5a092d9",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "07d030994052a5fb9a9e5f636e3f6b6be2f015d6",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "44971799c25eaa8d17152dcfaf03bd1d6b91ea6c",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 24329384,
+                            "id": "Q24329384"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                },
+                {
+                  "hash": "f8f8b2ec64c447e7f2f498666b111182114d82c6",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "172038b271dea227679d05a77e6d044917893957",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 25369108,
+                            "id": "Q25369108"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P646": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P646",
+                "hash": "7131eab5f0e49b1672beea08e97225617bc81818",
+                "datavalue": {
+                  "value": "/m/01ky6",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$BE270F33-D91B-4AD8-92D6-ED69439AE33C",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 15241312,
+                            "id": "Q15241312"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P577": [
+                      {
+                        "snaktype": "value",
+                        "property": "P577",
+                        "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2013-10-28T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P577"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P18": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P18",
+                "hash": "8a8284b45ca38fcdc9369e593ee36931a84f6f0a",
+                "datavalue": {
+                  "value": "Castro Battle of Actium.jpg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P2096": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2096",
+                    "hash": "cde28fdf8605c53dca8fd85647f7699d6aebdf56",
+                    "datavalue": {
+                      "value": {
+                        "text": "معركة أكتيوم, لوحة للورينزو أ. كاسترو, 1672",
+                        "language": "ar"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P2096",
+                    "hash": "2d820db1a94513cb26009e56e177d691bc19d19a",
+                    "datavalue": {
+                      "value": {
+                        "text": "''La Bataille d'Actium'', peinture de Lorenzo A. Castro.",
+                        "language": "fr"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P2096"
+              ],
+              "id": "Q160387$31D74A3F-F699-4447-AB3D-564D818C998B",
+              "rank": "normal"
+            }
+          ],
+          "P1343": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "62c309f8296338bd9647a7e758857137f3370310",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2657718,
+                    "id": "Q2657718"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$63EAFCF6-331D-407F-9096-838571766319",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "838bca4d129e7db69c9b411c07d03542437bccbb",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 4114391,
+                    "id": "Q4114391"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P805": [
+                  {
+                    "snaktype": "value",
+                    "property": "P805",
+                    "hash": "30a05fe522242739163dc4d327b42b0704ba3722",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25369108,
+                        "id": "Q25369108"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P805"
+              ],
+              "id": "Q160387$7B6C68DD-A8BA-4B8F-B3A2-1AD33DC1EEE7",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "42346dfe9209b7359c1f5db829a368b38d407797",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 19180675,
+                    "id": "Q19180675"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P805": [
+                  {
+                    "snaktype": "value",
+                    "property": "P805",
+                    "hash": "22e642826b6ca9a48afd51acda07d75e740fbcb4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24730710,
+                        "id": "Q24730710"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P805"
+              ],
+              "id": "Q160387$7288A913-A626-47CC-AF93-24AF628DF1E8",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "88389772f86dcd7d415ddd029f601412e5cc894a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 602358,
+                    "id": "Q602358"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P805": [
+                  {
+                    "snaktype": "value",
+                    "property": "P805",
+                    "hash": "31a5f5c091134084d544d58390acfeed219b41b3",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24329384,
+                        "id": "Q24329384"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P805"
+              ],
+              "id": "Q160387$4A75DD2B-22B4-4F03-B787-36989FFCAB88",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "3bb2dfe60e5d95817c6eadaa9d2a98d65cccc8c4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 122785443,
+                    "id": "Q122785443"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "47f6e0f796c4f69d87021c363e199a77b2616fe3",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 256,
+                        "id": "Q256"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "587564898ba1c818316ca0a7af2bb0867f80d4bb",
+                    "datavalue": {
+                      "value": "18",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P407",
+                "P304"
+              ],
+              "id": "Q160387$d75c878a-4e8e-fed4-2d72-3979e66db19c",
+              "rank": "normal"
+            }
+          ],
+          "P361": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P361",
+                "hash": "89b194f5bd05ff487b08884b67fbdaac2c9e1abf",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2116320,
+                    "id": "Q2116320"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$225dc773-4738-6601-2bdc-44ee50eecc1f",
+              "rank": "normal"
+            }
+          ],
+          "P276": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P276",
+                "hash": "999f5dcf90a9bf792ae0d1c23efcf1be410e41da",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 37495,
+                    "id": "Q37495"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$2f7e893b-4718-8b56-48e6-1effdcf282af",
+              "rank": "normal"
+            }
+          ],
+          "P710": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "a7ab322d9f5bbbcd203009430f35d2b79bfb6ce3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 48174,
+                    "id": "Q48174"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$32bdfa2f-497d-fb83-169f-f9567f3152ec",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "c53c99e3c6fb191eb26d87bba4f2a19df56df357",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1405,
+                    "id": "Q1405"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$d9469717-433b-c369-9fc7-3d7d5bf2b969",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "8f14dfda9180c96cdfca85e5c30396879788ab69",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 727792,
+                    "id": "Q727792"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$b38426cd-44c2-db2e-6ec3-6bb4fe91bc71",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "2a350be1071b641c3e4823aa92b27814ea37af2c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1558039,
+                    "id": "Q1558039"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$478e5c9e-45d5-a577-cdec-8c9ec8e421ae",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "fcecc8202040c81d2d5e0523d4ebd4f53fff4269",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 51673,
+                    "id": "Q51673"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$4d260aee-40ad-fb5f-7721-8dd10d8bdc96",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "127657bd704cf3552b2fb7ccc9a20707dd4fd85c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 705416,
+                    "id": "Q705416"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$c5306400-46f7-fce6-9f9c-59e9a514532d",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P710",
+                "hash": "6a09540590116686dc439b785da5236427be6921",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 635,
+                    "id": "Q635"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$897b6905-453b-59cd-04a2-f55edb42eafa",
+              "rank": "normal"
+            }
+          ],
+          "P1417": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1417",
+                "hash": "1637f1865c973c9db630704cf514957234f01f21",
+                "datavalue": {
+                  "value": "event/Battle-of-Actium-ancient-Roman-history",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "400944ab8157752169b86c90dc1b208f04634aee",
+                    "datavalue": {
+                      "value": "Battle of Actium",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q160387$3C39ECAC-B017-44F4-9725-189D418EBEBD",
+              "rank": "normal"
+            }
+          ],
+          "P3219": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3219",
+                "hash": "520461f6fa77ae826e6accd2b528421a8752254e",
+                "datavalue": {
+                  "value": "bataille-d-actium",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$EBC0E5C7-F84F-493E-8FFE-911DCDE46435",
+              "rank": "normal"
+            }
+          ],
+          "P244": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P244",
+                "hash": "2ec9304ef96f47eb46fc04f7791d0568678a83d8",
+                "datavalue": {
+                  "value": "sh85000736",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$7E88BDF7-9BA1-4A50-9897-EF364EC9AD26",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                        "datavalue": {
+                          "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2019-04-03T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P8068": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8068",
+                "hash": "7b69e347a39b2b80b96d2258ce011d16b7c58cc7",
+                "datavalue": {
+                  "value": "389207LAkt",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$4045A67B-D4A0-41B7-B28E-DD0E8C630AAC",
+              "rank": "normal"
+            }
+          ],
+          "P268": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P268",
+                "hash": "bd0130b0a197c80004af6549d6af85d8b677ead1",
+                "datavalue": {
+                  "value": "12288355g",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$e639773a-481f-9627-a0ee-6bbc160d9697",
+              "rank": "normal"
+            }
+          ],
+          "P5063": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5063",
+                "hash": "1163e60b78c9ca1eda9dfe976468b8aaef45c0b2",
+                "datavalue": {
+                  "value": "i42058",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$CF471FDA-3AD2-44C0-9625-4D826B94AE6C",
+              "rank": "normal"
+            }
+          ],
+          "P7293": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P7293",
+                "hash": "611d7ef5842e14cae63edba2b2efed0ff490c70e",
+                "datavalue": {
+                  "value": "9810688434905606",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$6bb1edc1-40b7-045d-7a33-e4ac1e2fc9e1",
+              "rank": "normal"
+            }
+          ],
+          "P9407": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P9407",
+                "hash": "20e3c064e9c414e5110f728b933cd0d0c1ce5158",
+                "datavalue": {
+                  "value": "1178",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$FB2D6B8B-5039-44A4-AFB5-F4DAA034437C",
+              "rank": "normal"
+            }
+          ],
+          "P9736": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P9736",
+                "hash": "6908e1135ee5f2d2d510eef429d5e070d3a10313",
+                "datavalue": {
+                  "value": "10266953",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$71417A26-8E63-445B-B689-880B4D294894",
+              "rank": "normal"
+            }
+          ],
+          "P4342": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4342",
+                "hash": "9b2894192ae8e76953750f411a676d5613ddf531",
+                "datavalue": {
+                  "value": "Actium",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$92e9d0f6-4510-f7b0-6577-084cec8ba3f3",
+              "rank": "normal"
+            }
+          ],
+          "P2924": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2924",
+                "hash": "d91c2c738a596e863883877d177f6b7c30b155ad",
+                "datavalue": {
+                  "value": "1808872",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "bbe5beda6e55bf4e69e89175c03b1eef070f390c",
+                    "datavalue": {
+                      "value": "АКЦИЙ",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q160387$331c1857-4e9d-571c-0567-a453dcef3b4b",
+              "rank": "normal"
+            }
+          ],
+          "P8189": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8189",
+                "hash": "d868e9a63fabef69f376a2888bff56f08e7042a8",
+                "datavalue": {
+                  "value": "987007293850405171",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P14457": [
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "98a0b33c1e8518d7407c4bf3e375702be821b2e4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Actium, Battle of, 31 B.C.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "5ffe75fc1d02c9a9ae9d78276861292366a72ca1",
+                    "datavalue": {
+                      "value": {
+                        "text": "קרב אקטיום, 31 לפני הספירה",
+                        "language": "he"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P14457"
+              ],
+              "id": "Q160387$67F55206-4D1D-4ECF-B118-24671D4DF5D0",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "c8a47202c92936005b390eb36ddd267921b51f43",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "0ea73b3596b49258a7b7ec6495950779b99e875d",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 188915,
+                            "id": "Q188915"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P6385": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6385",
+                "hash": "e7ca771f8cfa820b9713b79abce2b5b329c3dd00",
+                "datavalue": {
+                  "value": "istoriya/AKTSI.html",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$93a51d9a-426c-23cf-9d60-f530f59747c3",
+              "rank": "normal"
+            }
+          ],
+          "P9000": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P9000",
+                "hash": "29d4fafbdb27dcfd931b552c6da25e191aecdae1",
+                "datavalue": {
+                  "value": "Battle_of_Actium",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$2DD157B1-BB03-4BBF-B091-496BA5B1FFC8",
+              "rank": "normal"
+            }
+          ],
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "2f3a4fbd562cdefff5e16b8bb567ee5dd616f44a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1261499,
+                    "id": "Q1261499"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$b94436ea-4d67-3402-01a6-7107f65aad9e",
+              "rank": "normal"
+            }
+          ],
+          "P227": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P227",
+                "hash": "bafca5c59fe6297669a4a99885125c92112e0820",
+                "datavalue": {
+                  "value": "4196463-9",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$c9125a90-4ae7-2181-b0c6-795894a2259f",
+              "rank": "normal"
+            }
+          ],
+          "P4839": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4839",
+                "hash": "18959c1c6b98c5c0bfa59efb04f0a3224b48a0fb",
+                "datavalue": {
+                  "value": "Entity[\"HistoricalEvent\", \"BattleActium\"]",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$4069D861-FD0B-43C9-A9CE-4495DECF4446",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4839",
+                "hash": "6527da4ade1673ec6fb4b08b443915f99f4bb351",
+                "datavalue": {
+                  "value": "Entity[\"MilitaryConflict\", \"BattleOfActium\"]",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$BDDD80AC-D60A-43B8-8327-E70D1F987EFD",
+              "rank": "normal"
+            }
+          ],
+          "P1889": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1889",
+                "hash": "5e86473d301d783bec81df048dc7965bdf18b54c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 9173813,
+                    "id": "Q9173813"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$ed4b3da2-4821-9589-d9df-b2303d023804",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1889",
+                "hash": "3b6b7f67d7f3867dc024c4eb135112943a0bee26",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2116320,
+                    "id": "Q2116320"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q160387$6f857efd-485b-f35e-76e8-403ee0e7f047",
+              "rank": "normal"
+            }
+          ],
+          "P13591": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13591",
+                "hash": "0678a73c10c83648d21c4a4c9cc7d4aa2eb3aa08",
+                "datavalue": {
+                  "value": "concept/96ad77c6-fc9f-4e10-a76a-48061406cbc8",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$01F818C4-C7F2-46A0-B1EE-795C71025E49",
+              "rank": "normal"
+            }
+          ],
+          "P13204": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13204",
+                "hash": "338867b9a68c1b952076d2c92b0b727c0108be32",
+                "datavalue": {
+                  "value": "htxe4tn5",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q160387$B6A648AE-45D9-44AE-9F51-605D42947B93",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "enwiki": {
+            "site": "enwiki",
+            "title": "Battle of Actium",
+            "badges": []
+          }
+        }
+      }
+    },
+    "success": 1
+  }
+}

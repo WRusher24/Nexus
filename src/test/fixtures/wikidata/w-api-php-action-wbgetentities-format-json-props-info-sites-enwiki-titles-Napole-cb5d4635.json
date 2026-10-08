@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Napoleon&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q517": {
+        "pageid": 776,
+        "ns": 0,
+        "title": "Q517",
+        "lastrevid": 2554822877,
+        "modified": "2026-10-08T02:38:40Z",
+        "type": "item",
+        "id": "Q517"
+      }
+    },
+    "success": 1
+  }
+}

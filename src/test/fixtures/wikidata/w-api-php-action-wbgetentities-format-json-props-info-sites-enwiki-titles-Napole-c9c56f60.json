@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Napoleon+III&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q7721": {
+        "pageid": 8961,
+        "ns": 0,
+        "title": "Q7721",
+        "lastrevid": 2554661894,
+        "modified": "2026-10-07T17:56:10Z",
+        "type": "item",
+        "id": "Q7721"
+      }
+    },
+    "success": 1
+  }
+}

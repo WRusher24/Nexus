@@ -1,0 +1,67 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Treaty+of+Versailles&srlimit=5&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "continue": {
+      "sroffset": 5,
+      "continue": "-||"
+    },
+    "query": {
+      "searchinfo": {
+        "totalhits": 5775
+      },
+      "search": [
+        {
+          "ns": 0,
+          "title": "Treaty of Versailles",
+          "pageid": 30030,
+          "size": 176000,
+          "wordcount": 20360,
+          "snippet": "The <span class=\"searchmatch\">Treaty</span> <span class=\"searchmatch\">of</span> <span class=\"searchmatch\">Versailles</span> was a peace <span class=\"searchmatch\">treaty</span> signed on 28 June 1919. As the most important <span class=\"searchmatch\">treaty</span> <span class=\"searchmatch\">of</span> World War I, it ended the state <span class=\"searchmatch\">of</span> war between Germany",
+          "timestamp": "2026-10-06T11:06:47Z"
+        },
+        {
+          "ns": 0,
+          "title": "Treaty of Versailles (1768)",
+          "pageid": 19362662,
+          "size": 2645,
+          "wordcount": 250,
+          "snippet": "The <span class=\"searchmatch\">Treaty</span> <span class=\"searchmatch\">of</span> <span class=\"searchmatch\">Versailles</span> was a <span class=\"searchmatch\">treaty</span> concluded on 15 May 1768 at <span class=\"searchmatch\">Versailles</span> between the Republic <span class=\"searchmatch\">of</span> Genoa and France, in which Genoa sold Corsica to France",
+          "timestamp": "2026-07-27T15:11:30Z"
+        },
+        {
+          "ns": 0,
+          "title": "Little Treaty of Versailles",
+          "pageid": 13909910,
+          "size": 7091,
+          "wordcount": 740,
+          "snippet": "Little <span class=\"searchmatch\">Treaty</span> <span class=\"searchmatch\">of</span> <span class=\"searchmatch\">Versailles</span> (Polish: Mały traktat wersalski) or the Polish Minority <span class=\"searchmatch\">Treaty</span> (French: Traité des minorités polonaises) was one <span class=\"searchmatch\">of</span> the bilateral",
+          "timestamp": "2025-07-30T21:59:26Z"
+        },
+        {
+          "ns": 0,
+          "title": "Treaty of Versailles (1756)",
+          "pageid": 23916368,
+          "size": 2619,
+          "wordcount": 234,
+          "snippet": "publicized. The Second <span class=\"searchmatch\">Treaty</span> <span class=\"searchmatch\">of</span> <span class=\"searchmatch\">Versailles</span>, promising even closer co-operation between the two states, was agreed at <span class=\"searchmatch\">Versailles</span> in 1757. Anderson 2000",
+          "timestamp": "2026-09-04T16:06:13Z"
+        },
+        {
+          "ns": 0,
+          "title": "Treaty of Paris (1783)",
+          "pageid": 191926,
+          "size": 34018,
+          "wordcount": 3341,
+          "snippet": "The <span class=\"searchmatch\">Treaty</span> <span class=\"searchmatch\">of</span> Paris, signed by representatives <span class=\"searchmatch\">of</span> King George III <span class=\"searchmatch\">of</span> Great Britain and representatives <span class=\"searchmatch\">of</span> the United States on September 3, 1783, officially",
+          "timestamp": "2026-10-07T12:38:37Z"
+        }
+      ]
+    }
+  }
+}

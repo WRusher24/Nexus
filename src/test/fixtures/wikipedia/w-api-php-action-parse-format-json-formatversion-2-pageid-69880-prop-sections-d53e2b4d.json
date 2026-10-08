@@ -1,0 +1,619 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=parse&pageid=69880&prop=sections&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "warnings": {
+      "main": {
+        "warnings": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
+      },
+      "parse": {
+        "warnings": "\"prop=sections\" has been deprecated. Please use \"prop=tocdata\" instead."
+      }
+    },
+    "parse": {
+      "title": "Napoleon",
+      "pageid": 69880,
+      "sections": [
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Early life",
+          "number": "1",
+          "index": "1",
+          "fromtitle": "Napoleon",
+          "byteoffset": 11101,
+          "anchor": "Early_life",
+          "linkAnchor": "Early_life"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Early career",
+          "number": "2",
+          "index": "2",
+          "fromtitle": "Napoleon",
+          "byteoffset": 18342,
+          "anchor": "Early_career",
+          "linkAnchor": "Early_career"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Return to Corsica",
+          "number": "2.1",
+          "index": "3",
+          "fromtitle": "Napoleon",
+          "byteoffset": 25051,
+          "anchor": "Return_to_Corsica",
+          "linkAnchor": "Return_to_Corsica"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Siege of Toulon",
+          "number": "2.2",
+          "index": "4",
+          "fromtitle": "Napoleon",
+          "byteoffset": 27707,
+          "anchor": "Siege_of_Toulon",
+          "linkAnchor": "Siege_of_Toulon"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "13 Vendémiaire",
+          "number": "2.3",
+          "index": "5",
+          "fromtitle": "Napoleon",
+          "byteoffset": 29798,
+          "anchor": "13_Vendémiaire",
+          "linkAnchor": "13_Vendémiaire"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "First Italian campaign",
+          "number": "2.4",
+          "index": "6",
+          "fromtitle": "Napoleon",
+          "byteoffset": 34770,
+          "anchor": "First_Italian_campaign",
+          "linkAnchor": "First_Italian_campaign"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Egyptian expedition",
+          "number": "2.5",
+          "index": "7",
+          "fromtitle": "Napoleon",
+          "byteoffset": 38925,
+          "anchor": "Egyptian_expedition",
+          "linkAnchor": "Egyptian_expedition"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Ruler of France",
+          "number": "3",
+          "index": "8",
+          "fromtitle": "Napoleon",
+          "byteoffset": 44010,
+          "anchor": "Ruler_of_France",
+          "linkAnchor": "Ruler_of_France"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "<i>18 Brumaire</i>",
+          "number": "3.1",
+          "index": "9",
+          "fromtitle": "Napoleon",
+          "byteoffset": 44366,
+          "anchor": "18_Brumaire",
+          "linkAnchor": "18_Brumaire"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "French Consulate",
+          "number": "3.2",
+          "index": "10",
+          "fromtitle": "Napoleon",
+          "byteoffset": 45838,
+          "anchor": "French_Consulate",
+          "linkAnchor": "French_Consulate"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Temporary peace in Europe",
+          "number": "3.2.1",
+          "index": "11",
+          "fromtitle": "Napoleon",
+          "byteoffset": 51672,
+          "anchor": "Temporary_peace_in_Europe",
+          "linkAnchor": "Temporary_peace_in_Europe"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "French Empire",
+          "number": "3.3",
+          "index": "12",
+          "fromtitle": "Napoleon",
+          "byteoffset": 56998,
+          "anchor": "French_Empire",
+          "linkAnchor": "French_Empire"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Bonaparte becomes Napoleon I",
+          "number": "3.3.1",
+          "index": "13",
+          "fromtitle": "Napoleon",
+          "byteoffset": 57279,
+          "anchor": "Bonaparte_becomes_Napoleon_I",
+          "linkAnchor": "Bonaparte_becomes_Napoleon_I"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "War of the Third Coalition",
+          "number": "3.3.2",
+          "index": "14",
+          "fromtitle": "Napoleon",
+          "byteoffset": 60858,
+          "anchor": "War_of_the_Third_Coalition",
+          "linkAnchor": "War_of_the_Third_Coalition"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Middle-Eastern alliances",
+          "number": "3.3.3",
+          "index": "15",
+          "fromtitle": "Napoleon",
+          "byteoffset": 67251,
+          "anchor": "Middle-Eastern_alliances",
+          "linkAnchor": "Middle-Eastern_alliances"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "War of the Fourth Coalition and Tilsit",
+          "number": "3.3.4",
+          "index": "16",
+          "fromtitle": "Napoleon",
+          "byteoffset": 68968,
+          "anchor": "War_of_the_Fourth_Coalition_and_Tilsit",
+          "linkAnchor": "War_of_the_Fourth_Coalition_and_Tilsit"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Peninsular War and Erfurt",
+          "number": "3.3.5",
+          "index": "17",
+          "fromtitle": "Napoleon",
+          "byteoffset": 74258,
+          "anchor": "Peninsular_War_and_Erfurt",
+          "linkAnchor": "Peninsular_War_and_Erfurt"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "War of the Fifth Coalition",
+          "number": "3.3.6",
+          "index": "18",
+          "fromtitle": "Napoleon",
+          "byteoffset": 79906,
+          "anchor": "War_of_the_Fifth_Coalition",
+          "linkAnchor": "War_of_the_Fifth_Coalition"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Consolidation of the empire",
+          "number": "3.3.7",
+          "index": "19",
+          "fromtitle": "Napoleon",
+          "byteoffset": 83256,
+          "anchor": "Consolidation_of_the_empire",
+          "linkAnchor": "Consolidation_of_the_empire"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Invasion of Russia",
+          "number": "3.3.8",
+          "index": "20",
+          "fromtitle": "Napoleon",
+          "byteoffset": 85075,
+          "anchor": "Invasion_of_Russia",
+          "linkAnchor": "Invasion_of_Russia"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "War of the Sixth Coalition",
+          "number": "3.3.9",
+          "index": "21",
+          "fromtitle": "Napoleon",
+          "byteoffset": 90322,
+          "anchor": "War_of_the_Sixth_Coalition",
+          "linkAnchor": "War_of_the_Sixth_Coalition"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Exile to Elba",
+          "number": "3.4",
+          "index": "22",
+          "fromtitle": "Napoleon",
+          "byteoffset": 96437,
+          "anchor": "Exile_to_Elba",
+          "linkAnchor": "Exile_to_Elba"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Hundred Days",
+          "number": "3.5",
+          "index": "23",
+          "fromtitle": "Napoleon",
+          "byteoffset": 98330,
+          "anchor": "Hundred_Days",
+          "linkAnchor": "Hundred_Days"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Exile on Saint Helena",
+          "number": "4",
+          "index": "24",
+          "fromtitle": "Napoleon",
+          "byteoffset": 102336,
+          "anchor": "Exile_on_Saint_Helena",
+          "linkAnchor": "Exile_on_Saint_Helena"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Death",
+          "number": "4.1",
+          "index": "25",
+          "fromtitle": "Napoleon",
+          "byteoffset": 107746,
+          "anchor": "Death",
+          "linkAnchor": "Death"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Religion",
+          "number": "5",
+          "index": "26",
+          "fromtitle": "Napoleon",
+          "byteoffset": 111780,
+          "anchor": "Religion",
+          "linkAnchor": "Religion"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Religious beliefs",
+          "number": "5.1",
+          "index": "27",
+          "fromtitle": "Napoleon",
+          "byteoffset": 112004,
+          "anchor": "Religious_beliefs",
+          "linkAnchor": "Religious_beliefs"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Concordat",
+          "number": "5.2",
+          "index": "28",
+          "fromtitle": "Napoleon",
+          "byteoffset": 115369,
+          "anchor": "Concordat",
+          "linkAnchor": "Concordat"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Arrest of Pope Pius VII",
+          "number": "5.3",
+          "index": "29",
+          "fromtitle": "Napoleon",
+          "byteoffset": 117548,
+          "anchor": "Arrest_of_Pope_Pius_VII",
+          "linkAnchor": "Arrest_of_Pope_Pius_VII"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Religious emancipation",
+          "number": "5.4",
+          "index": "30",
+          "fromtitle": "Napoleon",
+          "byteoffset": 118589,
+          "anchor": "Religious_emancipation",
+          "linkAnchor": "Religious_emancipation"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Personality",
+          "number": "6",
+          "index": "31",
+          "fromtitle": "Napoleon",
+          "byteoffset": 120171,
+          "anchor": "Personality",
+          "linkAnchor": "Personality"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Appearance and image",
+          "number": "7",
+          "index": "32",
+          "fromtitle": "Napoleon",
+          "byteoffset": 127082,
+          "anchor": "Appearance_and_image",
+          "linkAnchor": "Appearance_and_image"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Reforms",
+          "number": "8",
+          "index": "33",
+          "fromtitle": "Napoleon",
+          "byteoffset": 130648,
+          "anchor": "Reforms",
+          "linkAnchor": "Reforms"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Administration",
+          "number": "8.1",
+          "index": "34",
+          "fromtitle": "Napoleon",
+          "byteoffset": 131914,
+          "anchor": "Administration",
+          "linkAnchor": "Administration"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Napoleonic Code",
+          "number": "8.2",
+          "index": "35",
+          "fromtitle": "Napoleon",
+          "byteoffset": 134149,
+          "anchor": "Napoleonic_Code",
+          "linkAnchor": "Napoleonic_Code"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Warfare",
+          "number": "8.3",
+          "index": "36",
+          "fromtitle": "Napoleon",
+          "byteoffset": 135643,
+          "anchor": "Warfare",
+          "linkAnchor": "Warfare"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Education",
+          "number": "8.4",
+          "index": "37",
+          "fromtitle": "Napoleon",
+          "byteoffset": 139230,
+          "anchor": "Education",
+          "linkAnchor": "Education"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Nobility and honours",
+          "number": "8.5",
+          "index": "38",
+          "fromtitle": "Napoleon",
+          "byteoffset": 142428,
+          "anchor": "Nobility_and_honours",
+          "linkAnchor": "Nobility_and_honours"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Memory and evaluation",
+          "number": "9",
+          "index": "39",
+          "fromtitle": "Napoleon",
+          "byteoffset": 143119,
+          "anchor": "Memory_and_evaluation",
+          "linkAnchor": "Memory_and_evaluation"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Criticism",
+          "number": "9.1",
+          "index": "40",
+          "fromtitle": "Napoleon",
+          "byteoffset": 143174,
+          "anchor": "Criticism",
+          "linkAnchor": "Criticism"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Propaganda and memory",
+          "number": "9.2",
+          "index": "41",
+          "fromtitle": "Napoleon",
+          "byteoffset": 148833,
+          "anchor": "Propaganda_and_memory",
+          "linkAnchor": "Propaganda_and_memory"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Long-term influence outside France",
+          "number": "9.3",
+          "index": "42",
+          "fromtitle": "Napoleon",
+          "byteoffset": 153966,
+          "anchor": "Long-term_influence_outside_France",
+          "linkAnchor": "Long-term_influence_outside_France"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Children",
+          "number": "10",
+          "index": "43",
+          "fromtitle": "Napoleon",
+          "byteoffset": 159168,
+          "anchor": "Children",
+          "linkAnchor": "Children"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Arms",
+          "number": "11",
+          "index": "44",
+          "fromtitle": "Napoleon",
+          "byteoffset": 161175,
+          "anchor": "Arms",
+          "linkAnchor": "Arms"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "See also",
+          "number": "12",
+          "index": "45",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164659,
+          "anchor": "See_also",
+          "linkAnchor": "See_also"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "References",
+          "number": "13",
+          "index": "46",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164737,
+          "anchor": "References",
+          "linkAnchor": "References"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Notes",
+          "number": "13.1",
+          "index": "47",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164755,
+          "anchor": "Notes",
+          "linkAnchor": "Notes"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Citations",
+          "number": "13.2",
+          "index": "48",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164788,
+          "anchor": "Citations",
+          "linkAnchor": "Citations"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Works cited",
+          "number": "14",
+          "index": "49",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164824,
+          "anchor": "Works_cited",
+          "linkAnchor": "Works_cited"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Biographical studies",
+          "number": "14.1",
+          "index": "50",
+          "fromtitle": "Napoleon",
+          "byteoffset": 164875,
+          "anchor": "Biographical_studies",
+          "linkAnchor": "Biographical_studies"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Historiography and memory",
+          "number": "14.2",
+          "index": "51",
+          "fromtitle": "Napoleon",
+          "byteoffset": 169830,
+          "anchor": "Historiography_and_memory",
+          "linkAnchor": "Historiography_and_memory"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Specialty studies",
+          "number": "14.3",
+          "index": "52",
+          "fromtitle": "Napoleon",
+          "byteoffset": 170558,
+          "anchor": "Specialty_studies",
+          "linkAnchor": "Specialty_studies"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Further reading",
+          "number": "15",
+          "index": "53",
+          "fromtitle": "Napoleon",
+          "byteoffset": 177627,
+          "anchor": "Further_reading",
+          "linkAnchor": "Further_reading"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "External links",
+          "number": "16",
+          "index": "54",
+          "fromtitle": "Napoleon",
+          "byteoffset": 180021,
+          "anchor": "External_links",
+          "linkAnchor": "External_links"
+        }
+      ],
+      "showtoc": true
+    }
+  }
+}

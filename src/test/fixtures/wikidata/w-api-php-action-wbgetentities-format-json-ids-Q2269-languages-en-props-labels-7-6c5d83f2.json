@@ -1,0 +1,2981 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2269&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=en&sitefilter=enwiki&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q2269": {
+        "type": "item",
+        "id": "Q2269",
+        "labels": {
+          "en": {
+            "language": "en",
+            "value": "Industrial Revolution"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "transition to new manufacturing processes in Europe and the United States, in the 18th-19th centuries"
+          }
+        },
+        "aliases": {},
+        "claims": {
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "c0e510dcab1d5b2084e7ef4aa34b86ed61d22f07",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 11514315,
+                    "id": "Q11514315"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$f120fe94-4ed0-cc5a-60ec-82dc7397c613",
+              "rank": "normal"
+            }
+          ],
+          "P508": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P508",
+                "hash": "61a599418cf0a0344faf421dc3012a889e42b9b4",
+                "datavalue": {
+                  "value": "16453",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "q2269$6EAE82E7-560E-4271-9B31-9C2661E43F53",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "ff65511d37e885bcf005b99c2241192548c3f03a",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16583225,
+                            "id": "Q16583225"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P349": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P349",
+                "hash": "43630121562249ce4dffdd499401ca19dd50ad59",
+                "datavalue": {
+                  "value": "00570120",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$ECFDC1BA-4AA0-4404-9DCF-434D577CD3C1",
+              "rank": "normal"
+            }
+          ],
+          "P910": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P910",
+                "hash": "3c91283d5f7ae0d54966796016c5e0fb2016e807",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 7216177,
+                    "id": "Q7216177"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$AE6B7E70-3A93-4AF8-9BBE-BF2FA51B3F7C",
+              "rank": "normal"
+            }
+          ],
+          "P646": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P646",
+                "hash": "af926c0b89d8a7e8724bb82054c119aabb8f2e94",
+                "datavalue": {
+                  "value": "/m/03vl8",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$F92E0F1E-9279-4655-B13F-18A8FD7949C1",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 15241312,
+                            "id": "Q15241312"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P577": [
+                      {
+                        "snaktype": "value",
+                        "property": "P577",
+                        "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2013-10-28T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P577"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P227": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P227",
+                "hash": "c1461d8e9e21386aacd132c06e1fa0d5b572f3b6",
+                "datavalue": {
+                  "value": "4072790-7",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "7dc8486653a1eb133ee0b3539026f06a76d367eb",
+                    "datavalue": {
+                      "value": "Industrielle Revolution",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$105FF30C-800F-408D-AD9F-F351670E72C8",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 48183,
+                            "id": "Q48183"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P527": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "b5331d8496f9e38408e1c7f5e1f4eca1aff83b23",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 16847469,
+                    "id": "Q16847469"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$4c699875-41d0-1ccb-c0ed-f5a1e4f152ba",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "dfb2bd503cf8188cc693bddf8b0a19bd62544211",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 3938059,
+                    "id": "Q3938059"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$97b3406e-45ba-79ad-9a1f-4bfdabc3cb5f",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "0c3a4ded624997719a3dc8574315e8a8f58fb6fe",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 97353535,
+                    "id": "Q97353535"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$57D4A6A8-C786-4E83-A4D4-AA0DF3192D6E",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "898a7aa2c51342d3a404842fe6f7d3497acf19de",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 24525708,
+                    "id": "Q24525708"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$22433512-4cb5-312e-ee5e-f3dc07b57bea",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "9fc01a4bc1a17408d763a7578095a59f13b47a83",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 479224,
+                    "id": "Q479224"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$3a73f8e5-408b-ad3e-e026-1787b1d6acda",
+              "rank": "normal"
+            }
+          ],
+          "P1417": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1417",
+                "hash": "fb4a9f1b45f9c9bef8531f7564fa6d4b8ab2e1c8",
+                "datavalue": {
+                  "value": "event/Industrial-Revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "a3e35527eee08e0e87e9730a716340afd75fd503",
+                    "datavalue": {
+                      "value": "Industrial Revolution",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$60A5320D-B939-45A4-98D6-0F3231D810FC",
+              "rank": "normal"
+            }
+          ],
+          "P3417": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3417",
+                "hash": "a1eff24024e1fe31b52a48b2610beaa2793e40a3",
+                "datavalue": {
+                  "value": "Industrial-Revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$1C3112BE-5FF8-4530-9A05-B0FAB6F8314D",
+              "rank": "normal"
+            }
+          ],
+          "P3569": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3569",
+                "hash": "d415310d40c53efd782cbaebe0838f7173081bb8",
+                "datavalue": {
+                  "value": "geschiedenis-1815-1900/industriele-revolutie",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$38771083-525E-4AC4-9BB6-D6EA597A9F96",
+              "rank": "normal"
+            }
+          ],
+          "P3827": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3827",
+                "hash": "e22d072d4b7cc3a55b3586f60cc87e19971f4628",
+                "datavalue": {
+                  "value": "industrialism",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$CE920500-484C-4ED9-ADCE-D53EEEEBC3D0",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3827",
+                "hash": "544dd51e9fee2acd582b8fdd079d66497d8b853f",
+                "datavalue": {
+                  "value": "industrial-revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$13A92902-7965-4044-9112-BD2D8A6E0E65",
+              "rank": "normal"
+            }
+          ],
+          "P2924": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2924",
+                "hash": "b27c48935fc6685de42d13f452ef0c16619a327f",
+                "datavalue": {
+                  "value": "3180201",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "e4ded13db97f20c84065c125ea8171a9976bae44",
+                    "datavalue": {
+                      "value": "ПРОМЫШЛЕННАЯ РЕВОЛЮЦИЯ",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$5c7385b0-4903-60f1-c8fd-c90d65ff89cc",
+              "rank": "normal"
+            }
+          ],
+          "P3219": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3219",
+                "hash": "c11e1bb9428021f1ba234d1d67e41c39df0e3434",
+                "datavalue": {
+                  "value": "revolution-industrielle",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$993A685A-D9E5-4430-851D-7AC8CC9B1CED",
+              "rank": "normal"
+            }
+          ],
+          "P582": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "d90d0e2f53d15cb5dc25043bd859812602b812b5",
+                "datavalue": {
+                  "value": {
+                    "time": "+1820-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1319": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1319",
+                    "hash": "69aa8d2db3226ac2a267310afcfa11aa710f1be6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+1820-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P1326": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1326",
+                    "hash": "3abc54b54e3c0beb0ab5b9da7fbb3fd115cc95f8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+1840-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1319",
+                "P1326"
+              ],
+              "id": "Q2269$a23a6fa0-4457-b08e-db9f-887ecbac7b9c",
+              "rank": "normal"
+            }
+          ],
+          "P5008": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5008",
+                "hash": "d8037e40c3d12c404489a97a78937213939ff1cd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5460604,
+                    "id": "Q5460604"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$9E472729-D038-4E6B-ACAC-5144A0A42024",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5008",
+                "hash": "136e3fbe19158e73e4bfebf3f2d98a9df8638b7e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 6173448,
+                    "id": "Q6173448"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "7661f66dd5b82a1ea92515ddb16c09ce3088edea",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-10-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P585"
+              ],
+              "id": "Q2269$CAAC5409-BD9A-49B6-8B11-1D81942F36E8",
+              "rank": "normal"
+            }
+          ],
+          "P1296": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1296",
+                "hash": "5a7371e4d0c1d2329af739a5ec391bb2f97a547d",
+                "datavalue": {
+                  "value": "0055148",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$793781cc-4810-d2d8-72e4-fe12825ec010",
+              "rank": "normal"
+            }
+          ],
+          "P4342": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4342",
+                "hash": "c1be49f4c36fc11a5e985089aefcc65a13b3c365",
+                "datavalue": {
+                  "value": "den_industrielle_revolusjon",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P4390": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4390",
+                    "hash": "1a4df62914ea9afca349bd5fb5d8efd5832d83fa",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 39893449,
+                        "id": "Q39893449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P4390"
+              ],
+              "id": "Q2269$F855A12D-CC81-4B4B-ACA1-B9199E0263B5",
+              "rank": "normal"
+            }
+          ],
+          "P3222": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3222",
+                "hash": "3ade4b3925ab28b804e07d433ce4c2152da1f016",
+                "datavalue": {
+                  "value": "industriella-revolutionen",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$2A3527F4-1BD7-426B-98E4-A5207C8DEF9E",
+              "rank": "normal"
+            }
+          ],
+          "P935": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P935",
+                "hash": "ab8a0f1c5b9cb39697bb19cbb81ff10d61133a00",
+                "datavalue": {
+                  "value": "Industrial revolution",
+                  "type": "string"
+                },
+                "datatype": "string"
+              },
+              "type": "statement",
+              "id": "Q2269$26ED280D-3D06-48FD-9461-9FA90EA03E9A",
+              "rank": "normal"
+            }
+          ],
+          "P6573": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6573",
+                "hash": "f3b9a3167868e22cde2c13dd2e746c83e1e3eb1f",
+                "datavalue": {
+                  "value": "Industrielle_Revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$A21FE461-D8E6-4DCA-8214-D83C393F81BE",
+              "rank": "normal"
+            }
+          ],
+          "P5986": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5986",
+                "hash": "e42910cad5df49f038938095f12d02ffb5e46f43",
+                "datavalue": {
+                  "value": "901000183",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$C2967C61-9509-4ECD-85F3-220392005E07",
+              "rank": "normal"
+            }
+          ],
+          "P902": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P902",
+                "hash": "60b5f181d5155eedb012def1b9bd743e86727d39",
+                "datavalue": {
+                  "value": "013825",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$8CDB6979-AD92-47EA-A498-69A62371A1D1",
+              "rank": "normal"
+            }
+          ],
+          "P6404": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6404",
+                "hash": "257fad26ac0c0f18fb613a3bd36a838a1daf6cbe",
+                "datavalue": {
+                  "value": "la-rivoluzione-industriale",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "a278e171da78830f5c64a81ce52c9164fd085be0",
+                    "datavalue": {
+                      "value": "La Rivoluzione industriale",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P2093": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2093",
+                    "hash": "eedae0033ec7e6766a2f36170e25b031894f3456",
+                    "datavalue": {
+                      "value": "Patrizio Bianchi",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "d2a40d22655021267a9386d3086e000722b5a2d3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2011-01-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810",
+                "P2093",
+                "P577"
+              ],
+              "id": "Q2269$CFC7115B-8D5A-47E6-AFDA-A973B76C6225",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6404",
+                "hash": "3f42a897c464d42f6c7266cdc4436d27fc4dbae2",
+                "datavalue": {
+                  "value": "rivoluzione-industriale",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "c2e7bb5a1adc1d14eea8d47db0234cde8d7c43fb",
+                    "datavalue": {
+                      "value": "Rivoluzione industriale",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "d2a40d22655021267a9386d3086e000722b5a2d3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2011-01-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810",
+                "P577"
+              ],
+              "id": "Q2269$E9F8DD08-F531-4DE3-8F15-04016CDA2976",
+              "rank": "normal"
+            }
+          ],
+          "P6366": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6366",
+                "hash": "ef04a69dc6cecb453a2f0bc6e7f71a85a9250f30",
+                "datavalue": {
+                  "value": "517468935",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$7D332BEB-8DDF-43D3-B3B7-8BAA16CA8D4A",
+              "rank": "normal"
+            }
+          ],
+          "P2347": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2347",
+                "hash": "b0aa7ea857502d13f451d5b0016fdd6ad7b17f35",
+                "datavalue": {
+                  "value": "4900",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P14457": [
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "92cb32f024eae4f9b15239c4dd19bb1a9df801b9",
+                    "datavalue": {
+                      "value": {
+                        "text": "teollinen vallankumous",
+                        "language": "fi"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "c0616b4ecac87c2a1a0b2668997bb0d06239503f",
+                    "datavalue": {
+                      "value": {
+                        "text": "industriijalaš revolušuvdna",
+                        "language": "se"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "39a2954a53baf4a44d8c493009f544a9befb8c0f",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrial revolution",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "891032084b63199da43033827e751543964bdaf4",
+                    "datavalue": {
+                      "value": {
+                        "text": "industriella revolutionen",
+                        "language": "sv"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P14458": [
+                  {
+                    "snaktype": "value",
+                    "property": "P14458",
+                    "hash": "18d4e0c95be3f83de03033997f08dd792b474d2f",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrialisma",
+                        "language": "se"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14458",
+                    "hash": "cd3b09625311cbe62b88a4ca1fefcefef7f6febd",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrialismi",
+                        "language": "fi"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14458",
+                    "hash": "258561202b91887c17b02b77c7be867636171ba4",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrialism",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14458",
+                    "hash": "20de5a9630e31ce32973679f459ea47e45a1fa59",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrialismen",
+                        "language": "sv"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P14457",
+                "P14458"
+              ],
+              "id": "Q2269$A063C835-7F84-46CD-8E98-424DD172F366",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "f9bf1a1f034ddd51bd9928ac535e0f57d748e2cf",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "7133f11674741f52cadaae6029068fad9cbb52e3",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 89345680,
+                            "id": "Q89345680"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P373": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P373",
+                "hash": "003a8ff082814fc2faf91ad7359e9b52edbf9dc9",
+                "datavalue": {
+                  "value": "Industrial revolution",
+                  "type": "string"
+                },
+                "datatype": "string"
+              },
+              "type": "statement",
+              "id": "Q2269$11d867a8-4d16-6339-bac5-cebc1018d814",
+              "rank": "normal"
+            }
+          ],
+          "P8408": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8408",
+                "hash": "c9acf6344dd12222461a4e78cfc7b20faf65f5a0",
+                "datavalue": {
+                  "value": "IndustrialRevolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$5000B6C9-5B94-40D3-A946-7A21BA128BC9",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 64139102,
+                            "id": "Q64139102"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2020-07-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P5063": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5063",
+                "hash": "b406e89cea9de011c6091c29c096734815bfa224",
+                "datavalue": {
+                  "value": "i117436",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$A03CD6DC-378F-4592-897D-207ECA090C0A",
+              "rank": "normal"
+            }
+          ],
+          "P155": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P155",
+                "hash": "8a1691023df9399f9a2eb681da178307dd7709f2",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2805642,
+                    "id": "Q2805642"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$d8d1ed51-45db-1788-3a09-0f03f93c6d4b",
+              "rank": "normal"
+            }
+          ],
+          "P4527": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4527",
+                "hash": "a2d2b25b9737251155789d53f4759956f44c399f",
+                "datavalue": {
+                  "value": "10898",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "9a15afc552913ff6955443a9703312cba3174293",
+                    "datavalue": {
+                      "value": "Industrial revolution",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$1249C088-BF20-4E75-9D4A-A60BFF08EA58",
+              "rank": "normal"
+            }
+          ],
+          "P156": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P156",
+                "hash": "e425b40952be3b923acf78a302452dc4e5aa4658",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 217200,
+                    "id": "Q217200"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$b96c9f4d-45ce-edbd-8f53-a17657b48cad",
+              "rank": "normal"
+            }
+          ],
+          "P244": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P244",
+                "hash": "4264e10fc7b651d5ef5ba3bb84f4b3bebecf1f65",
+                "datavalue": {
+                  "value": "sh85065935",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "9a15afc552913ff6955443a9703312cba3174293",
+                    "datavalue": {
+                      "value": "Industrial revolution",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$A61C7878-2588-4B31-AB77-A2CA5F80913F",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "ced024eb12b5fe38ed87cb5720ea18f3c54229a9",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "019a50b7de741e0068bde41c9d9955b22a5de47b",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 36578,
+                            "id": "Q36578"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P268": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P268",
+                "hash": "354b0ffe200b05cd01f8559285a4fa12476e70ae",
+                "datavalue": {
+                  "value": "11950231q",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "3cbc81cecb06ebf069c081161f5c0b51f24ac59e",
+                    "datavalue": {
+                      "value": "Révolution industrielle",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$3141bf04-b170-41ff-bf12-98198941ab0d",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "09cfe6a36d233ff7621c80ac1d8394ce37ef7903",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16583225,
+                            "id": "Q16583225"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "d199915ceec973dd8fc1a42489b1eb6b98315e1c",
+                        "datavalue": {
+                          "value": "https://thes.bncf.firenze.sbn.it/termine.php?id=16453",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "09605b06f747dbbaf6e1418b14bc02970b818f18",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2021-06-14T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P18": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P18",
+                "hash": "c0f7b24a9e11a2b8d118cf687d0b2fb8e7d28b44",
+                "datavalue": {
+                  "value": "Mémoires de la Société géologique de France (IA meymoiresdelaso00socig).pdf",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q2269$0ef67b87-4f65-323f-7e51-1f22dec41c8f",
+              "rank": "normal"
+            }
+          ],
+          "P1542": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1542",
+                "hash": "66324f5db6a29aeb0de75f7b66a7d8c1ddd7a9bd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 125928,
+                    "id": "Q125928"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$55a845ee-46ec-62d8-6f88-3631c90ba7cb",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1542",
+                "hash": "786dc2a5ac92b880e80678a72d3c3e1b55cc8411",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 189833,
+                    "id": "Q189833"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$b09b7e51-406c-c5da-40b4-f5032aef8646",
+              "rank": "preferred"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1542",
+                "hash": "08e9db770bb9d38c29aaab3f03f6c14c538b8824",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 192571,
+                    "id": "Q192571"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P4900": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4900",
+                    "hash": "431d79909f037a25475bdb8abd706f458b8acb21",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 12713481,
+                        "id": "Q12713481"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "da0366f6e76e077f9375f35f750aacd8613b7516",
+                    "datavalue": {
+                      "value": "Unskilled labor",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P4900",
+                "P1810"
+              ],
+              "id": "Q2269$a5d33952-4b59-d519-170f-1e071840fbc3",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "06d57aea55bdbef9ec760e44748c4bfcb4dc3cb4",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "0c9bd6e0f4b0cf9a2888a617b2304e4c342bb61a",
+                        "datavalue": {
+                          "value": "https://www.britannica.com/topic/child-labour",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P1683": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1683",
+                        "hash": "13d911bda9c30162b978d83ff67e82e01259ed9c",
+                        "datavalue": {
+                          "value": {
+                            "text": "The movement to regulate child labour began in Great Britain at the close of the 18th century, when the rapid development of large-scale manufacturing made possible the exploitation of young children in mining and industrial work.",
+                            "language": "en"
+                          },
+                          "type": "monolingualtext"
+                        },
+                        "datatype": "monolingualtext"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854",
+                    "P1683"
+                  ]
+                }
+              ]
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1542",
+                "hash": "1ad71e81fb8d8054a07d1c5b0303c24c1421cf2e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 12713481,
+                    "id": "Q12713481"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "da0366f6e76e077f9375f35f750aacd8613b7516",
+                    "datavalue": {
+                      "value": "Unskilled labor",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$874ad9d9-4d2d-8764-113c-5f87722af9d2",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "e947d353926f444011605d082cad2cc32f0f7166",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "0c9bd6e0f4b0cf9a2888a617b2304e4c342bb61a",
+                        "datavalue": {
+                          "value": "https://www.britannica.com/topic/child-labour",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854"
+                  ]
+                }
+              ]
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1542",
+                "hash": "e4a8605c5ab288953cd9bf976e3330c1b7e526be",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1159675,
+                    "id": "Q1159675"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P4900": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4900",
+                    "hash": "828bd888e8e304997cc0aa0244849de4dbe7968e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 49780,
+                        "id": "Q49780"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P4900",
+                    "hash": "9db0d61ad8b9d194c6d2e83c6ae9c22f41da8170",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 208701,
+                        "id": "Q208701"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P4900"
+              ],
+              "id": "Q2269$a227f0b4-4bff-f9d6-7810-9cbc45d7e3e6",
+              "rank": "normal"
+            }
+          ],
+          "P950": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P950",
+                "hash": "cb7626f900217e1e61f651ca796b64f3a4af003b",
+                "datavalue": {
+                  "value": "XX557573",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "423ab8dcf153a510918acb3e3f485a7ed44fa4ea",
+                    "datavalue": {
+                      "value": "Revolución industrial",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$89633be2-4169-e4e6-0075-abd86071fb5e",
+              "rank": "normal"
+            }
+          ],
+          "P3365": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3365",
+                "hash": "58a05f95f02d59d02a74a80518b1fbb84bfc0518",
+                "datavalue": {
+                  "value": "rivoluzione-industriale",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "97a8a67b406a1329b7adc4e3d71ec77864e53545",
+                    "datavalue": {
+                      "value": "rivoluzióne industriale",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$7869ebaf-4ff3-f1dd-16b5-55ed59ba6fa0",
+              "rank": "normal"
+            }
+          ],
+          "P8189": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8189",
+                "hash": "e8f8aa3e86e491f48316a7aca63848533b6973fb",
+                "datavalue": {
+                  "value": "987007548195605171",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P14457": [
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "38772c5199fe667ffc308aeb4bda4d35083c1559",
+                    "datavalue": {
+                      "value": {
+                        "text": "Industrial revolution",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "c9fe6bf1bc5700781b99ca9da190d2024f073c40",
+                    "datavalue": {
+                      "value": {
+                        "text": "מהפכה תעשייתית",
+                        "language": "he"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P14457",
+                    "hash": "3a752ff3ec489e9e63888c74a49a618a8f85a745",
+                    "datavalue": {
+                      "value": {
+                        "text": "الثورة الصناعية",
+                        "language": "ar"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P14457"
+              ],
+              "id": "Q2269$16BD323B-912B-44DA-9414-DDA7EA53B1AE",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "c8a47202c92936005b390eb36ddd267921b51f43",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "0ea73b3596b49258a7b7ec6495950779b99e875d",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 188915,
+                            "id": "Q188915"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P1552": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1552",
+                "hash": "d91bf2083f212fb686f4598e66fc7c1a6559b031",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 202398,
+                    "id": "Q202398"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$d135782b-46e9-69b4-676d-dd3794749078",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1552",
+                "hash": "7e742ba68470faf282c5b306709f132bfeea9082",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 7692537,
+                    "id": "Q7692537"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$81f90fae-4ea6-3383-eece-7786d8698216",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1552",
+                "hash": "7e550d5b800c4ec8a53d1229fe48fa6d70e05dcd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1160362,
+                    "id": "Q1160362"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$fe3d2ca1-4237-74eb-27a5-58f665a848d1",
+              "rank": "normal"
+            }
+          ],
+          "P10283": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P10283",
+                "hash": "f3313a1929183fcc23f0756f39caebde7636bc6f",
+                "datavalue": {
+                  "value": "C517468935",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$55DA3D8A-1AEA-475E-B264-9B29F1B5C8E0",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "e0b27d817c9a9b3247df341000fc490bafcba862",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 107507571,
+                            "id": "Q107507571"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "435834d08182bb9f3dbe974ba9840af0f12899cc",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-01-26T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                        "datavalue": {
+                          "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P1065": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1065",
+                        "hash": "3134281f51e2490f88272d53c56ee95d9cc24e2c",
+                        "datavalue": {
+                          "value": "https://web.archive.org/web/20220125070108/https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P2960": [
+                      {
+                        "snaktype": "value",
+                        "property": "P2960",
+                        "hash": "f7ff3a0de7f9571ecb5e0740cba4122c6703e1ec",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-01-25T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813",
+                    "P854",
+                    "P1065",
+                    "P2960"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P8313": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8313",
+                "hash": "731a3b4ac171d4c60bbdaadbb760d76c15977dbc",
+                "datavalue": {
+                  "value": "den_industrielle_revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$E7B21D6C-FCCF-4E9D-952E-B71AB7B8C03A",
+              "rank": "normal"
+            }
+          ],
+          "P495": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P495",
+                "hash": "df7b64c8d2f8a3233632a590fb9ce446b31ef3a9",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 161885,
+                    "id": "Q161885"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$c8249965-4da4-abee-01c5-fc3965495ffe",
+              "rank": "normal"
+            }
+          ],
+          "P691": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P691",
+                "hash": "5f2a1dffa432e4744e204304f1f1181304cd4a6f",
+                "datavalue": {
+                  "value": "ph124743",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "214f59dee50dc66d10f37b710a7d33e4b10e4958",
+                    "datavalue": {
+                      "value": "průmyslová revoluce",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q2269$9A633D68-672D-4FE1-88AB-BD2CDAD58416",
+              "rank": "normal"
+            }
+          ],
+          "P1343": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "bf67fa64e05e70556d4de6934c76fb7e86aa2889",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 124737604,
+                    "id": "Q124737604"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "f13f371486be8508a4aa573478e9ec5915d77fe6",
+                    "datavalue": {
+                      "value": "9-10",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P304"
+              ],
+              "id": "Q2269$af78738f-1ba4-4294-84a9-6f336a0082b8",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "0f7a62a3023890ee13c23ed0edbe5c6b18cbc9b2",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131447403,
+                    "id": "Q131447403"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P805": [
+                  {
+                    "snaktype": "value",
+                    "property": "P805",
+                    "hash": "aa2c99f71218b68580d20387c17e192d46b80a29",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 131447560,
+                        "id": "Q131447560"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "e9d1ffa3de6025f3b81abfc0d9f8df80748a70ec",
+                    "datavalue": {
+                      "value": {
+                        "time": "+1841-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P805",
+                "P577"
+              ],
+              "id": "Q2269$827e3f51-455a-294a-3617-615887c9fddc",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "746f99f3fad7abbd24f1e87412f7922e58f12bd0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131719188,
+                    "id": "Q131719188"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P805": [
+                  {
+                    "snaktype": "value",
+                    "property": "P805",
+                    "hash": "1aa33ac3b71a82863fb0c919d8e749a410f8e961",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 131761771,
+                        "id": "Q131761771"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "080d5690b12ff274e98df56bbbc365942a2b381f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+1842-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P805",
+                "P577"
+              ],
+              "id": "Q2269$7f24c3b0-4737-9067-49de-1965035b4a52",
+              "rank": "normal"
+            }
+          ],
+          "P279": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P279",
+                "hash": "eff501fe535e98b1197c7007eed0512b9cd1a0e2",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 4530482,
+                    "id": "Q4530482"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$1c13ac10-4ff6-8673-f565-4ae507a77eb9",
+              "rank": "normal"
+            }
+          ],
+          "P10565": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P10565",
+                "hash": "7fbbabd00757675caeb459a6629cb2e9344a1e68",
+                "datavalue": {
+                  "value": "456953",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$0ED4C16A-43A0-4E88-8498-7FBEF8540B69",
+              "rank": "normal"
+            }
+          ],
+          "P11762": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P11762",
+                "hash": "71af4a83f5b56ea7344f699d751e92298a10dc11",
+                "datavalue": {
+                  "value": "353290",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$f50f5cfc-4ee2-a79c-ed9a-d712ec8cbe17",
+              "rank": "normal"
+            }
+          ],
+          "P11764": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P11764",
+                "hash": "9a221468933e4dc95cf67f0eb17abdca33e5a8ef",
+                "datavalue": {
+                  "value": "275053",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$26e7e97a-4794-beef-6a3f-4a8afd816b0a",
+              "rank": "normal"
+            }
+          ],
+          "P11765": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P11765",
+                "hash": "437bdac94f5c291113fdb5d61837a62792cfb7cb",
+                "datavalue": {
+                  "value": "42370",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$0d60d811-4237-538c-5212-5f63c308d059",
+              "rank": "normal"
+            }
+          ],
+          "P1617": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1617",
+                "hash": "37bdc93eb7064da5849a294ba2adb9545ed73946",
+                "datavalue": {
+                  "value": "d43cf1ca-9064-4742-9e3a-6019c166dc96",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$B62CC0C6-B031-4B5E-A714-50D92DD9D29D",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "8582d8416671f1f2567247201bac753552435ca5",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 18336371,
+                            "id": "Q18336371"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P6058": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6058",
+                "hash": "c4b66d6c23af318c652057d4bc98ce6052aea9e2",
+                "datavalue": {
+                  "value": "divers/wd/61047",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$2a00a332-49b0-6722-e3d0-37fa7cea2a26",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6058",
+                "hash": "cd6b2b6f6aee5935428814b1775f415fa9ff1a5f",
+                "datavalue": {
+                  "value": "divers/wd/184610",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$3fcca646-4071-1abc-9239-2676e010fde0",
+              "rank": "normal"
+            }
+          ],
+          "P12086": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P12086",
+                "hash": "dee9d85ef1ef755af5c9d0992159a4114bdca609",
+                "datavalue": {
+                  "value": "Industriële_revolutie",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P9675": [
+                  {
+                    "snaktype": "value",
+                    "property": "P9675",
+                    "hash": "6f06ab1b876aca067855c3a4b84c6e2a5a09c965",
+                    "datavalue": {
+                      "value": "1329",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P9675"
+              ],
+              "id": "Q2269$A6B2BD3D-CFD6-4576-954F-5434AC3F134F",
+              "rank": "normal"
+            }
+          ],
+          "P12385": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P12385",
+                "hash": "2d4e7daf651c22d455b84c0fe68bd508897404fb",
+                "datavalue": {
+                  "value": "revolucio-industrial",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$060af942-33ee-4c68-afbc-6452a566511e",
+              "rank": "normal"
+            }
+          ],
+          "P12721": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P12721",
+                "hash": "8bc976c750eb033131c1ab47e19672e338b1a408",
+                "datavalue": {
+                  "value": "den_industrielle_revolusjon",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$DC91F70F-2B63-473C-B69E-BBB628D19E52",
+              "rank": "normal"
+            }
+          ],
+          "P12800": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P12800",
+                "hash": "657f741010cbe784b38f4bdb1a273e423715b56d",
+                "datavalue": {
+                  "value": "fr:Première_révolution_industrielle",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$B9D5AE82-18C8-4CD6-83CC-8BB41450AEE9",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P12800",
+                "hash": "7be03ee73453780327f2f66543d699896a50e488",
+                "datavalue": {
+                  "value": "fr:Révolution_industrielle",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$1D0028B7-64D0-41DA-9EDA-BB061885E30D",
+              "rank": "normal"
+            }
+          ],
+          "P5437": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5437",
+                "hash": "ac8d384c1a44f6c602e1a8fa0389149e61927f5e",
+                "datavalue": {
+                  "value": "3707",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P459": [
+                  {
+                    "snaktype": "value",
+                    "property": "P459",
+                    "hash": "3084e3b8a8327068d29db87271ae41c0e0c567fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1266546,
+                        "id": "Q1266546"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P459"
+              ],
+              "id": "Q2269$5F3D8112-4694-471E-BE4E-D4E7F3D02BE2",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "29d9261d3b24be2fb72a4e345a3e45cdf28eeed5",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "4b222ea31b6fcd95c95734ce289e8c0b903041e9",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 1370467,
+                            "id": "Q1370467"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "906490cb26d50131e0290371d0ce82d503c6c5e9",
+                        "datavalue": {
+                          "value": "https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/eurovoc",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P580": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "c36583f3f558f30c1eb63c7d5d211ee7901f8ee6",
+                "datavalue": {
+                  "value": {
+                    "time": "+1760-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P276": [
+                  {
+                    "snaktype": "value",
+                    "property": "P276",
+                    "hash": "00bed68ffc59bfc95bfb3fa80e6b4faf2b0311a1",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 23666,
+                        "id": "Q23666"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P276"
+              ],
+              "id": "Q2269$51f2089a-4fbb-2d8c-8612-7dcf2213a60b",
+              "rank": "normal"
+            }
+          ],
+          "P13591": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13591",
+                "hash": "37fb3c3215158ee45ec5b40de822ea0511ea2955",
+                "datavalue": {
+                  "value": "concept/fde533f2-e35a-4cdd-a317-ec13c8590109",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$753D3348-E0D2-4B40-9DA3-C230F5299FB0",
+              "rank": "normal"
+            }
+          ],
+          "P13613": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13613",
+                "hash": "5e8e42a0d11fade339e8abfedc4036cdbc2d5365",
+                "datavalue": {
+                  "value": "181046",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$c876b56b-462d-1262-8f89-dab9c21e7d22",
+              "rank": "normal"
+            }
+          ],
+          "P6385": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6385",
+                "hash": "1efe37ca3f54cf087d5d132fd6f088b224eb1d37",
+                "datavalue": {
+                  "value": "gumanitarnye_nauki/ekonomika_i_pravo/PROMISHLENNAYA_REVOLYUTSIYA.html",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$34C698C0-3647-46D6-914E-CBAC34590AEE",
+              "rank": "normal"
+            }
+          ],
+          "P443": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P443",
+                "hash": "8ffd2d582f03c76e225e126d7864a7c7c9445d3c",
+                "datavalue": {
+                  "value": "De-industrielle Revolution.ogg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "46bfd327b830f66f7061ea92d1be430c135fa91f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 188,
+                        "id": "Q188"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P898": [
+                  {
+                    "snaktype": "value",
+                    "property": "P898",
+                    "hash": "dd4b0edff286429cea98716628221ea3116e4533",
+                    "datavalue": {
+                      "value": "ɪndʊstʁiˈɛlə ʁevoluˈt͡si̯oːn",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P5168": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5168",
+                    "hash": "aeec5b52823baaf4469ddb1ded1095ae6a78e97e",
+                    "datavalue": {
+                      "value": {
+                        "text": "industrielle Revolution",
+                        "language": "de"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P407",
+                "P898",
+                "P5168"
+              ],
+              "id": "Q2269$cfd9bfa6-45ab-5836-9709-2fc143be080d",
+              "rank": "normal"
+            }
+          ],
+          "P1036": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1036",
+                "hash": "c8ac2f18f69193dc194f03ee9d68040a27e71dd9",
+                "datavalue": {
+                  "value": "909.81",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$774A2526-1D2B-40F2-A62B-2F45CFFCF76F",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "5b50699acf2ecd373c74f1ba43bc101a24be2664",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16583225,
+                            "id": "Q16583225"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P508": [
+                      {
+                        "snaktype": "value",
+                        "property": "P508",
+                        "hash": "61a599418cf0a0344faf421dc3012a889e42b9b4",
+                        "datavalue": {
+                          "value": "16453",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "6d4c9e5b0416a20f72876d06319d4d54168395a8",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2025-11-21T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P508",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P13750": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13750",
+                "hash": "c99c58521a637a33b8852f5af7e2f47b178fae04",
+                "datavalue": {
+                  "value": "159676",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$DA575B7B-1CDF-4D9B-B4D4-460BBCD0C20D",
+              "rank": "normal"
+            }
+          ],
+          "P1269": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1269",
+                "hash": "59145854342bee4f21d72fdec7e22d989803cadc",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 12760,
+                    "id": "Q12760"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$8736FA93-489A-43C8-95DA-7730CF999755",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1269",
+                "hash": "ad6edfba255ccfb53f22455661fefa3ac95356a0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 191159,
+                    "id": "Q191159"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$C84FE764-AF13-4A22-AAB2-EC51E01C2E8B",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1269",
+                "hash": "751872a94f7be0002e67720ebe34228d29e75459",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2608153,
+                    "id": "Q2608153"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$88E68ABD-97A1-4FDC-AD8E-87C6AE769286",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1269",
+                "hash": "d05df51b4b42708a6bdfaeaf6c73064a619eabd6",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 178803,
+                    "id": "Q178803"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q2269$A1FF9F42-996C-4421-877D-13D4F5E4AE69",
+              "rank": "normal"
+            }
+          ],
+          "P9322": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P9322",
+                "hash": "a9ea1b1cc0fd278739121afe96f23dc418a54cf9",
+                "datavalue": {
+                  "value": "h0008347-prumyslova-revoluce",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$84B6417B-0648-4B48-A25A-6A8C460E0938",
+              "rank": "normal"
+            }
+          ],
+          "P13772": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13772",
+                "hash": "594d26ffee24a6dd6296cdfd3de51c79500b7cc6",
+                "datavalue": {
+                  "value": "industrial-revolution",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q2269$BBED0C67-7B23-41EE-BB6D-4F2B813C06F1",
+              "rank": "normal"
+            }
+          ],
+          "P14541": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P14541",
+                "hash": "77b2c6b29d67fd874d00e8f8b058031983f59bae",
+                "datavalue": {
+                  "value": "4027qa",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "31875c46ecef52f9da9a77d7aaaa44d197706944",
+                    "datavalue": {
+                      "value": "产业革命",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "db222836be3e0f411db075ede25483376c7593ff",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-12-04T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810",
+                "P5017"
+              ],
+              "id": "Q2269$342A56E3-7E2A-4052-AB92-C1CACB754222",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "enwiki": {
+            "site": "enwiki",
+            "title": "Industrial Revolution",
+            "badges": []
+          }
+        }
+      }
+    },
+    "success": 1
+  }
+}

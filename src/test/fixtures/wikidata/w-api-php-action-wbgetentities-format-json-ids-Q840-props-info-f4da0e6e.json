@@ -1,0 +1,26 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q840&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q840": {
+        "pageid": 159,
+        "ns": 0,
+        "title": "Q46",
+        "lastrevid": 2550750831,
+        "modified": "2026-09-29T04:26:55Z",
+        "redirects": {
+          "from": "Q840",
+          "to": "Q46"
+        },
+        "type": "item",
+        "id": "Q46"
+      }
+    },
+    "success": 1
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=World+War+I&srlimit=5&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "continue": {
+      "sroffset": 5,
+      "continue": "-||"
+    },
+    "query": {
+      "searchinfo": {
+        "totalhits": 391013,
+        "suggestion": "world war 1",
+        "suggestionsnippet": "world war 1"
+      },
+      "search": [
+        {
+          "ns": 0,
+          "title": "World War I",
+          "pageid": 4764461,
+          "size": 216304,
+          "wordcount": 22026,
+          "snippet": "<span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span>, or the First <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> (28 July 1914 – 11 November 1918), also known as the Great <span class=\"searchmatch\">War</span>, was a global conflict between two coalitions: the Allies",
+          "timestamp": "2026-10-05T00:58:54Z"
+        },
+        {
+          "ns": 0,
+          "title": "Allies of World War I",
+          "pageid": 2198871,
+          "size": 118920,
+          "wordcount": 11920,
+          "snippet": "France in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> Germany in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> Italy in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> Romania in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> United Kingdom in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> United States in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> Japan",
+          "timestamp": "2026-10-03T19:28:05Z"
+        },
+        {
+          "ns": 0,
+          "title": "World War II",
+          "pageid": 32927,
+          "size": 251001,
+          "wordcount": 25788,
+          "snippet": "Japanese leaders were tried for <span class=\"searchmatch\">war</span> crimes. The causes of <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> II included unresolved tensions in the aftermath of <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> and the rise of fascism in",
+          "timestamp": "2026-10-06T22:35:06Z"
+        },
+        {
+          "ns": 0,
+          "title": "World War I casualties",
+          "pageid": 33111,
+          "size": 138008,
+          "wordcount": 14788,
+          "snippet": "The total number of military and civilian casualties in <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> is estimated to be 15 to 22 million deaths[failed verification] and about 21 million",
+          "timestamp": "2026-08-18T21:56:41Z"
+        },
+        {
+          "ns": 0,
+          "title": "World war",
+          "pageid": 142735,
+          "size": 48879,
+          "wordcount": 4412,
+          "snippet": "century: <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> <span class=\"searchmatch\">I</span> (1914–1918) and <span class=\"searchmatch\">World</span> <span class=\"searchmatch\">War</span> II (1939–1945). Some historians have also characterized other global conflicts as <span class=\"searchmatch\">world</span> <span class=\"searchmatch\">wars</span>, such as the",
+          "timestamp": "2026-09-23T17:09:55Z"
+        }
+      ]
+    }
+  }
+}

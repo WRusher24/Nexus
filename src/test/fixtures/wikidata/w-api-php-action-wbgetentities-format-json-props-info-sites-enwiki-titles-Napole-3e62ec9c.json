@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Napoleon+%28disambiguation%29&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q193415": {
+        "pageid": 191460,
+        "ns": 0,
+        "title": "Q193415",
+        "lastrevid": 2544009239,
+        "modified": "2026-09-11T13:50:10Z",
+        "type": "item",
+        "id": "Q193415"
+      }
+    },
+    "success": 1
+  }
+}

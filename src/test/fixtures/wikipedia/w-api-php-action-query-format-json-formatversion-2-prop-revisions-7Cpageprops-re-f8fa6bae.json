@@ -1,0 +1,32 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Treaty+of+Versailles&redirects=1&prop=revisions%7Cpageprops&rvprop=ids&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 30030,
+          "ns": 0,
+          "title": "Treaty of Versailles",
+          "revisions": [
+            {
+              "revid": 1378834026,
+              "parentid": 1374373251
+            }
+          ],
+          "pageprops": {
+            "defaultsort": "Versailles, Treaty Of",
+            "page_image_free": "Treaty_of_Versailles,_English_version.jpg",
+            "wikibase-shortdesc": "One of the treaties that ended World War I",
+            "wikibase_item": "Q8736"
+          }
+        }
+      ]
+    }
+  }
+}

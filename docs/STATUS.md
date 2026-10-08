@@ -1,12 +1,189 @@
 # Project Status
 
-## Current milestone: 4 (Graph write path)
+## Current milestone: 5 (External clients: Wikipedia, Wikidata, search/disambiguation, root-node creation)
 
 ## Last session: 2026-10-08
 
-## State: Graph mutation + traversal core complete — `upsertNode`, `insertVerifiedEdge` (+ batch), `checkForCycle` / `hasActiveCycle`, `mergeNodes`, and traversal queries. `pnpm run verify` green (212 tests).
+## State: External data layer complete — `wikipediaClient`, `wikidataClient`, `parser`, `qidResolver`, `search`, `sourceDocuments`, `rateLimit`, fixture-backed HTTP mocks, and `createRootNode`. All clients are built and tested against **recorded live-API fixtures** (no live calls in tests). `pnpm run verify` green (280 tests).
 
-## Next: Milestone 5 (Wikipedia API client + Wikidata QID resolver)
+## Next: Milestone 6 (LLM extraction + validation pipeline)
+
+---
+
+## Session log — 2026-10-08 (Milestone 5)
+
+Completed (all NEW unless noted):
+
+- `src/lib/wikipedia/rateLimit.ts` — serial minimum-interval `RateLimiter`
+  (default 10 req/s; no bursts, deliberately).
+- `src/lib/wikipedia/parser.ts` — `parseArticleText` (normalise line endings,
+  collapse 3+ newlines, trim; locate headings as standalone lines; build
+  `SectionInfo[]` with exact UTF-16 offsets) and `sha256` (node:crypto).
+- `src/lib/wikipedia/wikipediaClient.ts` — `createWikipediaClient` (search,
+  fetch by page id, by title with redirect+disambiguation handling, by
+  revision id), typed `WikipediaError`, mandatory User-Agent, and the shared
+  `mediaWikiJsonRequest` retry helper.
+- `src/lib/wikipedia/wikidataClient.ts` — `createWikidataClient` (search,
+  getEntity, resolveRedirect, getQidForWikipediaTitle), claim/time parsing
+  (`parseWikidataTime`, `parseWikidataYear`), shared error/retry.
+- `src/lib/wikipedia/qidResolver.ts` — `createResolver` with the four-component
+  0-100 scoring model, confidence tiers, and `ENTITY_TYPE_TO_P31` /
+  `mapInstanceOfToNodeType`.
+- `src/lib/wikipedia/search.ts` — `createSearchService` (HTML-stripped
+  snippets; per-candidate sitelink-first QID resolution; failures tolerated).
+- `src/lib/wikipedia/sourceDocuments.ts` — revision-keyed cache
+  (`fetchAndStore`, `getByRevision`, `getLatest`); never updates a row.
+- `src/lib/wikipedia/types.ts` — EXTENDED with `EntityType` and
+  `ResolverConfidence`.
+- `src/lib/wikipedia/index.ts` — barrel.
+- `src/lib/graph/createRootNode.ts` — orchestrates source fetch → QID/page
+  identity → node-type + date inference → `upsertNode({ isRoot: true })`, and
+  promotes an existing non-root node. **The only path that sets `isRoot=true`.**
+- `src/lib/graph/index.ts` — barrel extended.
+- `src/test/helpers/httpFixture.ts` — deterministic fixture-backed `fetch`
+  (`createFixtureStore`, URL normalisation, hit recording).
+- `scripts/record-fixtures.ts` — one-time live-API recorder (run manually;
+  not part of `verify`).
+- `docs/STATUS.md` — this update.
+
+Tests added (68; 212 + 68 = 280 total, 26 files):
+
+- `src/test/integration/wikipedia/wikipediaClient.test.ts` (12) — missing
+  contact e-mail, search shape, empty/zero-result search, by page id, by title,
+  disambiguation null, by revision id, rate-limiter acquire, User-Agent spy,
+  404 → PAGE_NOT_FOUND, 500 → 3 retries → SERVER_ERROR.
+- `src/test/integration/wikipedia/wikidataClient.test.ts` (10) — search,
+  getEntity (claims/aliases/sitelinks), P580/P582, sitelink → QID, missing
+  title → null, redirect Q840 → Q46, rate limiter, User-Agent, BCE negative
+  year, precision 9 → null month/day.
+- `src/test/integration/wikipedia/parser.test.ts` (12) — empty, lead-only,
+  3-section split, body-mention not a heading, missing title skipped, CRLF,
+  triple newline, contiguous offsets, last end offset, repeated headings,
+  trim, sha256.
+- `src/test/integration/wikipedia/qidResolver.test.ts` (13) — HIGH exact
+  match, alias MEDIUM+, type downgrade, date-500-years LOW, NONE, top
+  candidate, full score breakdown, sorted/capped candidates, no-hint, QID
+  tiebreak, plus 3 mapping assertions.
+- `src/test/integration/wikipedia/search.test.ts` (6) — resolved QID, multiple
+  candidates, zero results, per-candidate failure tolerance, HTML stripping,
+  ranking order.
+- `src/test/integration/wikipedia/sourceDocuments.test.ts` (6) — create,
+  idempotent same revision, two revisions coexist, getByRevision, getLatest,
+  content hash.
+- `src/test/integration/graph/createRootNode.test.ts` (9) — HIGH QID,
+  no-QID fallback, EXISTING root, promote non-root, SourceDocument linked,
+  POLICY inference, range dates, BCE date, LOW confidence fallback.
+
+`pnpm run verify` output: lint PASS (0 errors), typecheck PASS, 280/280 tests
+PASS (26 files), audit 7/7 PASS.
+
+### Fixture inventory (recorded live on 2026-10-08)
+
+All fixtures were recorded by `scripts/record-fixtures.ts` against the live
+Wikipedia/Wikidata APIs and checked into the repo. Counts: 24 Wikipedia files,
+32 Wikidata files.
+
+| Topic | Fixtures | Live/synthetic |
+| --- | --- | --- |
+| Treaty of Versailles (POLICY, well-defined) | search, page-id extract+sections, title resolve, sitelink, entity Q8736 | live |
+| World War I (EVENT, large article) | search, page-id extract+sections, entity Q361 | live |
+| Industrial Revolution (PROCESS, range) | search, page-id extract+sections, entity Q2269 | live |
+| Napoleon (ACTOR, ambiguous) | search, title resolve, page-id extract+sections, candidate entities/sitelinks | live |
+| Mercury (highly ambiguous) | search, disambiguation title resolve, candidate entities/sitelinks | live |
+| Battle of Actium (BCE) | title resolve, entity Q160387 | live |
+| Zero-result query | search ("Fictional nonsense query xyzabc") | live |
+| QID redirect | info for Q840 → Q46 | live |
+
+### TextExtracts vs. action=parse decision
+
+**Both, split by concern.** Plain text comes from TextExtracts
+(`prop=extracts&explaintext=1&exsectionformat=plain`); the authoritative,
+hierarchical section-title list comes from `action=parse&prop=sections`
+(`pageid` for current, `oldid` for revision-pinned). `exsectionformat=plain`
+emits headings as bare lines with no structural markers, so `action=parse` is
+needed to know which bare lines are headings. `parseArticleText` then locates
+each title as a standalone line and computes offsets, skipping titles absent
+from the extract. `prop=sections` is deprecated in favour of `prop=tocdata`;
+`tocdata` was evaluated but `sections` remains supported and simpler. If it is
+removed, switch to `tocdata` with a one-line change.
+
+### P31 QID mappings used by the resolver (verified against live labels)
+
+- **EVENT:** Q1190554 (occurrence), Q1656682 (planned event), Q178561 (battle),
+  Q198 (war), Q273120 (protest), Q13418847 (historical event)
+- **ACTOR:** Q5 (human), Q215627 (person), Q16334295 (group of humans),
+  Q3024240 (historical country), Q43229 (organization)
+- **POLICY:** Q7748 (law), Q49371 (legislation), Q131569 (treaty),
+  Q625298 (peace treaty)
+- **PROCESS:** Q1150070 (change), Q3249551 (process), Q1190554 (occurrence),
+  Q40231 (public election)
+- **INSTITUTION:** Q43229 (organization), Q16334295 (group of humans),
+  Q4830453 (business), Q327333 (government agency), Q17149090 (armed org)
+- **IDEOLOGY:** Q7257 (ideology), Q179805 (political philosophy),
+  Q49773 (social movement)
+- **PLACE:** Q17334923 (physical location), Q486972 (human settlement),
+  Q82794 (region), Q3624078 (sovereign state), Q6256 (country)
+- **TECHNOLOGY:** Q11016 (technology), Q39546 (physical tool),
+  Q11862829 (academic discipline)
+
+The brief's example QIDs were partly wrong and were corrected: Q7944 is
+"earthquake" (not treaty), Q171240 is the London Stock Exchange (not the
+Treaty of Versailles), and Q6534608/Q1519799/Q1499346 were persons, a ministry
+and a fish. Overlapping QIDs are resolved by a fixed type order
+(EVENT → … → PLACE); the treaty QIDs were removed from EVENT so that a peace
+treaty maps to POLICY, which the `createRootNode` test asserts.
+
+### User-Agent + rate-limiter evidence
+
+- `wikipediaClient.test.ts` › "sends the User-Agent header on every request"
+  wraps the fixture fetch, records every request's headers, and asserts
+  `Nexus/1.0 (dev@example.com) nexus-history-graph` on all of them.
+- `wikidataClient.test.ts` › same test for the Wikidata client.
+- `wikipediaClient.test.ts` › "acquires a rate limiter token before each
+  request" and `wikidataClient.test.ts` › "calls the rate limiter before each
+  request" spy on `RateLimiter.acquire` and assert it was called.
+
+### isRoot=true audit
+
+`grep isRoot src/lib` confirms the only production assignments are in
+`createRootNode.ts` (`isRoot: true` on insert, `.set({ isRoot: true })` on
+promotion). `upsertNode.ts` writes `isRoot: input.isRoot ?? false`, so its
+default is false. The only test that sets it is `createRootNode.test.ts`
+(seeding a pre-existing root).
+
+### Deviations / decisions (with reasons)
+
+1. **Brief's example QIDs corrected to real values.** Q171240 (London Stock
+   Exchange, not Treaty of Versailles) and Q7944 (earthquake, not treaty) were
+   wrong; tests use the real QIDs recorded from the live APIs (Q8736, Q625298,
+   Q131569, …). Documented above.
+2. **`fetchArticleByTitle("Napoleon")` is not a disambiguation page.** Live
+   Wikipedia returns article content for "Napoleon"; the disambiguation-null
+   test uses "Mercury" (pageprops.disambiguation present), which is the
+   required "highly ambiguous common word" topic.
+3. **Revision pinning uses `revids=`/`oldid=` and the current TextExtracts
+   content.** TextExtracts cannot return an arbitrary revision's plain text;
+   the client records the exact `revid` it resolved and fetches the section
+   list at that `oldid`. This is the closest the API allows and is documented
+   in `wikipediaClient.ts`.
+4. **A separate `action=parse&prop=sections` request is made per article.**
+   Two requests (extract + sections) instead of the brief's single extract
+   request. Necessary for reliable section boundaries (see the parsing
+   decision).
+5. **Test seam `sleep?` added to both client option objects.** Retry backoff
+   would otherwise make the 500/429 tests take ~7s / ~5s. Production omits it;
+   tests pass a no-op. This is additive to the specified options.
+6. **`scripts/record-fixtures.ts` created.** Explicitly recommended by the
+   brief's fixture section though not in the "files allowed to change" list.
+   It is not executed by `verify` and performs the only live calls in the repo.
+7. **Resolver scoring tests use a stub `WikidataClient`.** Encoding every
+   scoring edge case (type disagreement, 500-year date gap, NONE) as recorded
+   fixtures would be brittle and large; the resolver only consumes the
+   `WikidataClient` interface, so a deterministic in-memory stub is used for
+   those cases. A fixture-backed happy path is covered by `search.test.ts` and
+   the Wikidata client tests.
+8. **`prop=sections` deprecation warning is tolerated.** MediaWiki still
+   serves it; see the parsing decision for the migration note.
 
 ---
 

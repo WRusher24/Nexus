@@ -18,6 +18,26 @@ export interface SectionInfo {
 export type Direction = 'UPSTREAM' | 'DOWNSTREAM';
 
 /**
+ * Canonical entity type used by the Wikipedia/Wikidata layer. Mirrors the
+ * `node_type` database enum and the `NodeType` union in `graph/types.ts`.
+ *
+ * It is redeclared here (rather than imported from graph) so this module stays
+ * a leaf with no dependency on the graph write path.
+ */
+export type EntityType =
+  | 'EVENT'
+  | 'PROCESS'
+  | 'POLICY'
+  | 'ACTOR'
+  | 'IDEOLOGY'
+  | 'INSTITUTION'
+  | 'TECHNOLOGY'
+  | 'PLACE';
+
+/** Confidence tier produced by the QID resolver. */
+export type ResolverConfidence = 'HIGH' | 'MEDIUM' | 'LOW' | 'NONE';
+
+/**
  * A chunk is a contiguous slice of the article's rawText that will be sent
  * to the LLM. Offsets are into the original rawText so quote verification
  * can work against the sent chunks.

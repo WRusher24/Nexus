@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Treaty+of+Versailles+%281756%29&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q375717": {
+        "pageid": 357542,
+        "ns": 0,
+        "title": "Q375717",
+        "lastrevid": 2552959335,
+        "modified": "2026-10-04T07:57:39Z",
+        "type": "item",
+        "id": "Q375717"
+      }
+    },
+    "success": 1
+  }
+}

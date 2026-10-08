@@ -1,0 +1,575 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=parse&pageid=30030&prop=sections&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "warnings": {
+      "main": {
+        "warnings": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
+      },
+      "parse": {
+        "warnings": "\"prop=sections\" has been deprecated. Please use \"prop=tocdata\" instead."
+      }
+    },
+    "parse": {
+      "title": "Treaty of Versailles",
+      "pageid": 30030,
+      "sections": [
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Background",
+          "number": "1",
+          "index": "1",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 8485,
+          "anchor": "Background",
+          "linkAnchor": "Background"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "First World War",
+          "number": "1.1",
+          "index": "2",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 8500,
+          "anchor": "First_World_War",
+          "linkAnchor": "First_World_War"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Role of the Fourteen Points",
+          "number": "1.2",
+          "index": "3",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 10308,
+          "anchor": "Role_of_the_Fourteen_Points",
+          "linkAnchor": "Role_of_the_Fourteen_Points"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Armistice",
+          "number": "1.3",
+          "index": "4",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 11769,
+          "anchor": "Armistice",
+          "linkAnchor": "Armistice"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Blockade",
+          "number": "1.4",
+          "index": "5",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 14698,
+          "anchor": "Blockade",
+          "linkAnchor": "Blockade"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Negotiations",
+          "number": "2",
+          "index": "6",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 17419,
+          "anchor": "Negotiations",
+          "linkAnchor": "Negotiations"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "French aims",
+          "number": "2.1",
+          "index": "7",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 19553,
+          "anchor": "French_aims",
+          "linkAnchor": "French_aims"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "British aims",
+          "number": "2.2",
+          "index": "8",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 23079,
+          "anchor": "British_aims",
+          "linkAnchor": "British_aims"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "American aims",
+          "number": "2.3",
+          "index": "9",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 25884,
+          "anchor": "American_aims",
+          "linkAnchor": "American_aims"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Italian aims",
+          "number": "2.4",
+          "index": "10",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 29314,
+          "anchor": "Italian_aims",
+          "linkAnchor": "Italian_aims"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Treaty content and signing",
+          "number": "3",
+          "index": "11",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 31351,
+          "anchor": "Treaty_content_and_signing",
+          "linkAnchor": "Treaty_content_and_signing"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Territorial changes",
+          "number": "3.1",
+          "index": "12",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 35512,
+          "anchor": "Territorial_changes",
+          "linkAnchor": "Territorial_changes"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Mandates",
+          "number": "3.2",
+          "index": "13",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 41328,
+          "anchor": "Mandates",
+          "linkAnchor": "Mandates"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Military restrictions",
+          "number": "3.3",
+          "index": "14",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 42934,
+          "anchor": "Military_restrictions",
+          "linkAnchor": "Military_restrictions"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Reparations",
+          "number": "3.4",
+          "index": "15",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 47468,
+          "anchor": "Reparations",
+          "linkAnchor": "Reparations"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Guarantees",
+          "number": "3.5",
+          "index": "16",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 49468,
+          "anchor": "Guarantees",
+          "linkAnchor": "Guarantees"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "International organizations",
+          "number": "3.6",
+          "index": "17",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 50526,
+          "anchor": "International_organizations",
+          "linkAnchor": "International_organizations"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "War Crimes",
+          "number": "3.7",
+          "index": "18",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 52335,
+          "anchor": "War_Crimes",
+          "linkAnchor": "War_Crimes"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Reactions",
+          "number": "4",
+          "index": "19",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 53209,
+          "anchor": "Reactions",
+          "linkAnchor": "Reactions"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Britain",
+          "number": "4.1",
+          "index": "20",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 53223,
+          "anchor": "Britain",
+          "linkAnchor": "Britain"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Status of British Dominions",
+          "number": "4.1.1",
+          "index": "21",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 55896,
+          "anchor": "Status_of_British_Dominions",
+          "linkAnchor": "Status_of_British_Dominions"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "France",
+          "number": "4.2",
+          "index": "22",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 57035,
+          "anchor": "France",
+          "linkAnchor": "France"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Italy",
+          "number": "4.3",
+          "index": "23",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 58481,
+          "anchor": "Italy",
+          "linkAnchor": "Italy"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Portugal",
+          "number": "4.4",
+          "index": "24",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 59664,
+          "anchor": "Portugal",
+          "linkAnchor": "Portugal"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "United States",
+          "number": "4.5",
+          "index": "25",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 60602,
+          "anchor": "United_States",
+          "linkAnchor": "United_States"
+        },
+        {
+          "toclevel": 3,
+          "level": "4",
+          "line": "Edward House's views",
+          "number": "4.5.1",
+          "index": "26",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 64258,
+          "anchor": "Edward_House's_views",
+          "linkAnchor": "Edward_House's_views"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "China",
+          "number": "4.6",
+          "index": "27",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 65280,
+          "anchor": "China",
+          "linkAnchor": "China"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Germany",
+          "number": "4.7",
+          "index": "28",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 66532,
+          "anchor": "Germany",
+          "linkAnchor": "Germany"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Japan",
+          "number": "4.8",
+          "index": "29",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 72079,
+          "anchor": "Japan",
+          "linkAnchor": "Japan"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Implementation",
+          "number": "5",
+          "index": "30",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 77355,
+          "anchor": "Implementation",
+          "linkAnchor": "Implementation"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Reparations",
+          "number": "5.1",
+          "index": "31",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 77417,
+          "anchor": "Reparations_2",
+          "linkAnchor": "Reparations_2"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Territorial changes",
+          "number": "5.2",
+          "index": "32",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 79428,
+          "anchor": "Territorial_changes_2",
+          "linkAnchor": "Territorial_changes_2"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Rhineland occupation",
+          "number": "5.3",
+          "index": "33",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 83517,
+          "anchor": "Rhineland_occupation",
+          "linkAnchor": "Rhineland_occupation"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Violations",
+          "number": "6",
+          "index": "34",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 88125,
+          "anchor": "Violations",
+          "linkAnchor": "Violations"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Reparations",
+          "number": "6.1",
+          "index": "35",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 88140,
+          "anchor": "Reparations_3",
+          "linkAnchor": "Reparations_3"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Military",
+          "number": "6.2",
+          "index": "36",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 91555,
+          "anchor": "Military",
+          "linkAnchor": "Military"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Territorial",
+          "number": "6.3",
+          "index": "37",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 97427,
+          "anchor": "Territorial",
+          "linkAnchor": "Territorial"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "War criminals",
+          "number": "6.4",
+          "index": "38",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 97891,
+          "anchor": "War_criminals",
+          "linkAnchor": "War_criminals"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Historical assessments",
+          "number": "7",
+          "index": "39",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 102306,
+          "anchor": "Historical_assessments",
+          "linkAnchor": "Historical_assessments"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Territorial changes",
+          "number": "7.1",
+          "index": "40",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 114897,
+          "anchor": "Territorial_changes_3",
+          "linkAnchor": "Territorial_changes_3"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Military terms and violations",
+          "number": "7.2",
+          "index": "41",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 118631,
+          "anchor": "Military_terms_and_violations",
+          "linkAnchor": "Military_terms_and_violations"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Rise of the Nazis",
+          "number": "7.3",
+          "index": "42",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 121140,
+          "anchor": "Rise_of_the_Nazis",
+          "linkAnchor": "Rise_of_the_Nazis"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "See also",
+          "number": "8",
+          "index": "43",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 122315,
+          "anchor": "See_also",
+          "linkAnchor": "See_also"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Notes",
+          "number": "9",
+          "index": "44",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 122475,
+          "anchor": "Notes",
+          "linkAnchor": "Notes"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Footnotes",
+          "number": "9.1",
+          "index": "45",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 122485,
+          "anchor": "Footnotes",
+          "linkAnchor": "Footnotes"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Citations",
+          "number": "9.2",
+          "index": "46",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 122518,
+          "anchor": "Citations",
+          "linkAnchor": "Citations"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Sources",
+          "number": "10",
+          "index": "47",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 122739,
+          "anchor": "Sources",
+          "linkAnchor": "Sources"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "Further reading",
+          "number": "11",
+          "index": "48",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 164383,
+          "anchor": "Further_reading",
+          "linkAnchor": "Further_reading"
+        },
+        {
+          "toclevel": 2,
+          "level": "3",
+          "line": "Historiography and memory",
+          "number": "11.1",
+          "index": "49",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 168096,
+          "anchor": "Historiography_and_memory",
+          "linkAnchor": "Historiography_and_memory"
+        },
+        {
+          "toclevel": 1,
+          "level": "2",
+          "line": "External links",
+          "number": "12",
+          "index": "50",
+          "fromtitle": "Treaty_of_Versailles",
+          "byteoffset": 172295,
+          "anchor": "External_links",
+          "linkAnchor": "External_links"
+        }
+      ],
+      "showtoc": true
+    }
+  }
+}

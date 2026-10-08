@@ -1,0 +1,142 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=Treaty+of+Versailles&language=en&limit=5&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "searchinfo": {
+      "search": "Treaty of Versailles"
+    },
+    "search": [
+      {
+        "id": "Q8736",
+        "title": "Q8736",
+        "pageid": 10061,
+        "concepturi": "http://www.wikidata.org/entity/Q8736",
+        "repository": "wikidata",
+        "url": "//www.wikidata.org/wiki/Q8736",
+        "display": {
+          "label": {
+            "value": "Treaty of Versailles",
+            "language": "en"
+          },
+          "description": {
+            "value": "most important of the peace treaties of the First World War which ended the state of war between Germany and the Allied Powers",
+            "language": "en"
+          }
+        },
+        "label": "Treaty of Versailles",
+        "description": "most important of the peace treaties of the First World War which ended the state of war between Germany and the Allied Powers",
+        "match": {
+          "type": "label",
+          "language": "en",
+          "text": "Treaty of Versailles"
+        }
+      },
+      {
+        "id": "Q961673",
+        "title": "Q961673",
+        "pageid": 911435,
+        "concepturi": "http://www.wikidata.org/entity/Q961673",
+        "repository": "wikidata",
+        "url": "//www.wikidata.org/wiki/Q961673",
+        "display": {
+          "label": {
+            "value": "Treaty of Versailles",
+            "language": "en"
+          },
+          "description": {
+            "value": "1768 treaty between the Republic of Genoa and France",
+            "language": "en"
+          }
+        },
+        "label": "Treaty of Versailles",
+        "description": "1768 treaty between the Republic of Genoa and France",
+        "match": {
+          "type": "label",
+          "language": "en",
+          "text": "Treaty of Versailles"
+        }
+      },
+      {
+        "id": "Q1639638",
+        "title": "Q1639638",
+        "pageid": 1573848,
+        "concepturi": "http://www.wikidata.org/entity/Q1639638",
+        "repository": "wikidata",
+        "url": "//www.wikidata.org/wiki/Q1639638",
+        "display": {
+          "label": {
+            "value": "Treaty of Versailles",
+            "language": "en"
+          },
+          "description": {
+            "value": "diplomatic agreement between Austria and France in 1757",
+            "language": "en"
+          }
+        },
+        "label": "Treaty of Versailles",
+        "description": "diplomatic agreement between Austria and France in 1757",
+        "match": {
+          "type": "label",
+          "language": "en",
+          "text": "Treaty of Versailles"
+        }
+      },
+      {
+        "id": "Q1537392",
+        "title": "Q1537392",
+        "pageid": 1474148,
+        "concepturi": "http://www.wikidata.org/entity/Q1537392",
+        "repository": "wikidata",
+        "url": "//www.wikidata.org/wiki/Q1537392",
+        "display": {
+          "label": {
+            "value": "Treaty of Versailles",
+            "language": "en"
+          },
+          "description": {
+            "value": "Treaty of 1758",
+            "language": "en"
+          }
+        },
+        "label": "Treaty of Versailles",
+        "description": "Treaty of 1758",
+        "match": {
+          "type": "label",
+          "language": "en",
+          "text": "Treaty of Versailles"
+        }
+      },
+      {
+        "id": "Q375717",
+        "title": "Q375717",
+        "pageid": 357542,
+        "concepturi": "http://www.wikidata.org/entity/Q375717",
+        "repository": "wikidata",
+        "url": "//www.wikidata.org/wiki/Q375717",
+        "display": {
+          "label": {
+            "value": "Treaty of Versailles",
+            "language": "en"
+          },
+          "description": {
+            "value": "agreement between Austria and France",
+            "language": "en"
+          }
+        },
+        "label": "Treaty of Versailles",
+        "description": "agreement between Austria and France",
+        "match": {
+          "type": "label",
+          "language": "en",
+          "text": "Treaty of Versailles"
+        }
+      }
+    ],
+    "search-continue": 5,
+    "success": 1
+  }
+}

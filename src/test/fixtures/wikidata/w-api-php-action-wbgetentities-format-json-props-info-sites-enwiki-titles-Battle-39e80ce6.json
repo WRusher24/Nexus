@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Battle+of+Actium&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q160387": {
+        "pageid": 161277,
+        "ns": 0,
+        "title": "Q160387",
+        "lastrevid": 2517909027,
+        "modified": "2026-07-15T21:33:07Z",
+        "type": "item",
+        "id": "Q160387"
+      }
+    },
+    "success": 1
+  }
+}

@@ -7,6 +7,7 @@
  */
 
 export { upsertNode } from './upsertNode';
+export { createRootNode, extractEntitiesDates } from './createRootNode';
 export {
   insertVerifiedEdge,
   insertVerifiedEdgeBatch,
@@ -45,3 +46,5 @@ export type {
   NodeNeighborhood,
   AncestorTraversalResult,
 } from './types';
+
+export type { CreateRootNodeInput, CreateRootNodeResult } from './createRootNode';

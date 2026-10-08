@@ -1,0 +1,33 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&revids=1366357557&prop=extracts%7Crevisions%7Cpageprops&explaintext=1&exsectionformat=plain&rvprop=ids&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 19362662,
+          "ns": 0,
+          "title": "Treaty of Versailles (1768)",
+          "extract": "The Treaty of Versailles was a treaty concluded on 15 May 1768 at Versailles between the Republic of Genoa and France, in which Genoa sold Corsica to France.\n\nCorsica had been ruled by Genoa since 1284. In the 18th century, Corsicans started to seek their independence. A German adventurer, Theodore von Neuhoff, briefly became King of Corsica in 1736, supported by the Dutch Republic and Great Britain. In 1755, a full-fledged Corsican Republic was founded under Pasquale Paoli, and in 1764 Genoa asked France to send troops to the island. \nIn the Treaty of Versailles, Genoa had no option but to put Corsica in pledge to France, to repay its debts. There was no chance that Genoa, which was in decline, could ever repay its debts otherwise, and Genoa was not capable of suppressing the Corsican struggle for independence. However, the treaty also established that France would return to Genoa the possession of neighboring Capraia island, previously occupied by the Corsican Republic.\nIn September 1768, France began its conquest of Corsica. France gained full military control of the island following the Battle of Ponte Novu in 1769. Until the French Revolution, the island was considered the personal possession of the King.\n\n\nReferences",
+          "revisions": [
+            {
+              "revid": 1366357557,
+              "parentid": 1360873974
+            }
+          ],
+          "pageprops": {
+            "defaultsort": "Versailles 1768",
+            "page_image_free": "Genoa_and_Corsica.jpg",
+            "wikibase-shortdesc": "1768 treaty between the Republic of Genoa and France",
+            "wikibase_item": "Q961673"
+          }
+        }
+      ]
+    }
+  }
+}

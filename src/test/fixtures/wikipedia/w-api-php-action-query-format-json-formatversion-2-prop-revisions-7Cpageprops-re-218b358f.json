@@ -1,0 +1,32 @@
+{
+  "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Battle+of+Actium&redirects=1&prop=revisions%7Cpageprops&rvprop=ids&format=json&formatversion=2",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 5008,
+          "ns": 0,
+          "title": "Battle of Actium",
+          "revisions": [
+            {
+              "revid": 1378178531,
+              "parentid": 1375340791
+            }
+          ],
+          "pageprops": {
+            "defaultsort": "Actium, Battle of",
+            "page_image_free": "Medinaceli_Actium_reliefs_06.jpg",
+            "wikibase-shortdesc": "Naval battle between Octavian and Mark Antony/Cleopatra (31 BC)",
+            "wikibase_item": "Q160387"
+          }
+        }
+      ]
+    }
+  }
+}

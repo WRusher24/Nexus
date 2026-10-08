@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Freddie+Mercury&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q15869": {
+        "pageid": 18523,
+        "ns": 0,
+        "title": "Q15869",
+        "lastrevid": 2550600956,
+        "modified": "2026-09-28T19:27:16Z",
+        "type": "item",
+        "id": "Q15869"
+      }
+    },
+    "success": 1
+  }
+}

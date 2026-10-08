@@ -1,0 +1,22 @@
+{
+  "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=World+War+I&props=info&format=json",
+  "method": "GET",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "entities": {
+      "Q361": {
+        "pageid": 557,
+        "ns": 0,
+        "title": "Q361",
+        "lastrevid": 2553479037,
+        "modified": "2026-10-05T14:27:06Z",
+        "type": "item",
+        "id": "Q361"
+      }
+    },
+    "success": 1
+  }
+}
