@@ -1,12 +1,540 @@
 # Project Status
 
-## Current milestone: 6 (LLM extraction pipeline: prompt, providers, validation, orchestrator)
+## Current milestone: 9 (Frontend, hardening, and production readiness)
 
 ## Last session: 2026-10-08
 
-## State: Extraction pipeline complete — versioned context-free prompt, four LLM providers (OpenAI/Anthropic/DeepSeek/fixture), atomic budget reservation, the full post-extraction validation pipeline, and the `runExtraction` orchestrator that converts untrusted Wikipedia text into verified graph edges. `pnpm run verify` green (358 tests, 33 files); audit 7/7. No live LLM in tests (fixture provider only).
+## State: Deployable product. React Flow + ELK frontend (search → disambiguation → interactive causal graph with audit-brief nodes, side panel, evidence cards, feedback), production hardening (admin audit/cost/kill-switch endpoints, Vercel cron, Playwright smoke test), and a deployment runbook. `pnpm run verify` green (499 tests, 53 files); invariant audit 14/14; `pnpm run build` succeeds with all 18 routes registered.
 
-## Next: Human quality gate — run `scripts/run-extraction.ts` against ~15 topics and review quality BEFORE building M7. Then Milestone 7 (worker/queue/state machine).
+## Next: v2 backlog — dark mode, mobile layout, graph export, Redis rate limiting, LISTEN/NOTIFY SSE, automated Playwright.
+
+---
+
+## Session log — 2026-10-08 (Milestone 9)
+
+### Frontend stack
+
+- **Graph:** `@xyflow/react` v12.12.0 (React Flow) with custom `history` node
+  and edge components.
+- **Layout:** `elkjs` 0.12.0 (bundled build, runs in the browser), layered
+  algorithm, `RIGHT` direction (causes left, effects right), `POLYLINE` routing.
+  Re-laid out on node/edge-set change and via the Re-layout control, not on drag.
+- **State:** `zustand` 5.0.15 — one store for nodes/edges/selection/expansion
+  states/quota; React Flow's controlled arrays are derived from it.
+- **Styling:** `tailwindcss` v4.3.3 via `@tailwindcss/postcss` (PostCSS plugin)
+  + `autoprefixer`. `tailwind.config.ts` uses the v4 `@config` directive from
+  `globals.css` (`@import "tailwindcss"; @config "../../tailwind.config.ts";`).
+  Light mode only.
+- **Testing:** `@playwright/test` (already present).
+
+### Files added / changed (all NEW unless noted)
+
+Frontend:
+
+- `src/app/layout.tsx` — UPDATE: metadata, global CSS, `SessionProvider`.
+- `src/app/globals.css` — UPDATE: Tailwind v4 import + config.
+- `src/app/page.tsx` — FULL REWRITE: auth/search/graph state machine + the
+  expansion flow (endpoint + SSE) registered on the store.
+- `src/components/search/SearchBar.tsx`, `CandidateList.tsx`.
+- `src/components/graph/GraphCanvas.tsx`, `HistoryNode.tsx`, `HistoryEdge.tsx`,
+  `GraphControls.tsx`, `NodeStateBadge.tsx`.
+- `src/components/panel/SidePanel.tsx`, `EvidenceCard.tsx`,
+  `FeedbackButtons.tsx`, `QuotaDisplay.tsx`.
+- `src/components/auth/SignInButton.tsx`, `SessionProvider.tsx`.
+- `src/lib/frontend/api.ts`, `sse.ts`, `store.ts`, `layout.ts`, `types.ts`.
+
+Hardening:
+
+- `src/app/api/admin/audit/route.ts`, `cost/route.ts`, `kill-switch/route.ts`.
+- `src/lib/hardening/auditScheduler.ts`, `costReport.ts`.
+- `src/app/api/edges/[id]/route.ts` — NEW (single edge + evidence spans).
+- `src/app/api/auth/test-login/route.ts` — NEW (test-only session bootstrap).
+- `src/lib/db/audit.ts` — refactored to export `runInvariantAudit` +
+  `createDbAuditRunner` so the admin route runs the audits in-process. CLI
+  behavior (output + exit code) is unchanged; `main()` now runs only when the
+  module is executed directly.
+
+Testing / config:
+
+- `playwright.config.ts`, `e2e/smoke.spec.ts`, `e2e/fixtures/global-setup.ts`.
+- `tailwind.config.ts`, `postcss.config.js`, `vercel.json`.
+- `docker-compose.yml` — EXTEND: `worker` service.
+- `.env.example` — documents `ADMIN_EMAILS`, `CRON_SECRET`.
+- `package.json` — `e2e` / `e2e:install` scripts; deps below.
+- `docs/DEPLOY.md` — NEW runbook.
+- `docs/STATUS.md` — this update.
+
+### Dependencies added (each justified)
+
+| Package | Version | Justification |
+| --- | --- | --- |
+| `@xyflow/react` | ^12.12.0 | Specified frontend graph library. |
+| `elkjs` | ^0.12.0 | Deterministic layered layout for DAGs (blueprint). |
+| `zustand` | ^5.0.15 | Minimal global graph/viewport state; avoids context re-render storms. |
+| `tailwindcss` | ^4.3.3 | Utility-first styling (standard Next.js approach). |
+| `@tailwindcss/postcss` | ^4.3.3 | Tailwind v4 PostCSS plugin. |
+| `autoprefixer` | ^10.6.1 | Explicit vendor prefixing. |
+| `@playwright/test` | ^1.63.0 | Already present from M1; used for the smoke test. |
+
+No other dependencies were added.
+
+### ELK configuration
+
+```ts
+'elk.algorithm': 'layered',
+'elk.direction': 'RIGHT',
+'elk.layered.spacing.nodeNodeBetweenLayers': '80',
+'elk.spacing.nodeNode': '30',
+'elk.edgeRouting': 'POLYLINE',
+'elk.layered.considerModelOrder.strategy': 'NODES_AND_EDGES',
+'elk.layered.crossingMinimization.strategy': 'LAYER_SWEEP',
+```
+
+### Deployment architecture
+
+- **Web:** Vercel (Next.js App Router). `/` is a static client shell; the API
+  routes are dynamic Node.js functions.
+- **Worker:** long-lived container (Railway/Render/Fly/VPS), `pnpm run worker`;
+  cannot run on Vercel serverless.
+- **Database:** Neon PostgreSQL 16, pooled `DATABASE_URL` for the app/worker,
+  direct `DIRECT_URL` for migrations.
+- **Cron:** Vercel Cron → `GET /api/admin/audit` every 6h with `CRON_SECRET`.
+- Full details in `docs/DEPLOY.md`.
+
+### Verification (this session)
+
+- `pnpm run typecheck` — PASS.
+- `pnpm run lint` — PASS (0 errors, 41 non-null-assertion warnings, all in
+  pre-existing tests).
+- `pnpm run test` — 499/499 PASS (53 files) — unchanged.
+- `pnpm run audit:invariants` — 14/14 PASS.
+- `pnpm run build` — PASS; 18 routes registered (3 admin, 1 test-login, 1 edge
+  detail + the 13 M8 routes and the pages).
+- Live manual journey (browser) — PASS: magic-link sign-in → live Wikipedia
+  search (Q8736) → root node → ELK graph (root at x=345, 10 causes at x=12) →
+  upstream expansion completed in ~30s (11 nodes, 10 edges, badge EXPANDED) →
+  node panel (connections) → edge panel with a verified evidence quote pinned
+  to revision 1378834026 → feedback persisted. No browser console errors.
+- Playwright smoke test — PASS (`pnpm exec playwright install chromium` then
+  `pnpm run e2e`: 1 passed in 30.8s).
+
+### Known limitations (v1)
+
+- **No dark mode** (light mode only) and **no mobile-responsive layout**.
+- **No collaborative editing**, public graph sharing, or undo/redo.
+- **ELK layout** uses a fixed 220×130 node box estimate; very tall cards can
+  slightly overlap vertically until re-layout.
+- **React Flow bundle** is large (~496 kB for `/`); a Web Worker layout + code
+  splitting is a v2 optimisation.
+- **👍 feedback** is local-only: the M8 feedback enum has no positive type, so
+  only 👎 (INCORRECT) is persisted. Adding a `CORRECT` type needs a migration.
+- **Playwright smoke test** is manual (live Wikipedia + LLM); it is idempotent
+  on re-runs (if the root is already expanded the expand click is skipped).
+
+### Deviations / decisions (with reasons)
+
+1. **`src/lib/db/audit.ts` refactored** (not in the allowed-file list). The task
+   requires `/api/admin/audit` to run the audits *programmatically*; the module
+   previously ran as an unconditional CLI. Exported `runInvariantAudit` +
+   `AuditQueryRunner` and guarded `main()` behind a direct-invocation check.
+   CLI output/exit code are byte-identical.
+2. **`/api/edges/[id]` and `/api/auth/test-login` are additive routes.** The
+   task explicitly calls for both (Parts 4.2 and 7.1). Neither modifies an M8
+   route. `test-login` returns 404 unless `NODE_ENV=test` **or
+   `E2E_TEST_AUTH=1`**; the flag is needed because Next.js ignores `.env.local`
+   when `NODE_ENV=test`, which would drop `DATABASE_URL` for the dev server and
+   the worker.
+3. **Tailwind v4, not v3.** The brief allowed the builder's call and listed
+   `@tailwindcss/postcss`, so v4 was used with `@import "tailwindcss"` and the
+   `@config` directive instead of the v3 `@tailwind base/components/utilities`
+   directives.
+4. **`.env.example` updated** (outside the listed files) to document
+   `ADMIN_EMAILS` and `CRON_SECRET`, which the new admin routes read. This
+   mirrors the M8 precedent.
+5. **SSE reconnection is client-managed.** `EventSource` auto-reconnects; the
+   client closes and reconnects explicitly so attempts are bounded
+   (`maxReconnects = 5`) and `timeout` is distinguished from `close`.
+6. **Playwright starts only the web server in `webServer`; the worker is spawned
+   by `globalSetup`.** Playwright's `webServer` health check needs a URL/port and
+   the worker opens neither. `E2E_SKIP_WORKER=1` opts out.
+7. **Feedback mapping.** 👍 is local-only, 👎 persists `INCORRECT` (see Known
+   limitations) because the M8 enum has no positive value and M8 routes must not
+   be modified.
+
+### Environment
+
+- Verified locally against PostgreSQL 18, database `nexus_test`.
+- No new Vitest tests were required (the brief scopes frontend verification to
+  Playwright + the existing 499 suite), so the suite count is unchanged.
+
+---
+
+## Session log — 2026-10-08 (Milestone 8)
+
+Completed (all NEW unless noted):
+
+- `src/lib/auth/allowlist.ts` — invite-only email allowlist
+  (`ALLOWED_EMAILS`, case-insensitive + trimmed, fail-closed in production,
+  dev-open when unset).
+- `src/lib/auth/emailProvider.ts` — hand-built Auth.js email provider with a
+  **console transport** (logs `[AUTH] Magic link for <email>: <url>`), avoiding
+  the `nodemailer` runtime dependency.
+- `src/lib/auth/config.ts` — `NextAuth({ adapter: DrizzleAdapter(...),
+  session: { strategy: 'database' }, providers: [email] })` with a `signIn`
+  allowlist gate and a `session` callback that stamps `session.user.id`.
+- `src/lib/auth/session.ts` — `requireUser` / `getOptionalUserId` with a
+  test-only session override.
+- `src/lib/http/responses.ts`, `errors.ts`, `validation.ts`, `rateLimit.ts`,
+  `db.ts`, `testOverrides.ts` — typed JSON responses, typed error bodies with
+  status mapping, Zod body/query parsing, an in-memory token-bucket limiter
+  (search 20/min, expansion 10/min, default 60/min), a lazy DB accessor, and
+  test-only override slots (route modules may not export test hooks; Next
+  validates route exports at build time).
+- `src/lib/sse/stream.ts` — `createSseStream` (status-on-change, keepalive
+  comments, hard timeout, terminal close, abort cleanup) + `formatSseEvent`.
+- `src/lib/sse/pollExpansion.ts` — `fetchExpansionStatus` (request + node
+  state) and `isTerminalStatus`.
+- `src/lib/feedback/autoHide.ts` — `checkAutoHide`: `>= 2` distinct INCORRECT
+  reporters → `UPDATE edges SET status = 'SUPERSEDED'`.
+- `src/app/api/**/route.ts` — search, root-nodes, nodes (+ancestors /
+  descendants), expansions (POST / GET / SSE stream), edge feedback, quota, and
+  the Auth.js catch-all handler. Every route sets `runtime = 'nodejs'`; the SSE
+  route also sets `maxDuration = 120`.
+- `src/lib/db/schema.ts` — EXTENDED with Auth.js `users`, `accounts`,
+  `sessions`, `verificationTokens`; `userQuotas.userId` /
+  `edgeFeedback.userId` now FK to `users` (CASCADE) and
+  `expansionRequests.requestedBy` is now nullable with FK `ON DELETE SET NULL`.
+- `src/lib/db/migrations/0001_ordinary_cloak.sql` — NEW: auth tables, a
+  backfill of placeholder users for every existing userId reference, the FKs,
+  and a `provision_referenced_user()` bridge trigger (see Deviations).
+- `src/lib/db/audit.ts` — EXTENDED with audits 13 (feedback auto-hide gating)
+  and 14 (orphaned user references). 14/14.
+- `scripts/check-state-writes.mjs` — EXTENDED with `edges.status` checks; the
+  allowlist now includes `src/lib/feedback/autoHide.ts` (and the two existing
+  edges.status writers, `insertVerifiedEdge.ts` / `mergeNodes.ts`).
+- `src/test/helpers/apiClient.ts` — direct route invoker (no HTTP server) with
+  dynamic-segment parsing and a `insertTestUser` helper.
+- `src/test/helpers/authSession.ts` — `setTestSession` / `clearTestSession`.
+- `.env.example` — documented `ALLOWED_EMAILS`, `EMAIL_PROVIDER`,
+  `EMAIL_FROM`, `EMAIL_API_KEY`.
+- `package.json` — added `@auth/drizzle-adapter@1.11.3` only
+  (`next-auth@5.0.0-beta.32` was already present).
+
+Tests added (59; 440 + 59 = 499 total, 53 files):
+
+- `src/test/integration/auth/allowlist.test.ts` (7).
+- `src/test/integration/auth/session.test.ts` (5).
+- `src/test/integration/api/search.test.ts` (6).
+- `src/test/integration/api/rootNodes.test.ts` (5).
+- `src/test/integration/api/nodes.test.ts` (6).
+- `src/test/integration/api/expansions.test.ts` (10).
+- `src/test/integration/sse/stream.test.ts` (8).
+- `src/test/integration/api/feedback.test.ts` (6).
+- `src/test/integration/api/quota.test.ts` (4).
+- `src/test/integration/api/endToEnd.test.ts` (2).
+
+`pnpm run verify` output: lint PASS (0 errors, 41 non-null-assertion warnings,
+all in tests), state-writes PASS, typecheck PASS, 499/499 tests PASS (53 files),
+audit 14/14 PASS. `next build` also PASSES (all 12 API routes registered).
+
+`pnpm run audit:invariants` output:
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+[PASS] Audit 8 (Queue): No in-flight expansion requests without a node (0 violations)
+[PASS] Audit 9 (Queue): No LOADING nodes without an in-flight request (0 violations)
+[PASS] Audit 10 (Queue): No leases stale for more than 5 minutes (0 violations)
+[PASS] Audit 11 (P6): No users over their monthly expansion limit (0 violations)
+[PASS] Audit 12 (P6): No global budget overrun (0 violations)
+[PASS] Audit 13 (Feedback): SUPERSEDED edges have >= 2 distinct INCORRECT reporters (0 violations)
+[PASS] Audit 14 (Users): All userId references resolve to a users row (0 violations)
+=====================
+Result: 14/14 passed
+```
+
+### Auth.js email provider decision
+
+M8 ships the **console transport** (`EMAIL_PROVIDER=console`, the default): the
+magic link is logged to stdout as `[AUTH] Magic link for <email>: <url>`.
+No external email service is configured and **no `nodemailer` dependency was
+added** (the provider object is constructed by hand rather than via
+`next-auth/providers/nodemailer`, which requires nodemailer at runtime). To move
+to production, implement `sendVerificationRequest` in
+`src/lib/auth/emailProvider.ts` for the chosen service (Resend / Postmark / SES)
+and set `EMAIL_PROVIDER`, `EMAIL_FROM`, and `EMAIL_API_KEY`. The rest of the
+config is unchanged. Resend/Postmark/SES currently fall back to the console
+transport with a startup warning rather than failing sign-in.
+
+### SSE deployment note (Vercel vs. container)
+
+`/api/expansions/[id]/stream` polls Postgres every **2 seconds**, sends
+`: keepalive` every **15 seconds**, and enforces a hard **120-second** timeout
+(emits `event: timeout` then closes; the client reconnects and resumes from the
+next `status` event). The route declares `export const runtime = 'nodejs'` and
+`export const maxDuration = 120`.
+
+- **Container host** (Railway/Render/Fly/VPS): no function-duration limit; SSE
+  works as specified.
+- **Vercel**: requires at least the Pro plan for a 120s function budget; Hobby
+  caps functions far below that. If a long extraction outlives the function, the
+  client reconnects. A documented fallback is to poll `/api/expansions/{id}`
+  every 2 seconds instead of streaming.
+- There is **no push from the worker**: the stream polls the DB. Postgres
+  `LISTEN/NOTIFY` is a v2 optimisation.
+
+### edges table write paths (state-write enforcement)
+
+There are now **three** sanctioned writers of `edges.status`, all allowlisted in
+`scripts/check-state-writes.mjs`:
+
+1. `insertVerifiedEdge.ts` — writes `ACTIVE` on insert.
+2. `mergeNodes.ts` (M4) — retires duplicate `ACTIVE` edges to `SUPERSEDED`.
+3. `feedback/autoHide.ts` (M8) — feedback-driven `ACTIVE → SUPERSEDED`.
+
+The brief described auto-hide as the "second" writer; the merge path is the
+actual third. The enforcement script was extended with `edges.status` checks and
+verified to still fail for writes outside the allowlist.
+
+### Migration evidence
+
+- **Fresh database** (`nexus_m8_fresh`, empty): `pnpm run db:migrate` applied
+  0000 + 0001 cleanly; 15 tables and 4 triggers present
+  (`trg_edge_evidence`, `trg_provision_user_{userquotas,expansionrequests,edgefeedback}`).
+- **Existing M7 data** (`nexus_test` with seed rows): applied cleanly; the
+  backfill created users for `legacy-user-1` / `legacy-user-2` before the FKs
+  were validated. Verified that a brand-new `expansionRequests.requestedBy`
+  auto-provisions a user, and that deleting a user sets `requestedBy` to NULL.
+
+### Deviations / decisions (with reasons)
+
+1. **`provision_referenced_user` bridge trigger.** The M2–M7 test fixtures and
+   the queue's public API use arbitrary string user ids (e.g. `user-1`) that
+   predate the users table. Adding enforcing FKs would have failed ~hundreds of
+   prior tests. The migration backfills placeholder users for existing rows and
+   a `BEFORE INSERT` trigger auto-provisions a placeholder user (id = the
+   referenced string) for any future unknown reference, keeping the FK valid and
+   idempotent. Production always passes an authenticated `users.id`; the trigger
+   only bridges legacy/test references. Documented in the migration.
+2. **Test hooks live in `src/lib/http/testOverrides.ts`, not on route modules.**
+   Next.js rejects non-handler exports in `route.ts` at build time. This was
+   discovered by `next build` and fixed; the API tests import the setters from
+   the overrides module.
+3. **`src/test/helpers/db.ts` and `.eslintrc`-adjacent files changed outside the
+   brief's list.** `db.ts`'s `resetTestDb` gained the four auth tables so each
+   test starts clean. `.env.example` documents the new auth env vars. Both are
+   necessary consequences of the auth tables.
+4. **`logs`/email provider and `@auth/drizzle-adapter`.** The adapter was the
+   only new dependency. `next-auth@5.0.0-beta.32` was already in
+   `package.json`.
+5. **`expansionRequests.requestedBy` made nullable.** Required for the brief's
+   `ON DELETE SET NULL` to mean anything (history survives user deletion). No
+   production inserts a NULL; the queue always supplies the session id.
+6. **Non-null assertions in tests.** 22 new warnings; the repo already tolerates
+   `no-non-null-assertion` warnings (M6/M7 had 19). No rule was weakened.
+7. **Audit 13 gates on "has >= 1 INCORRECT feedback".** Edges SUPERSEDED by the
+   M4 merge path carry no feedback and must not be flagged; only feedback-bearing
+   SUPERSEDED edges are checked for the `>= 2` rule.
+
+### Environment
+
+- Verified locally against PostgreSQL 18, database `nexus_test`.
+- All M8 tests use the M6 fixture provider and M5 fixture-backed
+  Wikipedia/Wikidata clients; no live LLM or Wikipedia calls.
+- Dev smoke test: `GET http://localhost:3000/api/search?q=test` →
+  `401 {"error":"UNAUTHORIZED","message":"Authentication required"}`.
+
+---
+
+## Session log — 2026-10-08 (Milestone 7)
+
+Completed (all NEW unless noted):
+
+- `src/lib/queue/types.ts` — shared status unions (`ExpansionRequestStatus`,
+  `NodeExpansionState`), `IN_FLIGHT_STATUSES`, and the public
+  `requestExpansion` input/result types.
+- `src/lib/queue/errors.ts` — `QueueError` + `isUniqueViolation` (SQLSTATE
+  23505 unwrapped through Drizzle's cause chain).
+- `src/lib/queue/transition.ts` — **the single state-machine writer**.
+  `transition()` updates `expansionRequests.status` and the node's
+  `upstreamState`/`downstreamState` in one transaction with an optimistic
+  `WHERE status = $fromStatus` lock; `setNodeState()` is the shared node-state
+  helper. Exports `REQUEST_TO_NODE_STATE` and `LEGAL_TRANSITIONS`.
+- `src/lib/queue/depth.ts` — `checkDepth` wrapping `distanceToNearestRoot`
+  (A10); `MAX_DEPTH_FROM_ROOT = 6`, orphan sentinel `999`.
+- `src/lib/queue/quota.ts` — `ensureUserQuota`, `reserveUserQuota` (day/month
+  rollover + single conditional UPDATE), `refundUserQuota`, `getUserQuota`.
+- `src/lib/queue/requestExpansion.ts` — the public API: CACHE_HIT / IN_PROGRESS
+  / QUEUED / REJECTED, with quota reserved only for fresh work and refunded on
+  a losing insert race.
+- `src/lib/queue/claim.ts` — `SELECT ... FOR UPDATE SKIP LOCKED` claim; the
+  **only** place `attempt` is incremented; also flips the node to LOADING.
+- `src/lib/queue/heartbeat.ts` — `setInterval` lease extension scoped to
+  `lockedBy`; stops on a lost lease, tolerates transient DB errors.
+- `src/lib/queue/reaper.ts` — releases stale leases via `transition` (never
+  increments `attempt`); `BACKOFF_SECONDS` (30/120/0) and `MAX_ATTEMPTS = 3`.
+- `src/lib/queue/processExpansion.ts` — wraps `runExtraction` with Option A
+  phase transitions, quota refunds, retry scheduling, and heartbeat lifecycle;
+  `releaseLeaseAfterError` is the crash-release helper.
+- `src/lib/queue/index.ts` — barrel.
+- `src/worker/runLoop.ts` — serial claim/process loop + reaper interval,
+  abortable sleep, onIdle/onProcessed/onError hooks.
+- `src/worker/graceful.ts` — SIGINT/SIGTERM → AbortController; second signal
+  forces exit(130).
+- `src/worker/index.ts` — FULL REWRITE of the M1 placeholder: builds the real
+  provider + Wikipedia/Wikidata clients + source-document service, registers
+  signals, runs the loop.
+- `src/lib/db/audit.ts` — EXTENDED with 5 queue/P6 audits (8–12).
+- `scripts/check-state-writes.mjs` — grep enforcement (see Deviations).
+- `src/test/helpers/workerHarness.ts`, `src/test/integration/queue/*` (7 files),
+  `src/test/integration/worker/*` (2 files) — see test totals below.
+
+Tests added (82; 358 + 82 = 440 total, 43 files):
+
+- `src/test/integration/queue/transition.test.ts` (12).
+- `src/test/integration/queue/requestExpansion.test.ts` (15).
+- `src/test/integration/queue/claim.test.ts` (8).
+- `src/test/integration/queue/heartbeat.test.ts` (5).
+- `src/test/integration/queue/reaper.test.ts` (8).
+- `src/test/integration/queue/quota.test.ts` (9).
+- `src/test/integration/queue/depth.test.ts` (6).
+- `src/test/integration/queue/processExpansion.test.ts` (10).
+- `src/test/integration/worker/runLoop.test.ts` (6).
+- `src/test/integration/worker/endToEnd.test.ts` (3).
+
+`pnpm run verify` output: lint PASS (0 errors, 19 non-null-assertion warnings),
+state-writes PASS, typecheck PASS, 440/440 tests PASS (43 files), audit 12/12
+PASS.
+
+`pnpm run audit:invariants` output:
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+[PASS] Audit 8 (Queue): No in-flight expansion requests without a node (0 violations)
+[PASS] Audit 9 (Queue): No LOADING nodes without an in-flight request (0 violations)
+[PASS] Audit 10 (Queue): No leases stale for more than 5 minutes (0 violations)
+[PASS] Audit 11 (P6): No users over their monthly expansion limit (0 violations)
+[PASS] Audit 12 (P6): No global budget overrun (0 violations)
+=====================
+Result: 12/12 passed
+```
+
+### Phase transition decision — Option A
+
+`processExpansion` uses **Option A** (recommended in the brief): the
+orchestrator's internal phases (fetch/chunk/validate) are NOT surfaced. One
+transition enters `EXTRACTING` for the whole `runExtraction` call and one leaves
+it on success/retry/failure. `FETCHING` and `VALIDATING` remain in the enum and
+in `LEGAL_TRANSITIONS` for the Option B refinement. To support Option A,
+`LEGAL_TRANSITIONS.LOCKED` also allows `EXTRACTING` (see Deviations).
+
+### Backoff schedule
+
+The attempt counter is incremented **only** by `claim.ts`. The reaper and
+`processExpansion` never touch it (Amendment A8). The schedule is:
+
+| Attempt consumed | On retryable failure | Backoff |
+| --- | --- | --- |
+| 1 | `PENDING` with `retryAfter = now + 30s` | 30s |
+| 2 | `PENDING` with `retryAfter = now + 120s` | 120s |
+| 3 (`MAX_ATTEMPTS`) | `FAILED` (no further retry) | — |
+
+The reaper uses the same table when it releases an expired lease.
+
+### Quota vs. budget refund asymmetry
+
+Quota is refunded on `ABORTED_BUDGET` and `ABORTED_NO_SOURCE` (no LLM call was
+made) but **not** on an LLM failure (real work was attempted). Budget refunds on
+LLM failure are handled by M6's `reconcileBudget`.
+
+### Worker deployment notes
+
+- The worker is a long-lived process and **cannot run on Vercel serverless**
+  (function timeout). Run it in a container (Railway/Render/Fly/VPS) with
+  `pnpm run worker`.
+- One worker processes requests serially. Scale horizontally by running N
+  containers; `SKIP LOCKED` keeps them from colliding.
+- Set `WORKER_ID` per container for readable lease ownership; defaults to
+  `worker-<pid>-<timestamp>`.
+- Requires `DATABASE_URL`, `WIKIPEDIA_CONTACT_EMAIL`, and the provider API key
+  selected by `EXTRACTION_PROVIDER`.
+- A SIGKILL/OOM leaves the lease in the DB; the reaper (a sibling worker, or
+  this worker on restart) returns it to `PENDING`.
+
+### M8 handoff
+
+M8 can call `requestExpansion(db, { nodeId, direction, userId })` directly from
+its HTTP handler and branch on `CACHE_HIT | IN_PROGRESS | QUEUED | REJECTED`.
+No other queue function is required for the expand endpoint. `transition.ts` is
+the only production code path that writes the request status together with the
+node state (plus the single atomic claim in `claim.ts`).
+
+### Deviations / decisions (with reasons)
+
+1. **State-write grep enforcement added outside the allowed-file list.**
+   Acceptance criterion #2 requires the ban to be enforced. Added
+   `scripts/check-state-writes.mjs`, a `lint:state-writes` npm script, an entry
+   in `verify`, and a CI step (`.github/workflows/ci.yml`). The check scans
+   production `src/` (excluding tests) and fails if any file other than
+   `transition.ts`/`claim.ts` writes the request status or a node expansion
+   state. This mirrors the M5 precedent of adding a script to satisfy the
+   brief.
+2. **`requestExpansion` creates the request and sets the node to `QUEUED` in one
+   transaction, reusing `setNodeState` from `transition.ts`.** Creating the row
+   already writes `status = PENDING`, so the initial node sync is not a
+   transition; routing it through `setNodeState` keeps node-state writes inside
+   the sanctioned module.
+3. **`LEGAL_TRANSITIONS.LOCKED` extended with `EXTRACTING` and `COMPLETED`.**
+   The brief's constant omitted both, but its own tests require
+   `LOCKED → COMPLETED` and Option A requires `LOCKED → EXTRACTING`. Both were
+   added; every other list is unchanged.
+4. **Claim orders by `createdAt`, not `requestedAt`.** The brief's SQL used
+   `requestedAt`, which does not exist on the schema (the column is
+   `createdAt`). Used `createdAt` for FIFO.
+5. **Driver timestamps coerced in `claim.ts`.** Raw `db.execute` returns the
+   `RETURNING "leaseExpiresAt"` value as a string under the node-postgres
+   driver here, so the claim maps it through `toDate()` to honour the
+   `ClaimedRequest` contract.
+6. **Hard 60s shutdown timeout delegated.** `runWorkerLoop` lets the in-flight
+   `runExtraction` finish rather than killing it (killing would lose a paid LLM
+   result). The provider's own request timeout bounds the call; SIGKILL + the
+   reaper are the backstop. No `process.exit` from inside the loop.
+7. **Worker entrypoint uses relative imports, not `@/...`.** The `@/*` alias is
+   resolved by Next.js/tsc but is not guaranteed under the plain `tsx` runtime;
+   the entrypoint is executed directly by `tsx`.
+8. **Two stale M6 test assertions updated (out-of-scope but required for a
+   green `verify`).** The working tree already contained ADR 002
+   (`docs/adr/002-quote-length-relaxed.md`), which relaxed `verbatimQuote`
+   max 300→1000 and bumped `PROMPT_VERSION` to `1.0.1`, but two M6 tests still
+   asserted the old values. They were verified to pass on the pre-change
+   baseline (`git stash` of `prompt.ts`/`schema.ts`) and then updated to the
+   ADR's boundary (`schema.test.ts` now checks 1001 fails; the orchestrator test
+   now expects `1.0.1`). No test was weakened or deleted.
+9. **`processExpansion` releases the lease before rethrowing an unexpected
+   error.** The brief says the run loop's catch handles it; doing it in both
+   places (idempotently) makes the direct-call path (`processExpansion` invoked
+   by a test) safe and satisfies the "lease still released" requirement.
+
+### Environment
+
+- Verified locally against PostgreSQL 18, database `nexus_test`.
+- All M7 tests use the M6 fixture provider / stub services; no live LLM or
+  Wikipedia calls. No new runtime dependencies were added.
 
 ---
 

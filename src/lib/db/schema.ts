@@ -7,6 +7,7 @@ import {
   jsonb,
   pgEnum,
   pgTable,
+  primaryKey,
   real,
   text,
   timestamp,
@@ -133,6 +134,69 @@ export interface RejectionReason {
   edgeDescription: string;
   reason: string;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Auth.js tables (M8)
+//
+// Canonical Auth.js v5 + @auth/drizzle-adapter Postgres shapes. Column names are
+// exactly what the adapter expects; table names are customised to Nexus
+// conventions (the adapter is passed the table objects explicitly, so the
+// physical names are irrelevant to it). Sessions are database-backed (not JWT)
+// so they can be revoked by deleting a row.
+//
+// `users.id` is a text primary key defaulting to `gen_random_uuid()::text`; the
+// legacy `userId`/`requestedBy` text columns on userQuotas / expansionRequests /
+// edgeFeedback now reference it.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const users = pgTable('users', {
+  id: text('id').primaryKey().default(sql`gen_random_uuid()::text`),
+  name: text('name'),
+  email: text('email').notNull().unique(),
+  emailVerified: timestamp('emailVerified', { withTimezone: true, mode: 'date' }),
+  image: text('image'),
+  createdAt: timestamp('createdAt', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export const accounts = pgTable(
+  'accounts',
+  {
+    userId: text('userId')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    type: text('type').notNull(),
+    provider: text('provider').notNull(),
+    providerAccountId: text('providerAccountId').notNull(),
+    refresh_token: text('refresh_token'),
+    access_token: text('access_token'),
+    expires_at: integer('expires_at'),
+    token_type: text('token_type'),
+    scope: text('scope'),
+    id_token: text('id_token'),
+    session_state: text('session_state'),
+  },
+  (t) => [primaryKey({ columns: [t.provider, t.providerAccountId] })],
+);
+
+export const sessions = pgTable('sessions', {
+  sessionToken: text('sessionToken').primaryKey(),
+  userId: text('userId')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  expires: timestamp('expires', { withTimezone: true, mode: 'date' }).notNull(),
+});
+
+export const verificationTokens = pgTable(
+  'verificationTokens',
+  {
+    identifier: text('identifier').notNull(),
+    token: text('token').notNull(),
+    expires: timestamp('expires', { withTimezone: true, mode: 'date' }).notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.identifier, t.token] })],
+);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // nodes — canonical entities (invariant P1)
@@ -369,7 +433,11 @@ export const expansionRequests = pgTable(
       .notNull()
       .references(() => nodes.id),
     direction: directionEnum('direction').notNull(),
-    requestedBy: text('requestedBy').notNull(),
+    // Nullable so an ExpansionRequest's history survives deletion of its user
+    // (ON DELETE SET NULL). New rows always carry the authenticated user id.
+    requestedBy: text('requestedBy').references(() => users.id, {
+      onDelete: 'set null',
+    }),
     status: expansionRequestStatusEnum('status').notNull().default('PENDING'),
     attempt: integer('attempt').notNull().default(0),
     maxAttempts: integer('maxAttempts').notNull().default(3),
@@ -435,7 +503,10 @@ export const userQuotas = pgTable(
   'userQuotas',
   {
     id: uuid('id').primaryKey().defaultRandom(),
-    userId: text('userId').notNull().unique(),
+    userId: text('userId')
+      .notNull()
+      .unique()
+      .references(() => users.id, { onDelete: 'cascade' }),
     expansionsToday: integer('expansionsToday').notNull().default(0),
     expansionsThisMonth: integer('expansionsThisMonth').notNull().default(0),
     dailyLimit: integer('dailyLimit').notNull().default(20),
@@ -484,7 +555,9 @@ export const edgeFeedback = pgTable(
     edgeId: uuid('edgeId')
       .notNull()
       .references(() => edges.id),
-    userId: text('userId').notNull(),
+    userId: text('userId')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
     type: feedbackTypeEnum('type').notNull(),
     note: text('note'),
     createdAt: timestamp('createdAt', { withTimezone: true })

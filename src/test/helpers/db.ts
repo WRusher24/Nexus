@@ -88,6 +88,12 @@ const ALL_TABLES = [
   'nodes',
   'userQuotas',
   'globalBudget',
+  // Auth.js tables (M8). Listed so each test case starts from a clean slate;
+  // TRUNCATE ... CASCADE handles the FK ordering.
+  'accounts',
+  'sessions',
+  'verificationTokens',
+  'users',
 ] as const;
 
 /**

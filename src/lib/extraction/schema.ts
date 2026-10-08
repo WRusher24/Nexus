@@ -73,14 +73,14 @@ export const DateFieldSchema = z
 
 export const DisambiguationHintSchema = z
   .object({
-    description: z.string().max(50),
+    description: z.string().max(100),
     approximateDateRange: z.string().max(30),
   })
   .strict();
 
 export const EvidenceSchema = z
   .object({
-    verbatimQuote: z.string().min(10).max(300),
+    verbatimQuote: z.string().min(10).max(1000),
     sectionTitle: z.string(),
   })
   .strict();

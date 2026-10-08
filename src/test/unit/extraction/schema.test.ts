@@ -84,9 +84,9 @@ describe('ExtractionOutputSchema', () => {
     expect(ExtractionOutputSchema.safeParse(output).success).toBe(false);
   });
 
-  it('8. a quote of length 301 fails the maximum of 300', () => {
+  it('8. a quote of length 1001 fails the maximum of 1000 (ADR 002)', () => {
     const output = baseOutput({
-      edges: [edge({ evidence: { verbatimQuote: 'a'.repeat(301), sectionTitle: 'Causes' } })],
+      edges: [edge({ evidence: { verbatimQuote: 'a'.repeat(1001), sectionTitle: 'Causes' } })],
     });
     expect(ExtractionOutputSchema.safeParse(output).success).toBe(false);
   });

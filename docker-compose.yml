@@ -10,5 +10,24 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  # Queue worker (M9). The worker is a long-lived poll loop and cannot run on
+  # Vercel serverless; run it as a container locally and in production.
+  # `depends_on` only starts it after Postgres; migrations must be applied first
+  # (`pnpm run db:migrate` from the host). LLM provider keys come from .env.local.
+  worker:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "corepack enable && pnpm install --frozen-lockfile && pnpm run worker"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/nexus_dev
+      DIRECT_URL: postgresql://postgres:postgres@postgres:5432/nexus_dev
+      WIKIPEDIA_CONTACT_EMAIL: dev@example.com
+      EXTRACTION_PROVIDER: deepseek
+      WORKER_ID: docker-worker
+    depends_on:
+      - postgres
+
 volumes:
   pgdata:

@@ -494,7 +494,7 @@ describe('runExtraction', () => {
       .where(eq(extractionRuns.id, result.extractionRunId));
     expect(run?.rawPrompt.length).toBeGreaterThan(100);
     expect(run?.rawResponse.length).toBeGreaterThan(0);
-    expect(run?.promptVersion).toBe('1.0.0');
+    expect(run?.promptVersion).toBe('1.0.1');
   });
 
   it('runs a DOWNSTREAM extraction and flips the edge direction', async () => {

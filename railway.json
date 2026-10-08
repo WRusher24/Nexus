@@ -1,0 +1,16 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "buildCommand": "echo 'Skipping Next.js build for worker process'"
+  },
+  "deploy": {
+    "startCommand": "pnpm run worker"
+  }
+}
+
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "deploy": {
+    "startCommand": "pnpm run worker"
+  }
+}

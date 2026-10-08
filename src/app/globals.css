@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@config '../../tailwind.config.ts';
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f9fafb; /* gray-50 */
+}

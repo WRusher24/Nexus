@@ -18,7 +18,7 @@
 
 import type { Direction } from '@/lib/wikipedia/types';
 
-export const PROMPT_VERSION = '1.0.0';
+export const PROMPT_VERSION = '1.0.1';
 
 export interface PromptInput {
   focalEntity: {
@@ -64,7 +64,7 @@ export const SYSTEM_PROMPT = `You are a historical causation analyst. Your task 
 2. EVIDENCE REQUIREMENT: Every causal edge you propose MUST include a verbatim, contiguous quote copied EXACTLY from the provided text. The quote must:
    - Be an exact substring of the source text (character-for-character match, aside from matched citation markers and whitespace)
    - Be contiguous (no ellipses, no stitching together fragments from different locations)
-   - Be a single passage, at most 300 characters
+   - Be a single passage, at most 1000 characters
    - Come from the source text provided, never from your training data
    - Directly support the specific causal claim you are making
    If you cannot find a direct verbatim quote supporting a causal link, DO NOT propose that edge.
@@ -113,6 +113,7 @@ Choose the most specific applicable type. When in doubt, prefer CONTRIBUTED_TO o
 ## IMPORTANCE RANKING
 
 Rank each edge from 1 (critical/primary cause) to 10 (minor/peripheral factor), based on how the SOURCE TEXT presents it, not on your own historical judgment.
+importanceRank MUST be an integer between 1 and 10. Do NOT use values outside 1–10 under any circumstances.
 
 ## CONTESTED FLAG
 
@@ -121,6 +122,8 @@ Set contested to true ONLY when the source text explicitly indicates historical 
 ## ENTITY IDENTIFICATION
 
 For each related entity you propose:
+- Only propose related entities that refer to specific, canonical proper nouns or standalone Wikipedia article titles (e.g., "French Revolution", "Louis XVI", "Reign of Terror").
+- Do NOT propose abstract descriptive phrases, clause summaries, or general concepts (e.g., "internal power struggles", "political turmoil", "social unrest"). If a cause cannot be linked to a distinct canonical entity, omit the proposal.
 - Provide the entity name as it appears in, or is clearly implied by, the text.
 - Provide a disambiguationHint object with a short description (at most 50 characters) and an approximateDateRange (at most 30 characters).
 - Do NOT invent or guess Wikidata QIDs. QID resolution is handled by separate code.

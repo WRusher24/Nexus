@@ -8,6 +8,13 @@
       "when": 1791461830003,
       "tag": "0000_chemical_lilith",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791474730907,
+      "tag": "0001_ordinary_cloak",
+      "breakpoints": true
     }
   ]
 }
