@@ -1,0 +1,29 @@
+{
+  "sections": [
+    {
+      "title": "",
+      "startOffset": 0,
+      "endOffset": 800
+    },
+    {
+      "title": "Causes",
+      "startOffset": 800,
+      "endOffset": 2500
+    },
+    {
+      "title": "Course of the war",
+      "startOffset": 2500,
+      "endOffset": 4000
+    },
+    {
+      "title": "Aftermath",
+      "startOffset": 4000,
+      "endOffset": 4800
+    },
+    {
+      "title": "See also",
+      "startOffset": 4800,
+      "endOffset": 5000
+    }
+  ]
+}

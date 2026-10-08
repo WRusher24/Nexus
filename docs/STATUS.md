@@ -1,12 +1,106 @@
 # Project Status
 
-## Current milestone: 2 (Data model and DB invariants)
+## Current milestone: 3 (Deterministic logic & parsing core)
 
 ## Last session: 2026-10-08
 
-## State: Full Drizzle schema, migrations (incl. custom SQL), invariant audit, and a real-Postgres invariant test suite. `pnpm run verify` green.
+## State: Quote normalization + verification, date interval algebra, chronology comparator, Zod extraction schemas (enum-parity guarded), and section-aware chunking — all pure, with fast-check property tests. `pnpm run verify` green (147 tests).
 
-## Next: Milestone 3 (quote normalization, date intervals, chronology comparator)
+## Next: Milestone 4 (insertVerifiedEdge + cycle check + upsertNode)
+
+---
+
+## Session log — 2026-10-08 (Milestone 3)
+
+Completed (all NEW, pure functions, no I/O):
+
+- `src/lib/quote/normalize.ts` — single-pass, position-preserving normalizer
+  (`normalize` / `normalizeString`). Strips citation markers, NFC (per canonical
+  composition cluster), collapses Unicode whitespace, lowercases, trims; returns
+  `normalized`, `toOriginal: Int32Array`, and `rawText`. ~20 ms for 100 KB.
+- `src/lib/quote/verify.ts` — `verifyQuote` (indexOf-all → map offsets → chunk
+  filter → first valid match; 10-char minimum) and `quoteMentionsAnyEntity`
+  (Amendment A7 token check).
+- `src/lib/quote/index.ts` — barrel.
+- `src/lib/dates/intervals.ts` — `DatePrecision`, `PartialDate`, `YearInterval`,
+  `toYearInterval`, `intervalsOverlap`, `couldPrecede`.
+- `src/lib/dates/chronology.ts` — `checkChronology` → VERIFIED / UNVERIFIED /
+  VIOLATION (reason includes both year ranges).
+- `src/lib/dates/index.ts` — barrel.
+- `src/lib/extraction/schema.ts` — Zod schemas/types for the LLM output contract
+  (Amendment A1: no ROOT_TOPIC/DEPTH). `EXTRACTION_SCHEMA_VERSION = '1.0.0'`.
+- `src/lib/extraction/index.ts` — barrel.
+- `src/lib/wikipedia/types.ts` — `SectionInfo`, `Direction`, `Chunk`.
+- `src/lib/wikipedia/chunker.ts` — `chunkArticle` (priority 1/10/20/50, exclude
+  list, lead-exempt character budget). Pure.
+- `src/lib/wikipedia/index.ts` — barrel.
+- Fixtures: `src/test/fixtures/sources/{wwi-abbreviated,stub-article,long-article}.{txt,json}`
+  (offsets verified exact: 5000 / 400 / 29400 chars).
+- `fast-check` 4.10.2 added as a dev dependency.
+- `docs/STATUS.md` — this update.
+
+Tests added (116, all passing; plus the 31 M2 tests = 147):
+
+- `src/test/unit/quote/normalize.test.ts` (29) — markers, whitespace, NFC,
+  mapping; 4 fast-check properties (offset validity, monotonic map, idempotence,
+  length consistency).
+- `src/test/unit/quote/verify.test.ts` (23) — match/case/whitespace variants,
+  marker span, chunk filtering, entity mention; 3 fast-check properties.
+- `src/test/unit/dates/intervals.test.ts` (20) — precision → interval, overlap,
+  precede; 1 width property.
+- `src/test/unit/dates/chronology.test.ts` (15) — all rule branches.
+- `src/test/unit/extraction/schema.test.ts` (15) — valid/invalid shapes, strict,
+  bounds.
+- `src/test/unit/extraction/enum-parity.test.ts` (1) — Zod enums vs Drizzle
+  pgEnums (all four pairs).
+- `src/test/unit/wikipedia/chunker.test.ts` (13) — priorities, exclusions,
+  ordering, budget, fixtures; 1 offset-integrity property.
+
+`pnpm run verify` output: lint PASS, typecheck PASS, 147/147 tests PASS
+(13 files), audit 7/7 PASS.
+
+`pnpm run audit:invariants` output (unchanged):
+
+```
+Nexus Invariant Audit
+=====================
+[PASS] Audit 1 (P1): No identity-less nodes (0 violations)
+[PASS] Audit 2 (P1): No duplicate QIDs (0 violations)
+[PASS] Audit 3 (P2): No self-referential edges (0 violations)
+[PASS] Audit 4 (P2): No cycles in the active edge graph (0 violations)
+[PASS] Audit 5 (P3): No active edges without verified evidence (0 violations)
+[PASS] Audit 6 (P2): No active edges with out-of-bounds importance rank (0 violations)
+[PASS] Audit 7 (P1): No duplicate active edges (0 violations)
+=====================
+Result: 7/7 passed
+```
+
+Deviations / API decisions (with reasons):
+
+1. **`NormalizedText` carries `rawText`.** The brief lists only `normalized`
+   and `toOriginal`, but `verifyQuote` must return `matchedOriginalText`
+   (a slice of the original) and its specified signature has no rawText
+   parameter. Adding `rawText` to the value returned by `normalize()` keeps
+   `verifyQuote`'s signature exactly as specified. Documented in `normalize.ts`.
+2. **`matchCitationMarker` treats `[dubious…]` as any content starting with
+   `dubious`** (case-insensitive), per "`[dubious` followed by any characters
+   followed by `]`".
+3. **`MULTIPLE_MATCHES_OUTSIDE_CHUNKS` is part of the result union but is not
+   emitted** — the brief's algorithm says a match that exists but falls outside
+   the sent chunks returns `OUTSIDE_SENT_CHUNKS`.
+4. **NFC is applied per canonical composition cluster** (base + combining
+   marks, plus Hangul jamo pairs) rather than per UTF-16 code unit. Per-code-unit
+   NFC cannot compose `e` + U+0301 into `é`, which would violate the required
+   precomposed/decomposed equality. Cluster boundaries are composition-safe, so
+   the result is identical to whole-string NFC.
+5. **Property test 21 wording adjusted to a true invariant.** The literal claim
+   ("any raw substring of length ≥ 10 verifies") is false for substrings that
+   split a citation marker; the test generates contiguous word substrings and
+   asserts the matched text normalizes to the same normalized quote. An extra
+   property asserts NOT_FOUND for a disjoint-alphabet quote.
+6. **`pnpm-lock.yaml` changed** as a necessary consequence of adding
+   `fast-check` (the task only named `package.json`, but a dependency cannot be
+   added without the lockfile).
 
 ---
 
